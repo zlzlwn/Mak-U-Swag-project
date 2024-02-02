@@ -19,8 +19,11 @@ ERD작성
 2024-02-01
 
 DB,EER 구성
+
 ERD수정
+
 SFD작성
+
 project PPT 작성
 
 2024-02-02
