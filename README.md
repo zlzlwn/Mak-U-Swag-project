@@ -1,5 +1,6 @@
 
-![Uploading CompanyLogo_1번 (4).png…]()
+![CompanyLogo_1번 (4)](https://github.com/zlzlwn/Team1_project/assets/83982135/e10b44d6-fe51-48ab-afe7-cb36be84182d)
+
 
 1팀 세미프로젝트
 
