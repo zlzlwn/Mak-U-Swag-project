@@ -1,6 +1,6 @@
 
 ![CompanyLogo_1번 (4)](https://github.com/zlzlwn/Team1_project/assets/83982135/e10b44d6-fe51-48ab-afe7-cb36be84182d)
-
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=zlzlwn)](https://github.com/anuraghazra/github-readme-stats)
 
 1팀 세미프로젝트
 
@@ -14,7 +14,7 @@ Clone Site List UP
 
 2024-01-31
 
-      ERD작성
+ERD작성
 
 2024-02-01
 
