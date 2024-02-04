@@ -10,19 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.javalec.command.SCommand;
+import com.javalec.command.MCommand;
 
 /**
  * Servlet implementation class SFrontController
  */
 @WebServlet("*.do")
-public class SFrontController extends HttpServlet {
+public class MFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public SFrontController() {
+	public MFrontController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -58,7 +58,7 @@ public class SFrontController extends HttpServlet {
 		HttpSession session = request.getSession();// 세션정의 (컨트롤러)
 		
 		
-		SCommand command = null;
+		MCommand command = null;
 		String viewPage =null;
 		
 		String uri= request.getRequestURI();//uri=> 뒤에 쓴것만 가져오
