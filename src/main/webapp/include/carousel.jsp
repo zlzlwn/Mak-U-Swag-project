@@ -5,30 +5,14 @@
 <head>
 <style>
 
- body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-.container {
-     
-        }
-
-        .site-header {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-        }
-
-        .site-nav {
-            max-width: 200px; /* 원하는 너비로 조절 */
-        }
-
-
+ #wrap {
+        min-height: calc(100% - 120px);
+         display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        z-index: 1;
+      }
+      
 .credit {
   position: absolute;
   bottom: 20px;
@@ -188,26 +172,31 @@
 }
  .options .option .label .info .sub {
   transition-delay: 0.1s;
-}
+} 
+.container {
+     
+        }
 
+        .site-header {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+        }
 
-
-
-
-
-
-
-
-
+        .site-nav {
+            max-width: 200px; /* 원하는 너비로 조절 */
+        }
+     
 
 
 
 </style>
  
- 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
    
 </head>
 <body>
+<div id="wrap">
     <div class="options">
         <div class="option active"
              style="--optionBackground: url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);">
@@ -275,8 +264,10 @@
             </div>
         </div>
     </div>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src=".include/index.js"></script>
+    <script src="index.js"></script>
+    </div>
 </body>
 </html>

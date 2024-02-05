@@ -10,9 +10,11 @@
     
 	<%@ include file="include/sidebar.html" %>
 	<%@ include file="include/head.jsp" %>
+
+	
 	
 <!-- ============================== [[ Header  section]] ==============================-->
-<hr>
+
 
 <!-- ============================== [[ Sidebar  section]] ==============================-->
 
