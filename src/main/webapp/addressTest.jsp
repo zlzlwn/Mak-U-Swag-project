@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<!-- 
+	 * Description : 카카오 주소 test
+	 * 				
+	 * Date : 2024.02.05 (요일)
+	 * Author : 박지환
+	 * 
+ -->
 <html>
 <head>
 <meta charset="UTF-8">
