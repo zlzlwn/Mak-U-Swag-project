@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
 <meta charset="UTF-8">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,7 +28,7 @@ a {
 /* 사이트의 높이를 5000px로 만들어 스크롤 생성 */
 body {
   height: 5000px;
-  background-color: #444;
+  background-color: #FFFFFF;
   position: sticky;
 }
 
@@ -37,7 +37,7 @@ body {
 /* 사이드바의 너비와 높이를 변수를 통해 통제 */
 :root {
   --side-bar-width: 270px;
-  --side-bar-height: 80vh;
+  --side-bar-height: 70vh;
 }
 
 .side-bar {
@@ -46,6 +46,7 @@ body {
   width: var(--side-bar-width);
   min-height: var(--side-bar-height);   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
   margin-top: calc((100vh - var(--side-bar-height)) / 2);    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
+  z-index:2;
 }
 
 /* 아이콘 시작 */
@@ -127,7 +128,7 @@ body {
   color: white;
   font-size: 1rem;
   font-weight: bold;
-  padding-top: 25px;
+  padding-top:25px;
   padding-bottom: 28px;
   padding-left: 30px;
   transition: .5s;
@@ -157,7 +158,9 @@ body {
   background-color: #888;
   top: 0;         /* 2차 메뉴의 상단을 1차 메뉴의 상단에 고정 */
   left: 100%;     /* 2차 메뉴를 1차 메뉴의 너비만큼 이동 */
-  width: 100%;    /* 1차 메뉴의 너비를 상속 */
+  width: 90%;    /* 1차 메뉴의 너비를 상속 */
+  padding:10px;
+  margin:0;
 }
 
 /* 사이드바 너비의 80%만큼 왼쪽으로 이동 */
@@ -171,6 +174,13 @@ body {
 .side-bar:hover {
   transform: translate(-20px, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
 }
+.side-bar > ul ul {
+  display: none;
+  max-height: 250px; /* 원하는 높이로 조정하세요 */
+  overflow-y: auto; /* 내용이 넘칠 경우 스크롤 표시 */
+}
+
+
 /* 사이드바 끝 */
 </style>
 </head>
@@ -221,7 +231,7 @@ body {
       </ul>
     </li>
   <li>
-      <a href="#">menu4</a>
+      <a href="#">menu5</a>
       <ul>
         <li><a href="#">text1</a></li>
         <li><a href="#">text2</a></li>
@@ -232,8 +242,8 @@ body {
    <li><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Counseling Center</span><br>
 		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;02 436 1009</span><br>
 		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13:00 - 17:00</span><br>
-		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sat.sun.holiday off</span><br><br>
-		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<iframe src="test.html" width="200" height="60" frameborder="0"></iframe></span>
+		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sat.sun.holiday off</span><br>
+		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<iframe src="./include/search.html" width="200" height="60" frameborder="0"></iframe></span>
     </li>
     
     
