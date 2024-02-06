@@ -29,12 +29,29 @@ ERD작성
 
 2024-02-02
 
-  Git Project 생성
-  chart.js를 활용한 chart R&D
+ Git Project 생성
+ chart.js를 활용한 chart R&D
 
 2024-02-03
+restfulAPI(카카오, 구글, 네이버 API(로그인, 지도,주소)) R&D
+ 
 
-  Restful API R&D(kakao, google, naver)(Login,Map, Address)
+2024-02-05
+FADEROOM site clone css R&D
+ERD수정(2.0)
+quill editor R&D
+ 
+
+
+2024-02-06
+각 package,folder별 파일 생성
+FADEROOM site clone css를 위한 frame 분할
+accordion 기능 구현 R&D 
+FAQ 완성
+
+
+
+
 
 
 
