@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+
+input[id*="answer"]{
+	display:none;
+}
+input[id*="answer"] + label {
+	display : block;
+	padding:0px;
+	border:1px solid #D4CCBB;
+	border-bottum:0;
+	font-size:18px;
+	color:#0e3773;
+	font-weight: bold;
+	background:#D4CCBB;
+	cursor:pointer;
+	position:relative;
+	
+}
+input[id*="answer"] + label em {
+	position:absolute;
+	top:50%;
+	right:10px;
+	width:30px;
+	height:30px;
+	margin-top:-15px;
+	display:inline-block;
+	background:url('../images/toggle-arrow.png') 0 0 no-repeat;
+}
+
+input[id*="answer"] + label + div {
+	max-height:0;
+	transition: all .35s;
+	overflow:hidden;
+	font-size:18px;
+	
+	
+}
+
+input[id*="answer"] + label + div p {
+	display:inline-block;
+	padding:20px;
+}
+input[id*="answer"]:checked + label + div {
+	max-height:1000px;
+	}
+input[id*="answer"]:checked + label em {
+	background:url('../images/toggle-arrow-top.png') 0 0 no-repeat;
+	}
