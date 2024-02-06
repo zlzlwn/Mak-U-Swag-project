@@ -120,7 +120,46 @@ public class MFrontController extends HttpServlet {
 		case("/adminmain.do"):
 			viewPage ="Adminmain.jsp";
 		break;
-		
+		case("/manager.do"):
+			command= new ManagerCommand();
+			command.execute(request,response);
+			viewPage="Manager.jsp";
+			break;
+
+		case("/productmanager.do"):
+			command= new PmCommand();
+			command.execute(request,response);
+			viewPage="Product.jsp";
+			break;
+			
+		case("/productinsert.do"):
+			viewPage="ProductInsert.jsp";
+			break;
+			
+		case("/productupdate.do"):
+			viewPage="ProductInsert.jsp";
+			break;
+			
+		case("/noticemanager.do"):
+			command= new NoticeCommand();
+			command.execute(request,response);
+			viewPage="Noticemanager.jsp";
+			break;
+			
+		case("/noticeinsert.do"):
+			viewPage="NoticeInsert.jsp";
+			break;
+			
+		case("/noticeupdate.do"):
+			viewPage="Noticeupdate.jsp";
+			break;
+			
+		case("/totalmanager.do"):
+			command= new TotalCommand();
+			command.execute(request,response);
+			viewPage="Noticeupdate.jsp";
+			break;
+			
 		// ------------- logout ---------------------
 		case("/logout.do"): // 로그아웃시 메인으로
 			session.invalidate();
