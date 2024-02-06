@@ -55,7 +55,7 @@ public class MFrontController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 
 		// session
-		HttpSession session = request.getSession();// 세션정의 (컨트롤러)
+//		HttpSession session = request.getSession();// 세션정의 (컨트롤러)
 		
 		
 		MCommand command = null;
@@ -68,6 +68,22 @@ public class MFrontController extends HttpServlet {
 		String com = uri.substring(conPath.length());
 		System.out.println(com);
 		
+		switch(com) {
+		case("/main.do"): // 메인 페이지
+//			session.invalidate();
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="index.jsp";
+			break;
+		case("/about.do"): // aboutUs
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./about/aboutUs.jsp";
+			break;
+		default:
+			break;
+		
+		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);

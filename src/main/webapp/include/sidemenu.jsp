@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<div class="site-main">
-	<div class="container">
-
 		<div class="site-nav sidebar">
 			<div class="nav-col col-left">
 				<div class="site-menu">
 					<ul>
-						<li class="menu-item"><a href="/about/">About us</a></li>
+						<li class="menu-item"><a href="about.do">About us</a></li>
 					</ul>
 				</div>
 				<div
@@ -80,63 +77,11 @@
 								fw-msg="" class="inputTypeText" placeholder=""
 								onmousedown="SEARCH_BANNER.clickSearchForm(this)" value=""
 								type="text"><input type="image"
-								src="/_fm/images/search-icon.png" alt="검색"
+								src="./images/search-icon.png" alt="검색"
 								onclick="SEARCH_BANNER.submitSearchBanner(this); return false;">
 						</fieldset>
 					</div>
 				</form>
 			</div>
 		</div>
-
-		<div class="main">
-
-
-
-
-			<div class="board">
-				<div class="xans-element- xans-board xans-board-title board-header ">
-					<h3>
-						<font color="#555555">Notice</font>
-					</h3>
-				</div>
-
-				<div
-					class="xans-element- xans-board xans-board-listpackage board-list ">
-					<div
-						class="xans-element- xans-board xans-board-notice accordion-list notice-list">
-						<div class="accordion-item xans-record-">
-							<h3 class="accordion-header">
-								<span class="number">공지</span> <span class="title">신정 연휴
-									공지</span> <span class="date ">2023.12.28</span>
-							</h3>
-							<div class="accordion-content">
-								<div class="images"></div>
-								<div class="article">
-									<p>
-										<img src="/web/upload/NNEditor/20231228/intro16228m29.jpg"
-											class="fr-fic fr-dib" result="success"
-											name="intro16228m29.jpg" size="800px/1000px"
-											filesize="74,33 kB" error="">
-									</p>
-									<p>
-										<br>
-									</p>
-								</div>
-								<a href="/article/notice/1/28864/" class="content-link"></a>
-							</div>
-						</div>
-					</div>
-					<div class="xans-element- xans-board xans-board-empty message  ">검색결과가
-						없습니다.</div>
-					<div
-						class="xans-element- xans-board xans-board-buttonlist board-admin-actions displaynone ">
-						<a href="/board/free/write.html?board_no=1"
-							class="primary-button displaynone"><span>WRITE</span></a>
-					</div>
-				</div>
-			</div>
-
-			<%@ include file="../include/footer.jsp" %>
-		</div>
-	</div>
-</div>
+		

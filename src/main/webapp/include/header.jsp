@@ -4,7 +4,9 @@
 <div class="site-header">
 	<div class="container">
 		<div class="site-logo">
-				<img src="./images/CompanyLogo.png" alt="로고" class="logo-img" width="200px" height="60px">
+			<h1>
+				<img src="./images/CompanyLogo.png" alt="로고" class="logo-img" width="200px" height="100px">
+			</h1>
 		</div>
 		<ul class="xans-element- xans-layout xans-layout-statelogoff user-menu">
 			<li class="menu-item"><a href="/member/login.html">Login</a></li>
@@ -19,6 +21,5 @@
 		</div>
 	</div>
 </div>
-
 </header>
 

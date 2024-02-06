@@ -328,7 +328,7 @@
 }
 
 .board-search-form .search-button {
-    background-image: url('/_fm/images/search-icon.png');
+    background-image: url('../images/search-icon.png');
     background-size: 30px;
     background-repeat: no-repeat;
     background-position: center;
@@ -402,21 +402,31 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.header_wrap {
+	width: 80%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header_wrap h1 {
+	color: #FFFFFF;
+}
+
 .site-logo {
     width: 200px;
     position: relative;
 }
 
-.logo-img {
-	background-image: url('../images/CompanyLogo.png');
-    background-size: contain;
-    display: block;
-    width: 79px;
-    height: 60px;
-    padding-top: 30%;
-    margin-left: -8px;
-}
 
+.logo-img {
+	max-width: 40%;
+	/* 최대 너비를 부모 요소의 100%로 설정 */
+	height: auto;
+	/* 높이를 자동으로 조절하여 비율 유지 */
+}
 *:before,*:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1091,7 +1101,7 @@ html.remodal-is-locked {
 }
 
 .accordion-list .accordion-item .accordion-header:after {
-    background-image: url('/_fm/images/toggle-arrow.png');
+    background-image: url('../images/toggle-arrow.png');
     background-size: contain;
     content: '';
     width: 14px;
@@ -1239,7 +1249,7 @@ html.remodal-is-locked {
 }
 
 .site-logo {
-    width: 200px;
+    width: 300px;
     position: relative;
 }
 
@@ -1258,6 +1268,7 @@ html.remodal-is-locked {
     text-transform: uppercase;
     margin-left: 10px;
 }
+
 
 @media (min-width: 1200px) {
     .site-nav.fixed {
@@ -1327,7 +1338,7 @@ html.remodal-is-locked {
     }
 
     .site-logo {
-        width: 170px;
+        width: 200px;
         position: absolute;
         top: 30px;
         left: 50%;
@@ -1406,7 +1417,7 @@ html.remodal-is-locked {
     }
 
     .site-logo {
-        width: 130px;
+        width: 200px;
         top: 20px;
     }
 
