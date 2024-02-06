@@ -16,41 +16,43 @@
 *{ margin:0; padding:0; }
 li{ list-style:none; }
 
-header{
-
-  display:flex;
-  justify-content: center;
+header {
+  display: flex;
+  justify-content: flex-start; /* 왼쪽 정렬로 변경 */
   align-items: center;
-  
-  /* 헤더 상단 고정 */
-  position:sticky;
-  top:0px;
+  position: fixed; /* 화면 상단에 고정 */
+  top: 0;
+  left: 0;
+  width: 100%; /* 화면 전체 너비를 채우도록 설정 */
   background-color: #d4ccbb;
+  z-index: 1000; /* 다른 콘텐츠 위에 헤더가 나타나도록 설정 */
 }
 
-.header_wrap{
-  width:80%;
+.header_wrap {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_wrap h1 {
+  color: #FFFFFF;
+   /* 로고의 왼쪽 여백 추가 */
+}
+
+.header_wrap .gnb {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; /* 왼쪽 정렬로 변경 */
+  align-items: center;
+}
+
+.header_wrap .gnb li {
+  color: #000000;
+  margin: 0 20px; /* 여백 조정 */
+  margin-top: 75px; /* 로그아웃 링크를 아래로 내리는 간격 조정 */
   
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items:center;
-}
-
-.header_wrap h1{
-  color:#FFFFFF;
-}
-
-.header_wrap .gnb{ 
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items:center;
-}
-
-.header_wrap .gnb li{
-  color:#000000;
-  margin:0 10px;
 }
  #wrap,#wrap1 {
         min-height: calc(100% - 180px);
@@ -58,6 +60,8 @@ header{
         align-items: flex-start;
         z-index: 1;
          flex-direction: column;
+  margin-top: 120px; /
+         
       }
  iframe {
     border: none;
@@ -72,7 +76,7 @@ header{
     width: 100%;
     height: 500px;
     margin-bottom: 20px;
-    margin-top: 50px;
+    margin-top: 75px;
   }  
 
 
@@ -90,7 +94,8 @@ width:80%;
     .logo-img {
         max-width: 10%; /* 최대 너비를 부모 요소의 100%로 설정 */
         height: auto; /* 높이를 자동으로 조절하여 비율 유지 */
-        margin-top: 10px;
+        margin-top: 75px;
+        margin-left: 40px;
     }
     }
     .site-footer {
@@ -142,7 +147,7 @@ height: 10px;
 
 <header>
   <div class="header_wrap">
-    <h1><a href="Adminmain.do"><img src="./images/CompanyLogo.png" alt="로고" class="logo-img" ></a></h1>
+    <h1><a href="adminmain.do"><img src="./images/CompanyLogo.png" alt="로고" class="logo-img" ></a></h1>
     <nav>
       <ul class="gnb">
         <li><a href="logout.do">Logout</a></li>
@@ -153,7 +158,7 @@ height: 10px;
 </header>
 <div id="wrap">
   <iframe src="./include/carousel.jsp" frameborder="0"></iframe>
-  <iframe src="./include/carousel.jsp" frameborder="0"></iframe>
+
 </div>
 <div id="wrap1">
 </div>
