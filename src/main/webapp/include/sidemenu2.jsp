@@ -46,11 +46,10 @@
 				</div>
 				<div class="site-menu">
 					<ul>
-						<li class="menu-item"><a href="/board/notice/1/">Notice</a></li>
-						<li class="menu-item"><a href="/board/review/4/">Review</a></li>
-						<li class="menu-item"><a
-							href="/board/free/qna.html?board_no=5">Q&amp;A</a></li>
-						<li class="menu-item"><a href="/board/faq/3/">FAQ</a></li>
+						<li class="menu-item"><a href="notice.do">Notice</a></li>
+						<li class="menu-item"><a href="review.do">Review</a></li>
+						<li class="menu-item"><a href="qna.do">Q&amp;A</a></li>
+						<li class="menu-item"><a href="faq.do">FAQ</a></li>
 					</ul>
 				</div>
 				<div class="cs-info">
