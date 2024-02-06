@@ -6,22 +6,14 @@
 <link rel="stylesheet" href="./css/all.css">
 <link rel="stylesheet" href="./css/query.css">
 <script src="./js/jquery.js"></script>
+<script src="./js/fbevents.js"></script>
 <style>
-body {
-	background-color: #d4ccbb;
-	color: #0e3773;
-	font-size: 14px;
-	font-family: 'Avenir Next', 'KoPub Dotum', sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	line-height: 1.65;
-}
 </style>
 </head>
 <body class="nav-expended">
 <!-- ============================== [[ Header  section]] ==============================-->
     
-	<%@ include file="include/head2.jsp" %>
+	<%@ include file="include/header.jsp" %>
     
 <!-- ============================== [[ Header  section]] ==============================-->
 

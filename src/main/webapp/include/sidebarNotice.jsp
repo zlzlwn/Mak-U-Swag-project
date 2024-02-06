@@ -105,21 +105,11 @@
 					<div
 						class="xans-element- xans-board xans-board-notice accordion-list notice-list">
 						<div class="accordion-item xans-record-">
-							<h3 class="accordion-header">
-								<span class="number">공지</span> <span class="title">신정 연휴
+							<h3 class="accordion-header"  >
+								<span class="number"><%="가나" %></span> <span class="title">신정 연휴
 									공지</span> <span class="date ">2023.12.28</span>
 							</h3>
-							<div class="accordion-content">
-								<div class="images"></div>
-								<div class="article">
-									<p>
-									아코디언 테스트
-										<img src="./images/CompanyLogo.png" alt="로고" class="logo-img" width="200px" height="60px">
-									</p>
-									<p>
-										<br>
-									</p>
-								</div>
+						
 								<a href="/article/notice/1/28864/" class="content-link"></a>
 							</div>
 						</div>
