@@ -55,7 +55,7 @@ public class MFrontController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 
 		// session
-//		HttpSession session = request.getSession();// 세션정의 (컨트롤러)
+		HttpSession session = request.getSession();// 세션정의 (컨트롤러)
 		
 		
 		MCommand command = null;
@@ -107,6 +107,28 @@ public class MFrontController extends HttpServlet {
 //			command.execute(request, response);
 			viewPage ="./board/faq.jsp";
 		break;
+		
+		// ------------- member 폴더 ------------------
+		case("/agreement.do"): // board
+			viewPage ="./member/agreement.jsp";
+		break;
+		case("/privacy.do"): // board
+			viewPage ="./member/privacy.jsp";
+		break;
+		
+		// ------------- admin  ---------------------
+		case("/adminmain.do"):
+			viewPage ="Adminmain.jsp";
+		break;
+		
+		// ------------- logout ---------------------
+		case("/logout.do"): // 로그아웃시 메인으로
+			session.invalidate();
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage="index.jsp";
+		break;
+		
 		
 		default:
 			break;
