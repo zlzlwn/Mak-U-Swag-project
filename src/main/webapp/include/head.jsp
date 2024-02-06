@@ -8,10 +8,10 @@
 <style>
       html,
       body {
-        height: 5000px;
+        height: 1000px;
         padding: 0px;
         margin: 0px;
-  		background-color: #FFFFFF;
+  		background-color: #d4ccbb;;
       }
 *{ margin:0; padding:0; }
 li{ list-style:none; }
@@ -24,7 +24,8 @@ header{
   
   /* 헤더 상단 고정 */
   position:sticky;
-  top:0;
+  top:0px;
+  background-color: #d4ccbb;
 }
 
 .header_wrap{
@@ -51,14 +52,28 @@ header{
   color:#000000;
   margin:0 10px;
 }
- #wrap {
-        min-height: calc(100% - 120px);
+ #wrap,#wrap1 {
+        min-height: calc(100% - 180px);
          display: flex;
-        justify-content: center;
         align-items: flex-start;
         z-index: 1;
+         flex-direction: column;
       }
-      
+ iframe {
+    border: none;
+    outline: none;
+}
+ .iframe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }   
+   #wrap iframe {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }  
 
 
 .content{
@@ -73,8 +88,9 @@ width:80%;
 }
 
     .logo-img {
-        max-width: 15%; /* 최대 너비를 부모 요소의 100%로 설정 */
+        max-width: 10%; /* 최대 너비를 부모 요소의 100%로 설정 */
         height: auto; /* 높이를 자동으로 조절하여 비율 유지 */
+        margin-top: 10px;
     }
     }
     .site-footer {
@@ -94,38 +110,52 @@ width:80%;
 
 .site-footer span, .site-footer a {
     margin-right: 10px; /* 각 요소 사이의 간격을 조절하세요 */
-    color: #000000; /* 텍스트 색상을 원하는 색상으로 지정하세요 */
+    color: #0e3773; /* 텍스트 색상을 원하는 색상으로 지정하세요 */
+    font-weight: bold;
+    font-size: 13px;
 }
 
 .site-footer a {
     text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    
 }
 
 .legal-links a {
-    color: #fff; /* 법적 링크 색상을 원하는 색상으로 지정하세요 */
+    color: black; /* 법적 링크 색상을 원하는 색상으로 지정하세요 */
+    font-weight: bold;
+    font-size: 13px;
 }
 
 .copyright {
-    margin-top: 10px; /* 저작권 텍스트와 다른 요소 사이의 간격을 조절하세요 */
+    margin-top:0px; /* 저작권 텍스트와 다른 요소 사이의 간격을 조절하세요 */
+    font-weight: bold;
+    font-size: 13px;
+}
+.spacing{
+height: 10px;
 }
 </style>
 </head>
 <body>
+
 <header>
   <div class="header_wrap">
-    <h1><img src="./images/CompanyLogo.png" alt="로고" class="logo-img" ></h1>
+    <h1><a href="Adminmain.do"><img src="./images/CompanyLogo.png" alt="로고" class="logo-img" ></a></h1>
     <nav>
       <ul class="gnb">
-        <li>menu1</li>
-        <li>menu2</li>
-        <li>menu3</li>
+        <li><a href="logout.do">Logout</a></li>
       </ul>
     </nav>
   </div>
   
 </header>
 <div id="wrap">
-  <iframe src="./include/carousel.jsp" width="100%" height="500px"></iframe>
+  <iframe src="./include/carousel.jsp" frameborder="0"></iframe>
+  <iframe src="./include/carousel.jsp" frameborder="0"></iframe>
+</div>
+<div id="wrap1">
 </div>
 	
         
@@ -142,6 +172,7 @@ width:80%;
 						<span>201, 240, Bongujae-ro, Jungnang-gu, Seoul |</span>
 						<span>Reg. No. 174-05-01533 |</span>
 						<span>Ecommerce Reg. No. 2020-SeoulJungnang-0207</span>
+						<div class="spacing"></div>
 					</li>
 					<li class="legal-links">
 						<a href="../member/agreement.html">Terms of Use</a>

@@ -1,9 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <head>
 
 <style>
@@ -156,17 +154,17 @@ body {
   display: block;
   position: absolute;
   background-color: #888;
-  top: 0;         /* 2차 메뉴의 상단을 1차 메뉴의 상단에 고정 */
+  top: 0%;         /* 2차 메뉴의 상단을 1차 메뉴의 상단에 고정 */
   left: 100%;     /* 2차 메뉴를 1차 메뉴의 너비만큼 이동 */
-  width: 90%;    /* 1차 메뉴의 너비를 상속 */
-  padding:10px;
+  width: 70%;    /* 1차 메뉴의 너비를 상속 */
+  padding:0px;
   margin:0;
 }
 
 /* 사이드바 너비의 80%만큼 왼쪽으로 이동 */
 .side-bar {
   border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.8), 0);
+  transform: translate(calc(var(--side-bar-width) * -0.7), 0);
   transition: .5s;
 }
 
@@ -195,9 +193,9 @@ body {
   </section>
   <ul>
     <li>
-      <a href="#"><i class="fa-solid fa-cat"></i> 회원</a>
+      <i class="fa-solid fa-cat"></i> 회원
       <ul>
-        <li><a href="#">회원관리</a></li>
+        <li><a href="manager.do">회원관리</a></li>
       </ul>
     </li>
     <li>
