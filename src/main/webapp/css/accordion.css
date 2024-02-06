@@ -1,6 +1,4 @@
 @charset "UTF-8";
-
-
 input[id*="answer"]{
 	display:none;
 }
@@ -18,23 +16,21 @@ input[id*="answer"] + label {
 	
 }
 input[id*="answer"] + label em {
-	position:absolute;
-	top:50%;
-	right:10px;
-	width:30px;
-	height:30px;
-	margin-top:-15px;
-	display:inline-block;
-	background:url('../images/toggle-arrow.png') 0 0 no-repeat;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    display: inline-block;
+    background: url('../images/toggle-arrow.png') 0 0 no-repeat;
 }
 
 input[id*="answer"] + label + div {
-	max-height:0;
-	transition: all .35s;
-	overflow:hidden;
-	font-size:18px;
-	
-	
+    max-height: 0;
+    transition: max-height 0.35s ease; /* 부드러운 애니메이션 추가 */
+    overflow: hidden;
+    font-size: 18px;
 }
 
 input[id*="answer"] + label + div p {
@@ -42,8 +38,9 @@ input[id*="answer"] + label + div p {
 	padding:20px;
 }
 input[id*="answer"]:checked + label + div {
-	max-height:1000px;
-	}
+    max-height: 1000px; /* 열린 상태의 최대 높이 설정 */
+}
+
 input[id*="answer"]:checked + label em {
 	background:url('../images/toggle-arrow-top.png') 0 0 no-repeat;
 	}
