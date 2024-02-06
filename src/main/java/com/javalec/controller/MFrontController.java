@@ -75,11 +75,39 @@ public class MFrontController extends HttpServlet {
 //			command.execute(request, response);
 			viewPage ="index.jsp";
 			break;
+			
+		// ------------- about 폴더 ------------------
 		case("/about.do"): // aboutUs
 //			command = new BListCommand();
 //			command.execute(request, response);
 			viewPage ="./about/aboutUs.jsp";
 			break;
+			
+		// ------------- board 폴더 ------------------
+		
+			
+		// ------------- board 폴더 ------------------
+		case("/notice.do"): // notice
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./board/notice.jsp";
+		break;
+		case("/review.do"): // review
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./board/review.jsp";
+		break;
+		case("/qna.do"): // qna
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./board/qna.jsp";
+		break;
+		case("/faq.do"): // board
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./board/faq.jsp";
+		break;
+		
 		default:
 			break;
 		
