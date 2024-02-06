@@ -8,7 +8,7 @@
 <body>
 <!-- ============================== [[ Header  section]] ==============================-->
     
-	<%@ include file="include/sidebar.html" %>
+	<%@ include file="include/sidebar.jsp" %>
 	<%@ include file="include/head.jsp" %>
 
 	
