@@ -7,6 +7,8 @@
 <title>about us</title>
 <link rel="stylesheet" href="./css/all.css">
 <link rel="stylesheet" href="./css/all2.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../js/index.js"></script>
 </head>
 <body class="nav-expended">
 	<!-- ============================== [[ Header  section]] ==============================-->
@@ -29,6 +31,7 @@
 
 				<!-- 여기서 부터 작성 -->
 				
+			<%@ include file="../include/cardAni.jsp"%>
 				
 				
 				

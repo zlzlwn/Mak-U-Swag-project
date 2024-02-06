@@ -1235,8 +1235,8 @@ html.remodal-is-locked {
 }
 
 .site-header {
-    padding-top: 70px;
-    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
     position: relative;
     width: 100%;
     z-index: 99;
