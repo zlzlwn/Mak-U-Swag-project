@@ -59,23 +59,14 @@ header {
   
 }
  #wrap,#wrap1 {
-    position: absolute;
-    top: -80px;
-    left: 20%;
-    transform: translateX(-50%);
-    min-height: calc(100% - 150px); /* 더 큰 여유 공간을 주고자 할 때 수정 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    flex-direction: column;
-    width: 75%; /* 현재 너비의 1.5배로 설정 */
-    height: 170%; /* 현재 높이의 1.5배로 설정 */
-    min-width: 300px; /* 원래 너비의 최소 1.5배로 설정 */
-    min-height: 700px; /* 원래 높이의 최소 1.5배로 설정 */
-    max-width: 900px; /* 원래 너비의 최대 1.5배로 설정 */
-    max-height: 825px; /* 원래 높이의 최대 1.5배로 설정 */
-}
+      min-height: calc(100% - 180px);
+         display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+         flex-direction: column;
+         width: 40%;
+      }
  iframe {
     border: none;
     outline: none;
@@ -111,34 +102,52 @@ width:80%;
         margin-left: 40px;
     }
     }
+    .site-footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%; /* 푸터의 높이를 필요에 따라 조절하세요 */
+    transform: translateY(0%);
+}
 
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
 
+.site-footer span, .site-footer a {
+    margin-right: 10px; /* 각 요소 사이의 간격을 조절하세요 */
+    color: #0e3773; /* 텍스트 색상을 원하는 색상으로 지정하세요 */
+    font-weight: bold;
+    font-size: 13px;
+}
 
+.site-footer a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    
+}
+
+.legal-links a {
+    color: black; /* 법적 링크 색상을 원하는 색상으로 지정하세요 */
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.copyright {
+    margin-top:0px; /* 저작권 텍스트와 다른 요소 사이의 간격을 조절하세요 */
+    font-weight: bold;
+    font-size: 13px;
+}
 .spacing{
 height: 10px;
 }
 </style>
 </head>
 <body>
-<%
-    ArrayList<String> labels = (ArrayList<String>) session.getAttribute("labels");
-    ArrayList<Integer> data = (ArrayList<Integer>) session.getAttribute("data");
-    out.print(labels);
-    out.print(data);
-  
-%>
-
-<script>
-    // 세션에서 가져온 labels와 data 데이터가 null인지 확인
-    // JSON 형식의 데이터를 JavaScript 변수에 할당
-    
-    // JSON 형식의 데이터를 JavaScript 변수에 할당
-    const labels = JSON.parse('<%= new Gson().toJson(labels) %>');
-    const data = JSON.parse('<%= new Gson().toJson(data) %>');
-    out.print(labels);
-    
-    
-    </script>
 
 
 
@@ -154,12 +163,35 @@ height: 10px;
   
 </header>
 <div id="wrap">
-  <iframe src="Manager.jsp" frameborder="0"></iframe>
 
 </div>
 <div id="wrap1">
 </div>
 	
-
+        
+  <footer>
+  <div class="site-footer">
+				<ul><li>
+						<span>Mak U Swag |</span>
+						<span>CEO One Stone One Billion |</span>
+						<span>Personal Info Manager Team 401 |</span>
+						<span>Account No. ???? |</span><br>
+						<span>Email <a href="teamone401@makuswag.co.kr">info@ssambbong.co.kr</a></span><br>
+					</li>
+					<li>
+						<span>201, 240, Bongujae-ro, Jungnang-gu, Seoul |</span>
+						<span>Reg. No. 174-05-01533 |</span>
+						<span>Ecommerce Reg. No. 2020-SeoulJungnang-0207</span>
+						<div class="spacing"></div>
+					</li>
+					<li class="legal-links">
+						<a href="../member/agreement.html">Terms of Use</a>
+						<a href="../member/privacy.html">Privacy Policy</a>
+						<p class="copyright"> © 2023 Mak U Swag</p>
+					</li>
+				</ul></div>
+  
+  
+  </footer>
   </body>
 </html>

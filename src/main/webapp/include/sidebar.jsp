@@ -43,7 +43,7 @@ body {
   background-color: black;
   width: var(--side-bar-width);
   min-height: var(--side-bar-height);   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
-  margin-top: 50px;    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
+  margin-top: 10%;    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
   z-index:2;
 }
 
