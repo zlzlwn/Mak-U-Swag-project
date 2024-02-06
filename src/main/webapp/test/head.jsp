@@ -147,7 +147,7 @@ height: 10px;
 
 <header>
   <div class="header_wrap">
-    <h1><a href="Adminmain.do"><img src="./images/CompanyLogo.png" alt="로고" class="logo-img" ></a></h1>
+    <h1><a href="adminmain.do"><img src="./images/CompanyLogo.png" alt="로고" class="logo-img" ></a></h1>
     <nav>
       <ul class="gnb">
         <li><a href="logout.do">Logout</a></li>

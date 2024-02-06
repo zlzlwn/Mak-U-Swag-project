@@ -201,21 +201,21 @@ body {
     <li>
       <a href="#">상품</a>
       <ul>
-        <li><a href="#">상품관리</a></li>
-        <li><a href="#">상품등록</a></li>
-        <li><a href="#">상품수정</a></li>
+        <li><a href="productmanager.do">상품관리</a></li>
+        <li><a href="productinsert.do">상품등록</a></li>
+        <li><a href="productupdate.do">상품수정</a></li>
       </ul>
     </li>
     <li>
       <a href="#">게시판</a>
       <ul>
-        <li><a href="#">게시판 관리</a></li>
-        <li><a href="#">게시판 작성</a></li>
-        <li><a href="#">게시판 수정</a></li>
+        <li><a href="noticemanager.do">게시판 관리</a></li>
+        <li><a href="noticeinsert.do">게시판 작성</a></li>
+        <li><a href="noticeupdate.do">게시판 수정</a></li>
       </ul>
     </li>
     <li>
-      <a href="#">매출</a>
+      <a href="totalmanager.do">매출</a>
     </li>
    <li><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Counseling Center</span><br>
 		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;02 436 1009</span><br>
