@@ -12,9 +12,9 @@
 					No. 02-123-4567 |</span> <span>Ecommerce Reg. No.
 					2023-SeoulJungnang-0207</span></li>
 			<br>
-			<li class="legal-links"><a href="./member/agreement.jsp"
+			<li class="legal-links"><a href="agreement.do"
 				style="color: blue;">Terms of Use</a> <a
-				href="./member/privacy.jsp" style="color: blue;">Privacy Policy</a>
+				href="privacy.do" style="color: blue;">Privacy Policy</a>
 				<p class="copyright">© 2023 Mak U Swag</p></li>
 		</ul>
 	</div>

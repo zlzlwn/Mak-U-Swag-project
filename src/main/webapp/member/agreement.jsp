@@ -5,17 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>about us</title>
-<link rel="stylesheet" href="../css/all.css">
-<link rel="stylesheet" href="../css/all2.css">
+<link rel="stylesheet" href="./css/all.css">
+<link rel="stylesheet" href="./css/all2.css">
 </head>
 <body class="nav-expended">
 	<!-- ============================== [[ Header  section]] ==============================-->
 
-	<%@ include file="../include/header2.jsp"%>
+	<%@ include file="../include/header.jsp"%>
 
 	<!-- ============================== [[ Header  section]] ==============================-->
 
 	<!-- ============================== [[ Sidebar  section]] ==============================-->
+	
 	<div class="site-main">
 		<div class="container">
 
@@ -279,10 +280,6 @@
 				</div>
 				<br>
 				<hr>
-				<br>
-
-
-
 
 				<!-- 여기까지 작성 -->
 

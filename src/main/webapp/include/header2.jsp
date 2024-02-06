@@ -5,7 +5,9 @@
 	<div class="container">
 		<div class="site-logo">
 			<h1>
-				<img src="./images/CompanyLogo.png" alt="로고" class="logo-img" width="200px" height="100px">
+				<a href="main.do">
+					<img src="./images/CompanyLogo.png" alt="로고" class="logo-img" width="200px" height="100px">
+				</a>
 			</h1>
 		</div>
 		<ul class="xans-element- xans-layout xans-layout-statelogoff user-menu">
