@@ -328,7 +328,7 @@
 }
 
 .board-search-form .search-button {
-    background-image: url('/_fm/images/search-icon.png');
+    background-image: url('../images/search.png');
     background-size: 30px;
     background-repeat: no-repeat;
     background-position: center;
@@ -1091,7 +1091,7 @@ html.remodal-is-locked {
 }
 
 .accordion-list .accordion-item .accordion-header:after {
-    background-image: url('/_fm/images/toggle-arrow.png');
+    background-image: url('../images/toggle-arrow.png');
     background-size: contain;
     content: '';
     width: 14px;
