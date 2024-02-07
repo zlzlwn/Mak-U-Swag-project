@@ -34,43 +34,38 @@
 
 				<!-- 여기서 부터 작성 -->
 				<div class="board">
-					<div
-						class="xans-element- xans-board xans-board-title board-header ">
+					<div class="xans-element- xans-board xans-board-title board-header">
+						<!-- 게시판 제목 -->
 						<h3>
 							<font color="#555555">NOTICE</font>
 						</h3>
+						<!-- 아코디언을 감싸는 부분 -->
 						<div class="accordion">
 							<hr>
-							<input type="radio" name="accordion" id="answer01">
-							 <label for="answer01"> <em></em> 
-							 <!-- forEach는 계속 반복하기때문에 db에 여러줄이 있으면 다 뽑아온다 -> 그래서   -->
-							 <c:forEach items="${list}"] var="dto" varStatus="loop">
-									<c:if test="${loop.index eq 0}">
-										<span>${dto.noCategory}</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<span>${dto.noTitle}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<!-- NoticeDtoPJH 객체 리스트를 순회하며 아코디언 생성 -->
+							<c:forEach items="${list}" var="dto" varStatus="loop">
+								<!-- 각 아코디언의 라디오 버튼 -->
+								<input type="radio" name="accordion"
+									id="answer${loop.index + 1}">
+								<!-- 라디오 버튼과 연결된 라벨 -->
+								<label for="answer${loop.index + 1}"> <!-- NoticeDtoPJH 객체의 카테고리, 제목, 날짜 일부를 출력 -->
+									<em></em> <span>${dto.noCategory}</span> <span>${dto.noTitle}</span>
+									<span>${dto.noDate.substring(0, 10)}</span> <!-- 연월일까지만 추출 -->
+								</label>
+
+								<!-- 아코디언 내용 부분 -->
+								<div>
+									<!-- NoticeDtoPJH 객체의 각 속성을 출력 -->
+									<p>${dto.noTitle}</p>
+									<p>${dto.noCategory}</p>
 									<span>${dto.noDate.substring(0, 10)}</span>
-										<!-- 연월일까지만 추출 -->
-									</c:if>
-								</c:forEach>
-
-							</label>
-
-							<div>
-								<p>
-									<c:forEach items="${list}" var="dto">
-										<!-- NoticeDtoPJH 객체의 각 속성을 출력 -->
-										<p>${dto.noTitle}</p>
-										<p>${dto.noCategory}</p>
-										<span>${dto.noDate.substring(0, 10)}</span>
-										<!-- 연월일까지만 추출 -->
-									</c:forEach>
-
-
-								</p>
-							</div>
+									<!-- 연월일까지만 추출 -->
+								</div>
+							</c:forEach>
 						</div>
 					</div>
 				</div>
+
 
 
 
