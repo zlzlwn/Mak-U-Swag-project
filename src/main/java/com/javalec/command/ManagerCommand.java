@@ -24,10 +24,19 @@ public class ManagerCommand implements MCommand {
 	        // Managerdto에서 데이터를 가져와서 세션에 저장
 	        ArrayList<String> labels = dto.getLabels();
 	        ArrayList<Integer> data = dto.getData();
-	        System.out.println(dto.getLabels());
-	        System.out.println(dto.getData());
 	        session.setAttribute("labels", labels);
 	        session.setAttribute("data", data);
+	        
+	        
+	        Managerdao managerdao2 = new Managerdao();
+	        Managerdto dto2 = managerdao2.view1();
+	        
+	        ArrayList<String> labels1 = dto2.getLabels1();
+	        ArrayList<Integer> data1 = dto2.getData1();
+	        ArrayList<Integer> data2 = dto2.getData2();
+	        session.setAttribute("labels1", labels1);
+	        session.setAttribute("data1", data1);
+	        session.setAttribute("data2", data2);
 	    }
 
 	}

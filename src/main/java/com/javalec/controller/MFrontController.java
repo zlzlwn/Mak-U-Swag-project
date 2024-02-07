@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.javalec.command.MCommand;
+import com.javalec.command.ManagerCommand;
 
 /**
  * Servlet implementation class SFrontController
@@ -170,9 +171,9 @@ public class MFrontController extends HttpServlet {
 			viewPage ="Adminmain.jsp";
 		break;
 		case("/manager.do"):
-//			command= new ManagerCommand();
+			command= new ManagerCommand();
 			command.execute(request,response);
-			viewPage="Manager.jsp";
+			viewPage="UserManageAdmin.jsp";
 			break;
 
 		case("/productmanager.do"):
