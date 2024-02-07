@@ -55,6 +55,9 @@
       </a>
       <div class="accordion-desc">
          <span>${dto.noContent}</span>  
+         <span>${dto.noimage}</span>  
+         <span><img src="${pageContext.request.contextPath}/images/${dto.imagename}" width="100" height="100"></span>  
+         
       </div>
     </li>
   </c:forEach>
