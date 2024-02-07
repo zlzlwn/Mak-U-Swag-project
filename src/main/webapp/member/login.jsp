@@ -27,7 +27,6 @@
 			<!-- ============================== [[ Sidebar  section]] ==============================-->
 
 			<!-- ============================== [[ Body  section]] ==============================-->
-
 			<div class="main">
 
 				<!-- 여기서 부터 작성 -->
@@ -45,9 +44,9 @@
 						<input id="sProvider" name="sProvider" value="" type="hidden">
 						<div class="xans-element- xans-member xans-member-login login ">
 							<!--
-	        $defaultReturnUrl = /index.html
-	        $forbidIpUrl = member/adminFail.html
-	    -->
+					        $defaultReturnUrl = /index.html
+					        $forbidIpUrl = member/adminFail.html
+					    	-->
 							<div class="login-header">
 								<h2>LOGIN</h2>
 							</div>
@@ -72,9 +71,7 @@
 								<div class="login-footer">
 									<div class="login-extras">
 										<a href="/member/id/find_id.html">아이디 찾기</a> <a
-											href="/member/passwd/find_passwd_info.html">비밀번호 찾기</a> <a
-											href="" class="displaynone" onclick="">비회원 구매</a> <span
-											class="guest-login-button displaynone">비회원 주문조회</span>
+											href="/member/passwd/find_passwd_info.html">비밀번호 찾기</a> 
 									</div>
 									<div class="login-actions">
 										<span class="auto"></span> <span class="save"></span> <a
