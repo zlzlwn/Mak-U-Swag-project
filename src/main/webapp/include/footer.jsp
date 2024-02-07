@@ -11,7 +11,6 @@
 			<li><span>4 floor, Gangnamdae-ro, Gangnam-gu, Seoul |</span> <span>Reg.
 					No. 02-123-4567 |</span> <span>Ecommerce Reg. No.
 					2023-SeoulJungnang-0207</span></li>
-			<br>
 			<li class="legal-links"><a href="agreement.do"
 				style="color: blue;">Terms of Use</a> <a
 				href="privacy.do" style="color: blue;">Privacy Policy</a>

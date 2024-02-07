@@ -1122,23 +1122,19 @@ html.remodal-is-locked {
 .accordion-list .accordion-name {
 	position: relative;
 	width: calc(100% - 50px);
-	padding-left: 40px;
 	font-size: 17px;
 	font-weight: bold;
 }
 
 .accordion-list .accordion-name .number {
-	display: inline-block;
-	position: absolute;
-	top: 3px;
-	left: 0;
-	font-family: 'gmarket';
-	font-weight: 500;
-	font-size: 14px;
-	color: #0e3773;
-	vertical-align: middle;
+  display: inline-block;
+  font-family: 'gmarket';
+  font-weight: 500;
+  font-size: 14px;
+  width: 85px;
+  color: #0e3773;
+  vertical-align: middle;
 }
-
 
 .accordion-list .accordion-item .accordion-desc {
 	display: none;
