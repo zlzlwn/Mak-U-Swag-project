@@ -70,10 +70,10 @@
 							</label>
 							<div>
 								<p>
-									<img hspace="5" vspace="0" src="../images/sizeGuideTop.jpeg"
-										style="width: 1400px; height: 1750px;"> <img hspace="5"
-										vspace="0" src="../images/sizeGuideBottom.jpeg"
-										style="width: 1400px; height: 1750px;">
+									<img hspace="5" vspace="0" src="./images/sizeGuideTop.jpeg"
+										style="width: 756px; height: 945px;"> <br>
+									<img hspace="5" vspace="0" src="./images/sizeGuideBottom.jpeg"
+										style="width: 756px; height: 945px;">
 								</p>
 							</div>
 						</div>
@@ -88,8 +88,8 @@
 							</label>
 							<div>
 								<p>
-									<img hspace="5" vspace="0" src="../images/userRating.jepg"
-										style="width: 1400px; height: 1750px;">
+									<img hspace="5" vspace="0" src="./images/userRating.jpeg"
+										style="width: 756px; height: 976px;">
 								</p>
 							</div>
 						</div>
