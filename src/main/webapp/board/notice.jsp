@@ -42,10 +42,12 @@
 						<div>
 						<p>
 						가나
+						<c:forEach items="${list}" var="dto">
                         <!-- NoticeDtoPJH 객체의 각 속성을 출력 -->
                         <p>${notice.noSeq}</p>
                         <p>${notice.noTitle}</p>
                         <p>${notice.noDate}</p>
+						</c:forEach>
 						
 						</p>
 						</div>
