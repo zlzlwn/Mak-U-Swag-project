@@ -49,6 +49,10 @@ FADEROOM site clone css를 위한 frame 분할
 accordion 기능 구현 R&D 
 FAQ 완성
 
+2024-02-07
+accordion 기능 구현
+NOTICE 구현완료
+admin 페이지 회원목록 차트 구현 
 
 
 
