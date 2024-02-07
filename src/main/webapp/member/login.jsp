@@ -14,7 +14,7 @@
 <body class="nav-expended">
 	<!-- ============================== [[ Header  section]] ==============================-->
 
-	<%@ include file="../include/header2.jsp"%>
+	<%@ include file="../include/header.jsp"%>
 
 	<!-- ============================== [[ Header  section]] ==============================-->
 
@@ -22,7 +22,7 @@
 	<div class="site-main">
 		<div class="container">
 
-			<%@ include file="../include/sidemenu2.jsp"%>
+			<%@ include file="../include/sidemenu.jsp"%>
 
 			<!-- ============================== [[ Sidebar  section]] ==============================-->
 
@@ -44,9 +44,9 @@
 						<input id="sProvider" name="sProvider" value="" type="hidden">
 						<div class="xans-element- xans-member xans-member-login login ">
 							<!--
-					        $defaultReturnUrl = /index.html
-					        $forbidIpUrl = member/adminFail.html
-					    	-->
+	        $defaultReturnUrl = /index.html
+	        $forbidIpUrl = member/adminFail.html
+	    	-->
 							<div class="login-header">
 								<h2>LOGIN</h2>
 							</div>

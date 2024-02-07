@@ -15,7 +15,7 @@
 </head>
 <!-- ============================== [[ Header  section]] ==============================-->
 
-<%@ include file="../include/header2.jsp"%>
+<%@ include file="../include/header.jsp"%>
 
 <!-- ============================== [[ Header  section]] ==============================-->
 
@@ -23,7 +23,7 @@
 <div class="site-main">
 	<div class="container">
 
-		<%@ include file="../include/sidemenu2.jsp"%>
+		<%@ include file="../include/sidemenu.jsp"%>
 
 		<!-- ============================== [[ Sidebar  section]] ==============================-->
 
