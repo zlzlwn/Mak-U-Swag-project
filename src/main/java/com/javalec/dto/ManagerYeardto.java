@@ -2,17 +2,17 @@ package com.javalec.dto;
 
 import java.util.ArrayList;
 
-public class Manager3dto {
+public class ManagerYeardto {
 	private ArrayList<String> labels3;
 	private ArrayList<Integer> data4;
 
 	
-	public Manager3dto() {
+	public ManagerYeardto() {
 		
 	}
 
 
-	public Manager3dto(ArrayList<String> labels3, ArrayList<Integer> data4) {
+	public ManagerYeardto(ArrayList<String> labels3, ArrayList<Integer> data4) {
 		super();
 		this.labels3 = labels3;
 		this.data4 = data4;

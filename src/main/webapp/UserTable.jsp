@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>AJAX MySQL Table Query1</title>
-<link rel="stylesheet" type="text/css" href="style.css"> <!-- style.css 파일을 불러옴 -->
+<link rel="stylesheet" type="text/css" href="./css/style.css"> <!-- style.css 파일을 불러옴 -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <style>
 #searchContainer {
@@ -30,6 +30,6 @@
         <button id="queryButton">검색</button>
     </div>
 	<div id="result"></div>
-    <script src="queryTable.js"></script> <!-- queryTable.js 파일을 불러옴 -->
+    <script src="./js/queryTable.js"></script> <!-- queryTable.js 파일을 불러옴 -->
 </body>    
 </html>

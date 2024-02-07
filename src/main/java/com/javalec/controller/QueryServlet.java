@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
-import com.javalec.dto.Managerdto;
+import com.javalec.dto.ManagerDaydto;
 import com.javalec.util.SharVar;
 
 /**
@@ -42,7 +42,7 @@ public class QueryServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		
 		//박스에 여러개의 데이터 담기
-		ArrayList<Managerdto> studentList = new ArrayList<Managerdto>();
+		ArrayList<ManagerDaydto> studentList = new ArrayList<ManagerDaydto>();
 		
 		
 		String query = "select userId,userPw,name,address,phone,email,gender,account,point,active,deactive,howToLogin from user where name like '%" + name + "%'";
@@ -55,7 +55,7 @@ public class QueryServlet extends HttpServlet {
 			ResultSet rs = stmt_mysql.executeQuery(query);
 			
 			while(rs.next()) {
-				Managerdto student = new Managerdto();
+				ManagerDaydto student = new ManagerDaydto();
 				student.setUserId(rs.getString("userId"));
 				student.setUserPw(rs.getString("userPw"));
 				student.setName(rs.getString("name"));

@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <style>
 
 html,
@@ -91,12 +92,7 @@ header {
     height: 100%;
 }
 
-iframe {
-    width: 45%;
-    height: 90%;
-    border: none;
-    margin-top:0px;
-}
+
 .check {
     margin-top: -50%; /* 버튼을 위로 이동 */
     margin-left: 10%;
@@ -130,15 +126,7 @@ iframe {
     const data = JSON.parse('<%= new Gson().toJson(data) %>');
 </script>
 
-<script>
-    // 문서가 완전히 로드된 후에 실행되는 함수
-    $(document).ready(function() {
-        // 일별 버튼 클릭 시 aaa.jsp로 이동하는 함수
-        $('#DayButton').click(function() {
-            window.location.href = 'aaa.jsp'; // aaa.jsp로 이동
-        });
-    });
-</script>
+
 <header>
     <div class="header_wrap">
         <h1><a href="adminmain.do"><img src="./images/CompanyLogo.png" alt="로고"></a></h1>
@@ -149,18 +137,38 @@ iframe {
         </nav>
     </div>
 </header>
+
+
 <div class="content">
-     <div class="check">
-        <button id="DayButton" onclick="window.location.href='aaa.jsp'">일별</button>
-        <button id="MonthButton">월별</button>
-        <button id="YearButton">년별</button>
+
+    <div class="frame-container" >
+        <iframe src="Manager.jsp" frameborder="0" style="width: 60%; margin-top: 50px;"></iframe>
+        <iframe src="Gender.jsp" frameborder="0" style="position: absolute; left: calc(70% - 70px); width: calc(20% - 30px); height: calc(50% + 300px); margin-top: 90px;"></iframe>
     </div>
-    <div class="frame-container">
-        <iframe src="Manager.jsp" frameborder="0" style="position: absolute; left: 80px; width: calc(70% - 200px); height: calc(100% + 60px);"></iframe>
-        <iframe src="Gender.jsp" frameborder="0" style="position: absolute; left: calc(70% - 70px); width: calc(20% - 30px); height: calc(50% + 150px); margin-top: 50px;"></iframe>
-    </div>
-    <iframe src="UserTable.jsp" frameborder="0" style="position: absolute; width: 80%; height: 35%; margin: 10px auto; align-items: center;"></iframe>
+    <iframe src="UserTable.jsp" frameborder="0" style="position: absolute; width: 80%; height: 45%; margin: 10px auto; align-items: center;"></iframe>
 </div>
+
+
+<script src="queryTable.js"></script>
+<script>
+    // 창 크기가 변경될 때 iframe의 크기를 다시 계산하여 조절하는 함수
+    function resizeIframes() {
+        const frameContainers = document.querySelectorAll('.frame-container');
+        frameContainers.forEach(container => {
+            const iframes = container.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+                iframe.style.height = `${container.offsetHeight}px`;
+            });
+        });
+    }
+
+    // 문서가 완전히 로드된 후에 실행되는 함수
+    $(document).ready(function() {
+        // 창 크기가 변경될 때 iframe의 크기를 다시 계산하여 조절
+        $(window).resize(resizeIframes);
+        resizeIframes(); // 초기 로드 시 iframe 크기 조절
+    });
+</script>
 
 
 

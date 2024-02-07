@@ -2,13 +2,13 @@ package com.javalec.dto;
 
 import java.util.ArrayList;
 
-public class Manager2dto {
+public class ManagerMonthdto {
 	private ArrayList<String> labels2;
 	private ArrayList<Integer> data3;
 
 	
 	
-	public Manager2dto() {
+	public ManagerMonthdto() {
 		
 	}
 
@@ -38,7 +38,7 @@ public class Manager2dto {
 
 
 
-	public Manager2dto(ArrayList<String> labels2, ArrayList<Integer> data3) {
+	public ManagerMonthdto(ArrayList<String> labels2, ArrayList<Integer> data3) {
 		super();
 		this.labels2 = labels2;
 		this.data3 = data3;

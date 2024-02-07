@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 import java.util.ArrayList;
 
-public class Managerdto {
+public class ManagerDaydto {
 	private ArrayList<String> labels;
 	private ArrayList<String> labels1;
 	private ArrayList<String> labels2;
@@ -38,11 +38,11 @@ public class Managerdto {
     
     
     
-    public Managerdto() {
+    public ManagerDaydto() {
     	
     }
     
-	public Managerdto(ArrayList<String> labels, ArrayList<Integer> data) {
+	public ManagerDaydto(ArrayList<String> labels, ArrayList<Integer> data) {
 		super();
 		this.labels = labels;
 		this.data = data;
@@ -77,7 +77,7 @@ public class Managerdto {
     }
 
 
-	public Managerdto(ArrayList<String> labels1, ArrayList<Integer> data1, ArrayList<Integer> data2) {
+	public ManagerDaydto(ArrayList<String> labels1, ArrayList<Integer> data1, ArrayList<Integer> data2) {
 		super();
 		this.labels1 = labels1;
 		this.data1 = data1;
@@ -115,7 +115,7 @@ public class Managerdto {
 	}
 
 
-	public Managerdto(String userId, String userPw, String name, String address, String phone, String email,
+	public ManagerDaydto(String userId, String userPw, String name, String address, String phone, String email,
 			String gender, String account, int point, Timestamp active, Timestamp deactive, String howToLogin) {
 		super();
 		this.userId = userId;
@@ -252,7 +252,7 @@ public class Managerdto {
 		this.howToLogin = howToLogin;
 	}
 
-	public Managerdto(ArrayList<Integer> data3, ArrayList<Integer> data4, ArrayList<Integer> data5,
+	public ManagerDaydto(ArrayList<Integer> data3, ArrayList<Integer> data4, ArrayList<Integer> data5,
 			ArrayList<Integer> data6, ArrayList<Integer> data7, ArrayList<Integer> data8, ArrayList<Integer> data9,
 			ArrayList<Integer> data10, ArrayList<Integer> data11, ArrayList<Integer> data12, ArrayList<Integer> data13,
 			ArrayList<Integer> data14) {

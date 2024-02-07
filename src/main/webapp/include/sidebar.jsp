@@ -42,7 +42,7 @@ body {
   position: fixed;    /* 스크롤을 따라오도록 지정 */
   background-color: black;
   width: var(--side-bar-width);
-  min-height: 65%;   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
+  min-height: 70%;   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
   margin-top: 13%;    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
   z-index:2;
 }

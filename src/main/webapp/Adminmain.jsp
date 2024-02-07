@@ -10,7 +10,7 @@
 <!-- ============================== [[ Header  section]] ==============================-->
     
 	<%@ include file="include/sidebar.jsp" %>
-	<%@ include file="test/head1.jsp" %>
+	<%@ include file="AdminMainhead.jsp" %>
 
 	
 	

@@ -17,9 +17,9 @@ import javax.sql.DataSource;
 
 import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
 
-import com.javalec.dto.Manager2dto;
-import com.javalec.dto.Manager3dto;
-import com.javalec.dto.Managerdto;
+import com.javalec.dto.ManagerMonthdto;
+import com.javalec.dto.ManagerYeardto;
+import com.javalec.dto.ManagerDaydto;
 
 public class Managerdao {
 
@@ -39,7 +39,7 @@ DataSource dataSource;
 	
 	
 	
-	public Managerdto view() {
+	public ManagerDaydto view() {
 		
 	ArrayList<String> labels = new ArrayList<>();
     ArrayList<Integer> data = new ArrayList<>();
@@ -62,11 +62,11 @@ DataSource dataSource;
         connection.close();
     } catch (Exception e) {
         e.printStackTrace();
-    }return new Managerdto(labels,data);
+    }return new ManagerDaydto(labels,data);
 }
 	
 	
-	public Managerdto view1() {
+	public ManagerDaydto view1() {
 		
 		ArrayList<String> labels1 = new ArrayList<>();
 	    ArrayList<Integer> data1 = new ArrayList<>();
@@ -104,10 +104,10 @@ DataSource dataSource;
 	        connection.close();
 	    } catch (Exception e) {
 	        e.printStackTrace();
-	    }return new Managerdto(labels1,data1,data2);
+	    }return new ManagerDaydto(labels1,data1,data2);
 	}
 	
-	public Manager2dto view2() {
+	public ManagerMonthdto view2() {
 		
 		ArrayList<String> labels2 = new ArrayList<>();
 	    ArrayList<Integer> data3 = new ArrayList<>();
@@ -130,10 +130,10 @@ DataSource dataSource;
 	        connection.close();
 	    } catch (Exception e) {
 	        e.printStackTrace();
-	    }return new Manager2dto(labels2,data3);
+	    }return new ManagerMonthdto(labels2,data3);
 	}
 	
-public Manager3dto view3() {
+public ManagerYeardto view3() {
 		
 		ArrayList<String> labels3 = new ArrayList<>();
 	    ArrayList<Integer> data4 = new ArrayList<>();
@@ -156,7 +156,7 @@ public Manager3dto view3() {
 	        connection.close();
 	    } catch (Exception e) {
 	        e.printStackTrace();
-	    }return new Manager3dto(labels3,data4);
+	    }return new ManagerYeardto(labels3,data4);
 	}
 	
 	
