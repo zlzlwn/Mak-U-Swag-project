@@ -1099,9 +1099,6 @@ html.remodal-is-locked {
 	transition: all 0.3s;
 }
 
-.accordion-list .accordion-item.active .accordion-link {
-	background-color: #fff;
-}
 
 .accordion-list .accordion-item .accordion-link::before {
 	content: "";
@@ -1136,10 +1133,17 @@ html.remodal-is-locked {
   vertical-align: middle;
 }
 
+.accordion-list .accordion-name .date {
+	font-family: 'gmarket';
+	font-weight: 500;
+	font-size: 14px;
+	float: right;
+	font-weight: 500;
+}
+
 .accordion-list .accordion-item .accordion-desc {
 	display: none;
 	padding: 30px 40px;
-	background-color: #f9f9f9;
 	color: #777;
 }
 

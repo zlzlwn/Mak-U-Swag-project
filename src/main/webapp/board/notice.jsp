@@ -7,11 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <title>NOTICE</title>
-<link rel="stylesheet" href="./css/accordion.css">
 <link rel="stylesheet" href="./css/all.css">
 <link rel="stylesheet" href="./css/all2.css">
-<link rel="icon" href="./images/CompanyLogo.png">
-<!-- 인터넷 창 아이콘에 로고 나오게 하기 -->
+<link rel="icon" href="./images/CompanyLogo.png"><!-- 인터넷 창 아이콘에 로고 나오게 하기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type = "text/javascript" src="./js/accordion.js"></script>
 </head>
 <body class="nav-expended">
 	<!-- ============================== [[ Header  section]] ==============================-->
@@ -33,38 +33,33 @@
 			<div class="main">
 
 				<!-- 여기서 부터 작성 -->
-				<div class="board">
-					<div class="xans-element- xans-board xans-board-title board-header">
-						<!-- 게시판 제목 -->
+		<div class="board">
+					<div
+						class="xans-element- xans-board xans-board-title board-header ">
 						<h3>
-							<font color="#555555">NOTICE</font>
+							<font color="#555555">&nbsp;&nbsp;NOTICE</font>
 						</h3>
-						<!-- 아코디언을 감싸는 부분 -->
-						<div class="accordion">
-							<hr>
-							<!-- NoticeDtoPJH 객체 리스트를 순회하며 아코디언 생성 -->
-							<c:forEach items="${list}" var="dto" varStatus="loop">
-								<!-- 각 아코디언의 라디오 버튼 -->
-								<input type="radio" name="accordion"
-									id="answer${loop.index + 1}">
-								<!-- 라디오 버튼과 연결된 라벨 -->
-								<label for="answer${loop.index + 1}"> <!-- NoticeDtoPJH 객체의 카테고리, 제목, 날짜 일부를 출력 -->
-									<em></em> <span>${dto.noCategory}</span> <span>${dto.noTitle}</span>
-									<span>${dto.noDate.substring(0, 10)}</span> <!-- 연월일까지만 추출 -->
-								</label>
+<div class="wrap">
 
-								<!-- 아코디언 내용 부분 -->
-								<div>
-									<!-- NoticeDtoPJH 객체의 각 속성을 출력 -->
-									<p>${dto.noTitle}</p>
-									<p>${dto.noCategory}</p>
-									<span>${dto.noDate.substring(0, 10)}</span>
-									<!-- 연월일까지만 추출 -->
-								</div>
-							</c:forEach>
-						</div>
-					</div>
-				</div>
+  <!-- 아코디언 메뉴 -->
+<ul class="accordion-list">
+
+  <c:forEach items="${list}" var="dto" varStatus="loop">
+    <li class="accordion-item">
+      <a href="#" class="accordion-link">
+        <div class="accordion-name">
+          <span class="number">${dto.noCategory}</span>
+          <span class="title">${dto.noTitle}</span>
+          <span class="date">${dto.noDate.substring(0, 10)}</span>
+        </div>
+      </a>
+      <div class="accordion-desc">
+         <span>${dto.noContent}</span>  
+      </div>
+    </li>
+  </c:forEach>
+  
+</ul>
 
 
 
