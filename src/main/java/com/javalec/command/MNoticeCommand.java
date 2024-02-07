@@ -17,7 +17,7 @@ public class MNoticeCommand implements MCommand {
 		// DAO 메서드 호출하여 데이터 가져오기
 		ArrayList<NoticeDtoPJH> dtos =  dao.list(); // 1개의 값을 가져온다
 		
-		request.setAttribute("noticeList", dtos);
+		request.setAttribute("list", dtos);
 	}
 
 }

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.javalec.command.MCommand;
+import com.javalec.command.MNoticeCommand;
 import com.javalec.command.ManagerCommand;
 
 /**
@@ -138,8 +139,8 @@ public class MFrontController extends HttpServlet {
 		
 		// ------------- board 폴더 ------------------
 		case("/notice.do"): // notice
-//			command = new BListCommand();
-//			command.execute(request, response);
+			command = new MNoticeCommand();
+			command.execute(request, response);
 			viewPage ="./board/notice.jsp";
 		break;
 		case("/review.do"): // review

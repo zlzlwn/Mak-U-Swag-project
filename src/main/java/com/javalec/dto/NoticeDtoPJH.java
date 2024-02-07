@@ -138,6 +138,18 @@ public class NoticeDtoPJH {
 	public void setNoPasswd(String noPasswd) {
 		this.noPasswd = noPasswd;
 	}
+
+
+
+	public String getNoTitle() {
+		return noTitle;
+	}
+
+
+
+	public void setNoTitle(String noTitle) {
+		this.noTitle = noTitle;
+	}
 	
 	
 	
