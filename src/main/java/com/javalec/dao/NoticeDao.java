@@ -39,7 +39,7 @@ DataSource dataSource;
 			
 			try {
 				connection = dataSource.getConnection();
-				String query="select noCategory, noTitle, noDate from notice;";
+				String query="select noCategory, noTitle, noDate, noContent from notice;";
 				
 				preparedStatement = connection.prepareStatement(query);
 				resultSet = preparedStatement.executeQuery();
@@ -48,8 +48,10 @@ DataSource dataSource;
 					String noCategory=resultSet.getString("noCategory");
 					String noTitle=resultSet.getString("noTitle");
 					String noDate=resultSet.getString("noDate");
+					String noContent=resultSet.getString("noContent");
 					
-					NoticeDtoPJH dto = new NoticeDtoPJH(noTitle, noCategory, noDate);
+					NoticeDtoPJH dto = new NoticeDtoPJH(noTitle, noCategory, noDate, noContent);
+					
 							
 							
 					

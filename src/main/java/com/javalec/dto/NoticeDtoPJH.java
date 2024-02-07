@@ -36,11 +36,12 @@ public class NoticeDtoPJH {
 
 
 
-	public NoticeDtoPJH(String noTitle, String noCategory, String noDate) {
+	public NoticeDtoPJH(String noTitle, String noCategory, String noDate, String noContent) {
 		super();
 		this.noTitle = noTitle;
 		this.noCategory = noCategory;
 		this.noDate = noDate;
+		this.noContent = noContent;
 	}
 
 
