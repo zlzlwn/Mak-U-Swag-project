@@ -165,6 +165,9 @@ public class MFrontController extends HttpServlet {
 		case("/privacy.do"): // privacy
 			viewPage ="./member/privacy.jsp";
 		break;
+		case("/login.do"): // login
+			viewPage ="./member/login.jsp";
+		break;
 		
 		// ------------- admin  ---------------------
 		case("/adminmain.do"):
