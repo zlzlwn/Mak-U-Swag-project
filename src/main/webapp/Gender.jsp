@@ -9,19 +9,16 @@
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-    #myChart {
-        width: 10px; /* 원하는 가로 크기 설정 */
-        height: 10px; /* 원하는 세로 크기 설정 */
-    }
+
 </style>
 </head>
 <body>
 <div>
-    <canvas id="myChart"></canvas>
+     <canvas id="myChart"></canvas>
 </div>
 <%
     ArrayList<String> labels1 = (ArrayList<String>) session.getAttribute("labels1");
-    ArrayList<Integer> data1 = (ArrayList<Integer>) session.getAttribute("data1");
+    ArrayList<Integer> data1 = (ArrayList<Integer>) session.getAttribute("data1"); 
     ArrayList<Integer> data2 = (ArrayList<Integer>) session.getAttribute("data2");
   
 %>

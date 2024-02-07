@@ -34,16 +34,16 @@ body {
 
 /* 사이드바의 너비와 높이를 변수를 통해 통제 */
 :root {
-  --side-bar-width: 270px;
-  --side-bar-height: 70vh;
+  --side-bar-width: 220px;
+  --side-bar-height: 60vh;
 }
 
 .side-bar {
   position: fixed;    /* 스크롤을 따라오도록 지정 */
   background-color: black;
   width: var(--side-bar-width);
-  min-height: var(--side-bar-height);   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
-  margin-top: 10%;    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
+  min-height: 70%;   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
+  margin-top: 13%;    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
   z-index:2;
 }
 
@@ -174,7 +174,7 @@ body {
 }
 .side-bar > ul ul {
   display: none;
-  max-height: 250px; /* 원하는 높이로 조정하세요 */
+  max-height: 230px; /* 원하는 높이로 조정하세요 */
   overflow-y: auto; /* 내용이 넘칠 경우 스크롤 표시 */
 }
 
@@ -221,7 +221,6 @@ body {
 		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;02 436 1009</span><br>
 		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13:00 - 17:00</span><br>
 		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sat.sun.holiday off</span><br>
-		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<iframe src="./include/search.html" width="200" height="60" frameborder="0"></iframe></span>
     </li>
     
     
