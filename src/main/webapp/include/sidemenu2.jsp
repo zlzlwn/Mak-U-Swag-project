@@ -11,25 +11,25 @@
 					class="xans-element- xans-layout xans-layout-category site-menu">
 					<ul>
 						<li class="menu-item xans-record-"><a
-							href="/category/best-100/91/">BEST 100</a></li>
+							href="best100.do">BEST 100</a></li>
 						<li class="menu-item xans-record-"><a
-							href="/category/all-in-one/77/">All-in-one</a></li>
+							href="all_in_one.do">All-in-one</a></li>
 						<li class="menu-item xans-record-"><a
-							href="/category/outer/24/">Outer</a></li>
+							href="outer.do">Outer</a></li>
 						<li class="menu-item xans-record-"><a
-							href="/category/topshort-sleeve/85/">Top(short sleeve)</a></li>
+							href="topshort.do">Top(short sleeve)</a></li>
 						<li class="menu-item xans-record-"><a
-							href="/category/toplong-sleeve/25/">Top(long sleeve)</a></li>
+							href="toplong.do">Top(long sleeve)</a></li>
 						<li class="menu-item xans-record-"><a
-							href="/category/bottoms/26/">Bottoms</a></li>
+							href="bottoms.do">Bottoms</a></li>
 						<li class="menu-item xans-record-"><a
-							href="/category/bags/27/">Bags</a></li>
+							href="bags.do">Bags</a></li>
 						<li class="menu-item xans-record-"><a
-							href="/category/accessories/28/">Accessories</a></li>
+							href="accessories.do">Accessories</a></li>
 						<li class="menu-item xans-record-"><a
-							href="/category/shoes/55/">Shoes</a></li>
+							href="shoes.do">Shoes</a></li>
 						<li class="menu-item xans-record-"><a
-							href="/category/women-only/58/">Women only</a></li>
+							href="women.do">Women only</a></li>
 					</ul>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 				</div>
 				<div class="cs-info">
 					<ul>
-						<li>Counseling Center <br>02 436 1009
+						<li>Counseling Center <br>02 123 4567
 						</li>
 						<li>13:00 - 17:00 <br>sat.sun.holiday off
 						</li>

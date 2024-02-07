@@ -1,3 +1,5 @@
+<%@page import="com.google.gson.Gson"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,6 +8,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+
+
       html,
       body {
         height: 1000px;
@@ -55,13 +59,13 @@ header {
   
 }
  #wrap,#wrap1 {
-        min-height: calc(100% - 180px);
+      min-height: calc(100% - 180px);
          display: flex;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
         z-index: 1;
          flex-direction: column;
-  margin-top: 120px; /
-         
+         width: 40%;
       }
  iframe {
     border: none;
@@ -73,8 +77,8 @@ header {
     align-items: center;
   }   
    #wrap iframe {
-    width: 100%;
-    height: 500px;
+    width: 50%;
+    height: 300px;
     margin-bottom: 20px;
     margin-top: 75px;
   }  
@@ -145,6 +149,8 @@ height: 10px;
 </head>
 <body>
 
+
+
 <header>
   <div class="header_wrap">
     <h1><a href="adminmain.do"><img src="./images/CompanyLogo.png" alt="로고" class="logo-img" ></a></h1>
@@ -157,7 +163,6 @@ height: 10px;
   
 </header>
 <div id="wrap">
-  <iframe src="./include/carousel.jsp" frameborder="0"></iframe>
 
 </div>
 <div id="wrap1">

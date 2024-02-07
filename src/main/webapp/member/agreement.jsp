@@ -5,17 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>about us</title>
-<link rel="stylesheet" href="../css/all.css">
-<link rel="stylesheet" href="../css/all2.css">
+<link rel="stylesheet" href="./css/all.css">
+<link rel="stylesheet" href="./css/all2.css">
+<link rel="icon" href="./images/CompanyLogo.png"> <!-- 인터넷 창 아이콘에 로고 나오게 하기 -->
 </head>
 <body class="nav-expended">
 	<!-- ============================== [[ Header  section]] ==============================-->
 
-	<%@ include file="../include/header2.jsp"%>
+	<%@ include file="../include/header.jsp"%>
 
 	<!-- ============================== [[ Header  section]] ==============================-->
 
 	<!-- ============================== [[ Sidebar  section]] ==============================-->
+	
 	<div class="site-main">
 		<div class="container">
 
@@ -279,10 +281,6 @@
 				</div>
 				<br>
 				<hr>
-				<br>
-
-
-
 
 				<!-- 여기까지 작성 -->
 

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.javalec.command.MCommand;
+import com.javalec.command.ManagerCommand;
 
 /**
  * Servlet implementation class SFrontController
@@ -83,9 +84,58 @@ public class MFrontController extends HttpServlet {
 			viewPage ="./about/aboutUs.jsp";
 			break;
 			
-		// ------------- board 폴더 ------------------
+		// ------------- category 폴더 ------------------
+		case("/best100.do"): // Best 100
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./category/best_100.jsp";
+		break;
+		case("/all_in_one.do"): // All-in-one
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./category/all_in_one.jsp";
+		break;
+		case("/outer.do"): // Outer
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./category/outer.jsp";
+		break;
+		case("/topshort.do"): // Top(short sleeve)
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./category/topshort_sleeve.jsp";
+		break;
+		case("/toplong.do"): // Top(long sleeve)
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./category/toplong_sleeve.jsp";
+		break;
+		case("/bottoms.do"): // Bottoms
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./category/bottoms.jsp";
+		break;
+		case("/bags.do"): // Bags
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./category/bags.jsp";
+		break;
+		case("/accessories.do"): // Accessories
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./category/accessories.jsp";
+		break;
+		case("/shoes.do"): // Shoes
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./category/shoes.jsp";
+		break;
+		case("/women.do"): // Women only
+//			command = new BListCommand();
+//			command.execute(request, response);
+			viewPage ="./category/women_only.jsp";
+		break;
 		
-			
 		// ------------- board 폴더 ------------------
 		case("/notice.do"): // notice
 //			command = new BListCommand();
@@ -109,10 +159,10 @@ public class MFrontController extends HttpServlet {
 		break;
 		
 		// ------------- member 폴더 ------------------
-		case("/agreement.do"): // board
+		case("/agreement.do"): // agreement
 			viewPage ="./member/agreement.jsp";
 		break;
-		case("/privacy.do"): // board
+		case("/privacy.do"): // privacy
 			viewPage ="./member/privacy.jsp";
 		break;
 		
@@ -123,11 +173,11 @@ public class MFrontController extends HttpServlet {
 		case("/manager.do"):
 			command= new ManagerCommand();
 			command.execute(request,response);
-			viewPage="Manager.jsp";
+			viewPage="UserManageAdmin.jsp";
 			break;
 
 		case("/productmanager.do"):
-			command= new PmCommand();
+//			command= new PmCommand();
 			command.execute(request,response);
 			viewPage="Product.jsp";
 			break;
@@ -141,7 +191,7 @@ public class MFrontController extends HttpServlet {
 			break;
 			
 		case("/noticemanager.do"):
-			command= new NoticeCommand();
+//			command= new NoticeCommand();
 			command.execute(request,response);
 			viewPage="Noticemanager.jsp";
 			break;
@@ -155,7 +205,7 @@ public class MFrontController extends HttpServlet {
 			break;
 			
 		case("/totalmanager.do"):
-			command= new TotalCommand();
+//			command= new TotalCommand();
 			command.execute(request,response);
 			viewPage="Noticeupdate.jsp";
 			break;
@@ -167,7 +217,6 @@ public class MFrontController extends HttpServlet {
 //			command.execute(request, response);
 			viewPage="index.jsp";
 		break;
-		
 		
 		default:
 			break;
