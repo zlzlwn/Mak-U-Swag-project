@@ -81,6 +81,7 @@ header {
     height: 300px;
     margin-bottom: 20px;
     margin-top: 75px;
+    background-color: 
   }  
 
 

@@ -16,8 +16,8 @@
     <canvas id="myChart"></canvas>
 </div>
 <%
-    ArrayList<String> labels = (ArrayList<String>) session.getAttribute("labels");
-    ArrayList<Integer> data = (ArrayList<Integer>) session.getAttribute("data");
+    ArrayList<String> labels3 = (ArrayList<String>) session.getAttribute("labels3");
+    ArrayList<Integer> data4 = (ArrayList<Integer>) session.getAttribute("data4");
   
 %>
 
@@ -26,8 +26,8 @@
     // JSON 형식의 데이터를 JavaScript 변수에 할당
     
     // JSON 형식의 데이터를 JavaScript 변수에 할당
-    const labels = JSON.parse('<%= new Gson().toJson(labels) %>');
-    const data = JSON.parse('<%= new Gson().toJson(data) %>');
+    const labels = JSON.parse('<%= new Gson().toJson(labels3) %>');
+    const data = JSON.parse('<%= new Gson().toJson(data4) %>');
 
     // 차트 생성
     const ctx = document.getElementById('myChart');
@@ -36,7 +36,7 @@
         data: {
             labels: labels, // 과목명으로 labels 설정
             datasets: [{
-                label: '일자별 가입자 수',
+                label: '연 별 가입자 수',
                 data: data, // 점수로 data 설정
                 borderWidth: 1
             }]
