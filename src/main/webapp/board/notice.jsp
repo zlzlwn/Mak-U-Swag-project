@@ -58,13 +58,13 @@
 									</a>
 										 <div class="accordion-desc">
          <span class="title">${dto.noContent}</span>
-         <%
+        <%--  <%
          if (dto.getNoImage() != null ) {
-         %>
+         %> --%>
          <span><img src="${pageContext.request.contextPath}/images/${dto.noImage}" width="756px" height="945px"></span>
-         <%
+         <%-- <%
          }
-         %>
+         %> --%>
 										</div></li>
 								</c:forEach>
 
