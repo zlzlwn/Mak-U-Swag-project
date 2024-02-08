@@ -33,36 +33,35 @@
 			<div class="main">
 
 				<!-- 여기서 부터 작성 -->
-		<div class="board">
+				<div class="board">
 					<div
 						class="xans-element- xans-board xans-board-title board-header ">
 						<h3>
 							<font color="#555555">&nbsp;&nbsp;NOTICE</font>
+							<input type="button" name="insert">
 						</h3>
-<div class="wrap">
+						<div class="wrap">
 
-  <!-- 아코디언 메뉴 -->
-<ul class="accordion-list">
+							<!-- 아코디언 메뉴 -->
+							<ul class="accordion-list">
 
-  <c:forEach items="${list}" var="dto" varStatus="loop">
-    <li class="accordion-item">
-      <a href="#" class="accordion-link">
-        <div class="accordion-name">
-          <span class="number">${dto.noCategory}</span>
-          <span class="title">${dto.noTitle}</span>
-          <span class="date">${dto.noDate.substring(0, 10)}</span>
-        </div>
-      </a>
-      <div class="accordion-desc">
-         <span>${dto.noContent}</span>  
-         <span>${dto.noimage}</span>  
-         <span><img src="${pageContext.request.contextPath}/images/${dto.imagename}" width="100" height="100"></span>  
-         
-      </div>
-    </li>
-  </c:forEach>
-  
-</ul>
+								<c:forEach items="${list}" var="dto" varStatus="loop">
+									<li class="accordion-item"><a href="#"
+										class="accordion-link">
+											<div class="accordion-name">
+												<span class="number">${dto.noCategory}</span> <span
+													class="title">${dto.noTitle}</span> <span class="date">${dto.noDate.substring(0, 10)}</span>
+											</div>
+									</a>
+										<div class="accordion-desc">
+											<span>${dto.noContent}</span> 
+											<%-- <span>${dto.noimage}</span> 
+											<span><img src="${pageContext.request.contextPath}/images/${dto.imagename}" width="100" height="100"></span> --%>
+
+										</div></li>
+								</c:forEach>
+
+							</ul>
 
 
 
@@ -74,17 +73,17 @@
 
 
 
-				<!-- 여기까지 작성 -->
+							<!-- 여기까지 작성 -->
 
-				<!-- ============================== [[ Body  section]] ==============================-->
+							<!-- ============================== [[ Body  section]] ==============================-->
 
+							<!-- =============================  [[ Footer section ]]  ============================= -->
+
+							<%@ include file="../include/footer.jsp"%>
+
+						</div>
+					</div>
+				</div>
 				<!-- =============================  [[ Footer section ]]  ============================= -->
-
-				<%@ include file="../include/footer.jsp"%>
-
-			</div>
-		</div>
-	</div>
-	<!-- =============================  [[ Footer section ]]  ============================= -->
 </body>
 </html>
