@@ -44,7 +44,7 @@ body {
   width: var(--side-bar-width);
   min-height: 85%;   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
   margin-top: 5%;    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
-  z-index: 1;
+  z-index: 1000;
 
 }
 

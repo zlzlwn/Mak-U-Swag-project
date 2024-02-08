@@ -9,6 +9,26 @@
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.chart-container {
+    width: 100%;
+    height: 80vh; /* 부모 요소의 80% 높이를 사용할 수도 있습니다. */
+}
+
+.canvas-container {
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
 </style>
 </head>
 <body>
@@ -42,6 +62,7 @@
             }]
         },
         options: {
+        	maintainAspectRatio: true,
             scales: {
                 y: {
                     beginAtZero: true, // y축 기준값을 0으로 설정

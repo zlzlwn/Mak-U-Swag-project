@@ -15,6 +15,7 @@ body {
     height: 150%;
     margin: 0;
     padding: 0;
+     z-index: 2; 
 
 }
 
@@ -25,6 +26,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 2; /* z-index 적용 */
 }
 
 
@@ -37,6 +39,7 @@ header {
 
 .frame-container iframe:nth-child(2) {
     margin-left: 5%; /* Gender.jsp와의 간격 조절 */
+    z-index: 2; /* z-index 적용 */
 }
 
 
@@ -48,15 +51,18 @@ header {
   align-items: center;
    margin-left: 20px;
    margin-top:30px;
+   z-index: 2; /* z-index 적용 */
 }
 
 .header_wrap h1 img {
     max-width: 100px;
+    z-index: 2; /* z-index 적용 */
 }
 
 .header_wrap .gnb {
     display: flex;
     align-items: center;
+    z-index: 2; /* z-index 적용 */
 }
 
 .header_wrap .gnb ul {
@@ -64,6 +70,7 @@ header {
     list-style: none;
     margin: 0;
     padding: 0;
+    z-index: 2; /* z-index 적용 */
 }
 
 .header_wrap .gnb li {
@@ -71,11 +78,13 @@ header {
   margin: 0 20px; /* 여백 조정 */
   margin-top: 18px; /* 로그아웃 링크를 아래로 내리는 간격 조정 */
   margin-right: 34px;
+  z-index: 2; /* z-index 적용 */
   
 }
 
 .spacing {
     height: 10px;
+    z-index: 2; /* z-index 적용 */
 }
 
 .content {
@@ -84,6 +93,7 @@ header {
     align-items: center;
     background: linear-gradient(180deg, rgba(228, 220, 207, 1) 0%, rgba(245, 240, 187, 1) 38%, rgba(125, 157, 156, 1) 100%);
     height: calc(100% + 100px); /* header 높이 고려하여 계산 */
+    z-index: 2; /* z-index 적용 */
 }
 
 .frame-container {
@@ -100,6 +110,7 @@ header {
     margin-left: 10%;
     width: 20%;
     justify-content: space-around;
+    z-index: 2; /* z-index 적용 */
 }
         .manager-iframe {
             position: absolute;
@@ -107,7 +118,7 @@ header {
             width: calc(20% - 30px);
             height: calc(50% + 300px);
             margin-top: 90px;
-            z-index: 1; /* 낮은 z-index 값으로 설정하여 뒤쪽에 배치 */
+            z-index: 2; /* 낮은 z-index 값으로 설정하여 뒤쪽에 배치 */
         }
 
 
@@ -116,6 +127,7 @@ header {
         height: auto; /* 높이를 자동으로 조절하여 비율 유지 */
         margin-top: 16.2px;
         margin-left: 20px;
+        
     }}
     
 
@@ -152,10 +164,10 @@ header {
 <div class="content">
 
     <div class="frame-container" >
-        <iframe src="Manager.jsp" frameborder="0" style="width: 60%; margin-top: 50px;z-index: 10000;"></iframe>
+        <iframe src="Manager.jsp" frameborder="0" style="width: 60%; margin-top: 50px;z-index: 3;"></iframe>
         <iframe src="Gender.jsp" frameborder="0" style="position: absolute; left: calc(70% - 70px); width: calc(20% - 30px); height: calc(50% + 300px); margin-top: 90px;"></iframe>
     </div>
-    <iframe src="UserTable.jsp" frameborder="0" style="position: absolute; width: 80%; height: 45%; margin: 10px auto; align-items: center;"></iframe>
+    <iframe src="UserTable.jsp" frameborder="0" style="position: absolute; width: 80%; height: 45%; margin: 10px auto; align-items: center; z-index: 999"></iframe>
 </div>
 
 
