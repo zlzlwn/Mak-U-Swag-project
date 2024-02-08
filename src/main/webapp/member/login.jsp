@@ -63,11 +63,6 @@
 										fw-filter="isFill&amp;isMin[4]&amp;isMax[16]" fw-label="패스워드"
 										fw-msg="" autocomplete="off" value="" type="password">
 								</div>
-								<div class="security">
-									<img
-										src="//img.echosting.cafe24.com/design/skin/default/member/ico_access.gif"
-										alt="보안접속"> 보안접속
-								</div>
 								<div class="login-footer">
 									<div class="login-extras">
 										<a href="/member/id/find_id.html">아이디 찾기</a> <a

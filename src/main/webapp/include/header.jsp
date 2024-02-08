@@ -16,7 +16,9 @@
 			<li class="menu-item menu--cart"><a href="/order/basket.html">Cart<span class="badge displaynone">()</span></a></li>
 		</ul>
 		<div class="hamburger" role="button" aria-expanded="false">
-			<span class="patty"></span>
+			<span class="patty">
+				
+			</span>
 		</div>
 		<div class="mobile-cart">
 			<a href="/order/basket.html"><span class="badge"></span></a>

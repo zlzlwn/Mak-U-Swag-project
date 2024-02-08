@@ -31,33 +31,31 @@
 		<!-- ============================== [[ Body  section]] ==============================-->
 		<div class="main">
 			<!-- 여기서 부터 작성 -->
-					<div class="board">
-					<div
-						class="xans-element- xans-board xans-board-title board-header ">
-						<h3>
-							<font color="#555555">&nbsp;&nbsp;FAQ</font>
-						</h3>
-						<div class="wrap">
+			<div class="board">
+				<div class="xans-element- xans-board xans-board-title board-header ">
+					<h3>
+						<font color="#555555">&nbsp;&nbsp;FAQ</font>
+					</h3>
+					<div class="wrap">
 
-							<!-- 아코디언 메뉴 -->
-							<ul class="accordion-list">
+						<!-- 아코디언 메뉴 -->
+						<ul class="accordion-list">
 
-								<c:forEach items="${FaqList}" var="dto" varStatus="loop">
-									<li class="accordion-item"><a href="#"
-										class="accordion-link">
-											<div class="accordion-name">
-												<span class="number">${dto.faqCategory}</span> 
-												<span class="title">${dto.faqTitle}</span>
-													
-											</div>
-									</a>
-										<div class="accordion-desc">
-											<span>${dto.faqContent}</span> 
-										</div></li>
-								</c:forEach>
+							<c:forEach items="${FaqList}" var="dto" varStatus="loop">
+								<li class="accordion-item"><a href="#"
+									class="accordion-link">
+										<div class="accordion-name">
+											<span class="number">${dto.faqCategory}</span> <span
+												class="title">${dto.faqTitle}</span>
 
-							</ul>
+										</div>
+								</a>
+									<div class="accordion-desc">
+										<span>${dto.faqContent}</span>
+									</div></li>
+							</c:forEach>
 
+						</ul>
 
 
 
@@ -66,18 +64,21 @@
 
 
 
-
-
-							<!-- 여기까지 작성 -->
-
-							<!-- ============================== [[ Body  section]] ==============================-->
-
-							<!-- =============================  [[ Footer section ]]  ============================= -->
-
-							<%@ include file="../include/footer.jsp"%>
-
-						</div>
 					</div>
 				</div>
+			</div>
+
+
+			<!-- 여기까지 작성 -->
+
+			<!-- ============================== [[ Body  section]] ==============================-->
+
+			<!-- =============================  [[ Footer section ]]  ============================= -->
+
+			<%@ include file="../include/footer.jsp"%>
+
+		</div>
+	</div>
+</div>
 </body>
 </html>

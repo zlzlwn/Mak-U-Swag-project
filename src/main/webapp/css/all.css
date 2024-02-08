@@ -1227,11 +1227,10 @@ html.remodal-is-locked {
     margin-left: 10px;
 }
 
-
 @media (min-width: 1200px) {
     .site-nav.fixed {
         position:fixed;
-        top: 60px;
+        top: 100px;
     }
 }
 
