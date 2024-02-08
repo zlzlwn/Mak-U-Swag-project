@@ -1,7 +1,6 @@
 
 ![CompanyLogo_1번 (4)](https://github.com/zlzlwn/Team1_project/assets/83982135/e10b44d6-fe51-48ab-afe7-cb36be84182d)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=zlzlwn)](https://github.com/anuraghazra/github-readme-stats)
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=zlzlwn)](https://github.com/anuraghazra/github-readme-stats)
+
 
 1팀 세미프로젝트
 
@@ -9,7 +8,7 @@
 
 내용 : MVC패턴과 AJAX를 활용한 옷가게 WebPage
 
-2024-01-30
+2024-01-30<h>
 
 &nbsp; Clone Site List UP 
 
@@ -54,6 +53,7 @@ accordion 기능 구현
 NOTICE 구현완료
 admin 페이지 회원목록 차트 구현 
 
+2024-02-08
 
 
 
