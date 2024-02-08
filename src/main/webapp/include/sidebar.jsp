@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<script src="https://kit.fontawesome.com/896000ac05.js" crossorigin="anonymous"></script>
 <style>
 /* 노멀라이즈 시작 */
 body, ul, li {
@@ -34,17 +34,18 @@ body {
 
 /* 사이드바의 너비와 높이를 변수를 통해 통제 */
 :root {
-  --side-bar-width: 220px;
-  --side-bar-height: 60vh;
+  --side-bar-width: 260px;
+  --side-bar-height:75vh;
 }
 
 .side-bar {
   position: fixed;    /* 스크롤을 따라오도록 지정 */
   background-color: black;
   width: var(--side-bar-width);
-  min-height: 70%;   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
-  margin-top: 13%;    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
-  z-index:2;
+  min-height: 85%;   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
+  margin-top: 5%;    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
+  z-index: 1;
+
 }
 
 /* 아이콘 시작 */
@@ -121,14 +122,15 @@ body {
 /* 아이콘 끝 */
 
 /* 모든 메뉴의 a에 속성값 부여 */
+
 .side-bar ul > li > a {
   display: block;
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem; /* 텍스트 크기 조절 */
   font-weight: bold;
-  padding-top:25px;
-  padding-bottom: 28px;
-  padding-left: 30px;
+  padding-top:15px; /* 상단 패딩 조절 */
+  padding-bottom: 15px; /* 하단 패딩 조절 */
+  padding-left: 20%; /* 좌측 패딩 조절 */
   transition: .5s;
 }
 
@@ -164,7 +166,7 @@ body {
 /* 사이드바 너비의 80%만큼 왼쪽으로 이동 */
 .side-bar {
   border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.7), 0);
+  transform: translate(calc(var(--side-bar-width) * -0.8), 0);
   transition: .5s;
 }
 
@@ -193,13 +195,13 @@ body {
   </section>
   <ul>
     <li>
-      <a href="#">회원</a>
+       <a href="#"><i class="fa-solid fa-user" style="color: white;"> </i> 회원</a>
       <ul>
         <li><a href="manager.do">회원관리</a></li>
       </ul>
     </li>
     <li>
-      <a href="#">상품</a>
+      <a href="#"><i class="fa-solid fa-gift" style="color: white;"></i> 상품</a>
       <ul>
         <li><a href="productmanager.do">상품관리</a></li>
         <li><a href="productinsert.do">상품등록</a></li>
@@ -207,7 +209,7 @@ body {
       </ul>
     </li>
     <li>
-      <a href="#">게시판</a>
+      <a href="#"><i class="fa-solid fa-list" style="color: white;"></i> 게시판</a>
       <ul>
         <li><a href="noticemanager.do">게시판 관리</a></li>
         <li><a href="noticeinsert.do">게시판 작성</a></li>
@@ -215,9 +217,9 @@ body {
       </ul>
     </li>
     <li>
-      <a href="totalmanager.do">매출</a>
+      <a href="totalmanager.do"><i class="fa-solid fa-cart-plus" style="color:white;"></i> 매출</a>
     </li>
-   <li><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Counseling Center</span><br>
+   <li><br><br><br><br><br><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Counseling Center</span><br>
 		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;02 436 1009</span><br>
 		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13:00 - 17:00</span><br>
 		<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sat.sun.holiday off</span><br>

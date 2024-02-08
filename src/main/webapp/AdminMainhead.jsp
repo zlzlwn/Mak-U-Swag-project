@@ -21,16 +21,14 @@
 li{ list-style:none; }
 
 header {
-  display: flex;
-  justify-content: flex-start; /* 왼쪽 정렬로 변경 */
-  align-items: center;
-  position: fixed; /* 화면 상단에 고정 */
-  top: 0;
-  left: 0;
-  width: 100%; /* 화면 전체 너비를 채우도록 설정 */
-  background-color: #d4ccbb;
-  z-index: 1000; /* 다른 콘텐츠 위에 헤더가 나타나도록 설정 */
+    background-color: #d4ccbb;
+    padding: 5px 10px; /* 상하 여백을 더 작게 조정 */
+    weight: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 
 .header_wrap {
   width: 80%;
@@ -55,7 +53,8 @@ header {
 .header_wrap .gnb li {
   color: #000000;
   margin: 0 20px; /* 여백 조정 */
-  margin-top: 75px; /* 로그아웃 링크를 아래로 내리는 간격 조정 */
+  margin-top: 70px; /* 로그아웃 링크를 아래로 내리는 간격 조정 */
+
   
 }
  #wrap,#wrap1 {
@@ -85,21 +84,18 @@ header {
   }  
 
 
-.content{
-width:80%;
-  
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items:center;
-  background: linear-gradient(180deg, rgba(228,220,207,1) 0%, rgba(245,240,187,1) 38%, rgba(125,157,156,1) 100%);
-  height:2000px;
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(228, 220, 207, 1) 0%, rgba(245, 240, 187, 1) 38%, rgba(125, 157, 156, 1) 100%);
+    height: calc(100% + 100px); /* header 높이 고려하여 계산 */
 }
 
     .logo-img {
         max-width: 10%; /* 최대 너비를 부모 요소의 100%로 설정 */
         height: auto; /* 높이를 자동으로 조절하여 비율 유지 */
-        margin-top: 75px;
+        margin-top: 68px;
         margin-left: 40px;
     }
     }
@@ -156,9 +152,6 @@ height: 10px;
   <div class="header_wrap">
     <h1><a href="adminmain.do"><img src="./images/CompanyLogo.png" alt="로고" class="logo-img" ></a></h1>
     <nav>
-      <ul class="gnb">
-        <li><a href="logout.do">Logout</a></li>
-      </ul>
     </nav>
   </div>
   
