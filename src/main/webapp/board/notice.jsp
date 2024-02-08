@@ -1,6 +1,9 @@
+<%@page import="com.javalec.dto.NoticeDtoPJH"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="com.javalec.dto.NoticeDtoPJH" %>
+
 
 <!DOCTYPE html>
 <html>
@@ -12,6 +15,7 @@
 <link rel="icon" href="./images/CompanyLogo.png"><!-- 인터넷 창 아이콘에 로고 나오게 하기 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type = "text/javascript" src="./js/accordion.js"></script>
+
 </head>
 <body class="nav-expended">
 	<!-- ============================== [[ Header  section]] ==============================-->
@@ -52,9 +56,15 @@
 													class="title">${dto.noTitle}</span> <span class="date">${dto.noDate.substring(0, 10)}</span>
 											</div>
 									</a>
-										<div class="accordion-desc">
-											<span><img src="${pageContext.request.contextPath}/images/${dto.noImage}" width="756px" height="945px"></span>
-
+										 <div class="accordion-desc">
+         <span class="title">${dto.noContent}</span>
+         <%
+         if (dto.getNoImage() != null ) {
+         %>
+         <span><img src="${pageContext.request.contextPath}/images/${dto.noImage}" width="756px" height="945px"></span>
+         <%
+         }
+         %>
 										</div></li>
 								</c:forEach>
 
