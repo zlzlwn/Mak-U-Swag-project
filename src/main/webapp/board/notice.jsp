@@ -61,8 +61,8 @@
 											</div>
 									</a>
 										<div class="accordion-desc">
-												<span class="title">${dto.noContent}</span>
-												<!-- 이미지가  있으면  출력한다-->
+											<span class="title">${dto.noContent}</span>
+											<!-- 이미지가  있으면  출력한다-->
 											<c:if test="${not empty dto.noImage}">
 												<span> <img
 													src="${pageContext.request.contextPath}/images/${dto.noImage}"
@@ -72,9 +72,14 @@
 								</c:forEach>
 
 							</ul>
-								<c:forEach items="${pageList }" var="page">
-						<a href="list.do?page=${page }">${page}</a>
-					</c:forEach>
+							<!-- 세션에 담은 페이지수 출력부분 pageList만큼 반복한다-->
+				<div style="text-align: center;">
+    <c:forEach items="${pageList}" var="page">
+        <a href="notice.do?page=${page}" style="display: inline-block; margin: 0 5px;">&nbsp;${page}</a>
+    </c:forEach>
+</div>
+
+
 						</div>
 					</div>
 				</div>
