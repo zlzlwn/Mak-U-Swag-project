@@ -12,7 +12,7 @@
 
 html,
 body {
-    height: 150%;
+    height: 100%;
     margin: 0;
     padding: 0;
 
@@ -27,12 +27,17 @@ header {
     align-items: center;
 }
 
+.frame-container {
+            width: 100%; /* 테이블이 전체 너비를 차지하도록 설정 */
+            box-sizing: border-box; /* 내부 여백 포함하도록 설정 */
+            margin-top: 20px; /* 위쪽 여백 추가 */
+        }
+
 
 .frame-container iframe {
-    width: 45%;
-    height: auto;
+    width:100%;
     border: none;
-    z-index: 2;
+    margin-left: 15%;
 }
 
 .frame-container iframe:nth-child(2) {
@@ -91,7 +96,6 @@ header {
     justify-content: space-between;
     width: 80%;
     height: 100%;
-    z-index: 2;
 }
 
 
@@ -101,23 +105,13 @@ header {
     width: 20%;
     justify-content: space-around;
 }
-        .manager-iframe {
-            position: absolute;
-            left: calc(70% - 70px);
-            width: calc(20% - 30px);
-            height: calc(50% + 300px);
-            margin-top: 90px;
-            z-index: 1; /* 낮은 z-index 값으로 설정하여 뒤쪽에 배치 */
-        }
-
 
 .header_wrap h1 img {
-     max-width: 10.28%; /* 최대 너비를 부모 요소의 100%로 설정 */
+     max-width: 10.35%; /* 최대 너비를 부모 요소의 100%로 설정 */
         height: auto; /* 높이를 자동으로 조절하여 비율 유지 */
-        margin-top: 16.2px;
-        margin-left: 20px;
+        margin-top: 2.4%;
+        margin-left: 10px;
     }}
-    
 
 </style>
 </head>
@@ -143,7 +137,9 @@ header {
     <div class="header_wrap">
         <h1><a href="adminmain.do"><img src="./images/CompanyLogo.png" alt="로고"></a></h1>
         <nav class="gnb">
-
+            <ul>
+                <li><a href="logout.do">Logout</a></li>
+            </ul>
         </nav>
     </div>
 </header>
@@ -152,10 +148,8 @@ header {
 <div class="content">
 
     <div class="frame-container" >
-        <iframe src="Manager.jsp" frameborder="0" style="width: 60%; margin-top: 50px;z-index: 10000;"></iframe>
-        <iframe src="Gender.jsp" frameborder="0" style="position: absolute; left: calc(70% - 70px); width: calc(20% - 30px); height: calc(50% + 300px); margin-top: 90px;"></iframe>
-    </div>
-    <iframe src="UserTable.jsp" frameborder="0" style="position: absolute; width: 80%; height: 45%; margin: 10px auto; align-items: center;"></iframe>
+    <iframe src="ProductInsert.jsp" frameborder="0"></iframe>
+</div>
 </div>
 
 
