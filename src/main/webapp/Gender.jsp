@@ -9,13 +9,35 @@
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
+.chart-container {
+    width: 100%;
+    height: 80vh; /* 차트 컨테이너의 높이 설정 */
+}
+
+.canvas-container {
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
 </style>
 </head>
 <body>
-<div>
-     <canvas id="myChart"></canvas>
+<div class="chart-container">
+    <div class="canvas-container">
+        <canvas id="myChart"></canvas>
+    </div>
 </div>
+
 <%
     ArrayList<String> labels1 = (ArrayList<String>) session.getAttribute("labels1");
     ArrayList<Integer> data1 = (ArrayList<Integer>) session.getAttribute("data1"); 
@@ -46,9 +68,10 @@
             }]
         },
         options: {
+            maintainAspectRatio: true,
             plugins: {
                 legend: {
-                 
+                    // 위치 설정 등 legend 옵션 추가
                 },
                 tooltips: {
                     enabled: false // 도구 팁 제거
