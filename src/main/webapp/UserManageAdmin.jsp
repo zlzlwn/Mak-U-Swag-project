@@ -9,7 +9,7 @@
 <!-- ============================== [[ Header  section]] ==============================-->
     
 	<%@ include file="include/sidebar.jsp" %>
-	<%@ include file="test/UserManagehead.jsp" %>
+	<%@ include file="UserManagehead.jsp" %>
 
 	
 	
