@@ -38,7 +38,6 @@
 						class="xans-element- xans-board xans-board-title board-header ">
 						<h3>
 							<font color="#555555">&nbsp;&nbsp;NOTICE</font>
-							<input type="button" name="insert">
 						</h3>
 						<div class="wrap">
 
@@ -54,9 +53,7 @@
 											</div>
 									</a>
 										<div class="accordion-desc">
-											<span>${dto.noContent}</span> 
-											<%-- <span>${dto.noimage}</span> 
-											<span><img src="${pageContext.request.contextPath}/images/${dto.imagename}" width="100" height="100"></span> --%>
+											<span><img src="${pageContext.request.contextPath}/images/${dto.noImage}" width="756px" height="945px"></span>
 
 										</div></li>
 								</c:forEach>
