@@ -19,143 +19,101 @@ DataSource dataSource;
 	
 	
 	
-	public NoticeDao() {
-		try {
-			Context context = new InitialContext();
-			dataSource = (DataSource) context.lookup("java:comp/env/jdbc/makuswag"); // context 파일 위치
+//DataSource 초기화를 위한 생성자
+public NoticeDao() {
+    try {
+        // JNDI를 사용하여 DataSource 설정
+        Context context = new InitialContext();
+        // "java:comp/env/jdbc/makuswag"는 DataSource의 JNDI 이름으로 context.xml에서 설정해야 함
+        dataSource = (DataSource) context.lookup("java:comp/env/jdbc/makuswag");
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
-	
-		public ArrayList<NoticeDtoPJH> list(int requestPage, int numOfTuplePerPage){
-			ArrayList<NoticeDtoPJH> dtos= new ArrayList<NoticeDtoPJH>();
-			Connection connection = null;
-			PreparedStatement preparedStatement = null;
-			ResultSet resultSet = null;
-			int offset = (requestPage - 1) * numOfTuplePerPage;
-			
-			try {
-				connection = dataSource.getConnection();
-				String query="SELECT noCategory, noTitle, noDate, noContent, noImage FROM notice LIMIT ?,?";
-				
-				preparedStatement = connection.prepareStatement(query);
-				
-				 preparedStatement.setInt(1, offset);
-			        preparedStatement.setInt(2, numOfTuplePerPage);
-			        
-				resultSet = preparedStatement.executeQuery();
-				
-				
-				
-				while(resultSet.next()) {
-					
-					String noCategory=resultSet.getString("noCategory");
-					String noTitle=resultSet.getString("noTitle");
-					String noDate=resultSet.getString("noDate");
-					String noContent=resultSet.getString("noContent");
-					String noImage=resultSet.getString("noImage");
-					
-					NoticeDtoPJH dto = new NoticeDtoPJH(noTitle, noCategory, noDate, noContent, noImage);
-					
-							
-							
-					
-					
-					dtos.add(dto);
-				}
-				
-				
-			}catch(Exception e) {
-				e.printStackTrace();
-			}finally {
-				try {
-						if(resultSet != null) resultSet.close();
-						if(preparedStatement !=null) preparedStatement.close();
-						if(connection !=null) connection.close();
-				}catch(Exception e) {
-					e.printStackTrace();
-				}
-				
-			}
-			return dtos;
-		}
-		// countTuple 메서드 수정
-		public int countTuple() {
-		    Connection conn = null;
-		    PreparedStatement psmt = null;
-		    ResultSet rs = null;
-		    int count = 0;
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 
-		    try {
-		        conn = dataSource.getConnection();
-		        String query = "SELECT COUNT(*) FROM notice";
-		        psmt = conn.prepareStatement(query);
-		        rs = psmt.executeQuery();
+// 특정 페이지에 표시할 공지사항 목록을 가져오는 메서드
+public ArrayList<NoticeDtoPJH> list(int requestPage, int numOfTuplePerPage) {
+    ArrayList<NoticeDtoPJH> dtos = new ArrayList<NoticeDtoPJH>();
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    ResultSet resultSet = null;
+    int offset = (requestPage - 1) * numOfTuplePerPage;
 
-		        if (rs.next()) {
-		            count = rs.getInt(1);
-		            System.out.println("list-count success");
-		        }
+    try {
+        connection = dataSource.getConnection();
+        // SQL 쿼리를 사용하여 페이지 및 페이지당 튜플 수에 기반한 제한된 수의 공지사항을 가져옴
+        String query = "SELECT noCategory, noTitle, noDate, noContent, noImage FROM notice LIMIT ?,?";
 
-		    } catch (Exception e) {
-		        System.out.println("list-count fail");
-		        e.printStackTrace();
-		    } finally {
-		        try {
-		            if (rs != null) rs.close();
-		            if (psmt != null) psmt.close();
-		            if (conn != null) conn.close();
-		            System.out.println("< rs, psmt, conn close success>");
-		        } catch (Exception e) {
-		            System.out.println("< rs, psmt, conn close Fail>");
-		        }
-		    }
+        preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, offset);
+        preparedStatement.setInt(2, numOfTuplePerPage);
 
-		    return count;
-		}
+        resultSet = preparedStatement.executeQuery();
 
-		// content 메서드 추가
-		public NoticeDtoPJH content(int no) {
-		    NoticeDtoPJH dto = null;
-		    Connection conn = null;
-		    PreparedStatement psmt = null;
-		    ResultSet rs = null;
-		    
-		    try {
-		        conn = dataSource.getConnection();
-		        String query = "SELECT noCategory, noTitle, noDate, noContent, noImage FROM notice WHERE no = ?";
-		        psmt = conn.prepareStatement(query);
-		        psmt.setInt(1, no);
-		        rs = psmt.executeQuery();
+        // 결과 집합을 반복하며 NoticeDtoPJH 객체를 생성
+        while (resultSet.next()) {
+            String noCategory = resultSet.getString("noCategory");
+            String noTitle = resultSet.getString("noTitle");
+            String noDate = resultSet.getString("noDate");
+            String noContent = resultSet.getString("noContent");
+            String noImage = resultSet.getString("noImage");
 
-		        if (rs.next()) {
-		            String noCategory = rs.getString("noCategory");
-		            String noTitle = rs.getString("noTitle");
-		            String noDate = rs.getString("noDate");
-		            String noContent = rs.getString("noContent");
-		            String noImage = rs.getString("noImage");
+            NoticeDtoPJH dto = new NoticeDtoPJH(noTitle, noCategory, noDate, noContent, noImage);
+            dtos.add(dto);
+        }
 
-		            dto = new NoticeDtoPJH(noTitle, noCategory, noDate, noContent, noImage);
-		        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            if (resultSet != null) resultSet.close();
+            if (preparedStatement != null) preparedStatement.close();
+            if (connection != null) connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-		    } catch (Exception e) {
-		        e.printStackTrace();
-		    } finally {
-		        try {
-		            if (rs != null) rs.close();
-		            if (psmt != null) psmt.close();
-		            if (conn != null) conn.close();
-		        } catch (Exception e) {
-		            e.printStackTrace();
-		        }
-		    }
+    }
+    return dtos;
+}
 
-		    return dto;
-		}
-	
-	
+// 데이터베이스에 저장된 공지사항의 총 수를 계산하는 메서드
+public int countTuple() {
+    Connection conn = null;
+    PreparedStatement psmt = null;
+    ResultSet rs = null;
+    int count = 0;
+
+    try {
+        conn = dataSource.getConnection();
+        // SQL 쿼리를 사용하여 공지사항의 총 수를 계산
+        String query = "SELECT COUNT(*) FROM notice";
+        psmt = conn.prepareStatement(query);
+        rs = psmt.executeQuery();
+
+        // 결과에서 수를 가져옴
+        if (rs.next()) {
+            count = rs.getInt(1);
+            System.out.println("list-count success 노티스다오");
+        }
+
+    } catch (Exception e) {
+        System.out.println("list-count fail");
+        e.printStackTrace();
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (psmt != null) psmt.close();
+            if (conn != null) conn.close();
+            System.out.println("< rs, psmt, conn close 성공 (노티스다오)>");
+        } catch (Exception e) {
+            System.out.println("< rs, psmt, conn close Fail>");
+        }
+    }
+
+    return count;
+}
+
+
 }
