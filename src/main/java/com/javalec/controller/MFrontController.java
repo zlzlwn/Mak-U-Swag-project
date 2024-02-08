@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.javalec.command.MCommand;
+import com.javalec.command.MFaqCommand;
 import com.javalec.command.MNoticeCommand;
 import com.javalec.command.ManagerCommand;
 
@@ -154,8 +155,8 @@ public class MFrontController extends HttpServlet {
 			viewPage ="./board/qna.jsp";
 		break;
 		case("/faq.do"): // board
-//			command = new BListCommand();
-//			command.execute(request, response);
+			command = new MFaqCommand();
+			command.execute(request, response);
 			viewPage ="./board/faq.jsp";
 		break;
 		
