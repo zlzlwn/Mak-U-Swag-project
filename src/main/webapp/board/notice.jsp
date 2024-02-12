@@ -18,7 +18,32 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="./js/accordion.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+function submitSearchForm12() {
+	 event.preventDefault();
+	    console.log("submitSearchForm 함수 호출됨");
+
+    // 검색어 입력란의 값을 가져옴
+    var searchInput = document.getElementById("search").value;
+    // 검색 조건 값들을 가져옴
+    var searchDate = document.getElementById("search_date").value;
+    var searchKey = document.getElementById("search_key").value;
+
+    // 세션 스토리지에 검색 조건 저장
+    sessionStorage.setItem("searchKeyword", searchInput);
+    sessionStorage.setItem("searchDate", searchDate);
+    sessionStorage.setItem("searchKey", searchKey);
+
+    // 콘솔에 저장된 세션 값 출력 (테스트용)
+    console.log("검색어 저장됨: " + sessionStorage.getItem("searchKeyword"));
+    console.log("검색 날짜 저장됨: " + sessionStorage.getItem("searchDate"));
+    console.log("검색 키 저장됨: " + sessionStorage.getItem("searchKey"));
+
+    // 기본 폼 제출 동작 방지
+    return false;
+}
+</script>
 
 </head>
 <body class="nav-expended">
@@ -41,6 +66,7 @@
 			<div class="main">
 
 				<!-- 여기서 부터 작성 -->
+				
 				<div class="board">
 					<div
 						class="xans-element- xans-board xans-board-title board-header ">
@@ -49,6 +75,9 @@
 						</h3>
 						<div class="wrap">
 
+
+							<!-- 검색 결과를 표시할 영역 (초기에는 숨겨둠) 이거로 검색했을때 데이터를 업데이트 시킬꺼--> 
+							<div id="searchResults" style="display: none;"></div>
 							<!-- 아코디언 메뉴 -->
 							<ul class="accordion-list">
 								<!-- 아코디언 이름,  -->
@@ -73,62 +102,61 @@
 								</c:forEach>
 
 							</ul>
-							<!-- 세션에 담은 페이지수 출력부분 pageList만큼 반복한다-->
-							<div style="text-align: center;">
+					<!-- 세션에 담은 페이지수 출력부분 pageList만큼 반복한다-->
+<div style="text-align: center;">
 
-								<c:if test="${currentPage > 1}">
-									<a href="notice.do?page=${currentPage - 1}"
-										style="display: inline-block; margin: 0 5px;">&nbsp;Prev</a>
-								</c:if>
+    <c:if test="${currentPage > 1}">
+        <a href="notice.do?page=${currentPage - 1}" style="display: inline-block; margin: 10px;">&nbsp;이전</a>
+    </c:if>
 
-								<c:forEach items="${pageList}" var="page">
-									<a href="notice.do?page=${page}"
-										style="display: inline-block; margin: 0 5px;">&nbsp;${page}</a>
-								</c:forEach>
+    <c:forEach items="${pageList}" var="page">
+        <c:choose>
+            <c:when test="${page == currentPage}">
+                <span style="display: inline-block; margin: 10px; font-weight: bold;">&nbsp;${page}</span>
+            </c:when>
+            <c:otherwise>
+                <a href="notice.do?page=${page}" style="display: inline-block; margin: 10px;">&nbsp;${page}</a>
+            </c:otherwise>
+        </c:choose>
+    </c:forEach>
 
-								<c:if test="${currentPage < 7}">
-									<a href="notice.do?page=${currentPage + 1}"
-										style="display: inline-block; margin: 0 5px;">&nbsp;Next</a>
-								</c:if>
-							</div>
+    <c:if test="${currentPage < totalPage}">
+        <a href="notice.do?page=${currentPage + 1}" style="display: inline-block; margin: 10px;">&nbsp;다음</a>
+    </c:if>
+</div>
 
 
-						</div>
+
+
 					</div>
 				</div>
-				<form id="boardSearchForm" name="" action="/board/free/qna.html"
-							method="get" target="_top" enctype="multipart/form-data">
-							<input id="board_no" name="board_no" value="5" type="hidden" />
-							<input id="page" name="page" value="1" type="hidden" /> <input
-								id="board_sort" name="board_sort" value="" type="hidden" />
-							<div
-								class="xans-element- xans-board xans-board-search board-search-form ">
-								<fieldset>
-									<select id="search_date" name="search_date" fw-filter=""
-										fw-label="" fw-msg="">
-										<option value="week">일주일</option>
-										<option value="month">한달</option>
-										<option value="month3">세달</option>
-										<option value="all">전체</option>
-									</select> <select id="search_key" name="search_key" fw-filter=""
-										fw-label="" fw-msg="">
-										<option value="subject">제목</option>
-										<option value="content">내용</option>
-										<option value="writer_name">글쓴이</option>
-										<option value="member_id">아이디</option>
-										<option value="nick_name">별명</option>
-									</select> <input id="search" name="search" fw-filter="" fw-label=""
-										fw-msg="" class="inputTypeText" placeholder="" value=""
-										type="text" /> <a href="#none" class="search-button"
-										onclick="BOARD.form_submit('boardSearchForm');"></a>
-								</fieldset>
-							</div>
-						</form>
-<div
-							class="xans-element- xans-board xans-board-buttonlist board-admin-actions  ">
-							<a href="/board/free/write.html?board_no=5"
-								class="primary-button "><span>WRITE</span></a>
-						</div>
+					
+					<div
+						class="xans-element- xans-board xans-board-search board-search-form ">
+						<fieldset>
+							<select id="search_date" name="search_date" >
+								<option value="week">일주일</option>
+								<option value="month">한달</option>
+								<option value="month3">세달</option>
+								<option value="all">전체</option>
+							</select> <select id="search_key" name="search_key" >
+								<option value="subject">제목</option>
+								<option value="content">내용</option>
+							</select> 
+							<input id="search" name="search"  class="inputTypeText" placeholder="검색어를 입력하세요" value="" type="text" /> 
+								
+						<button onclick="submitSearchForm12()" class="search-button"></button>
+								
+						</fieldset>
+					</div>
+				<div
+					class="xans-element- xans-board xans-board-buttonlist board-admin-actions  ">
+					<a href="/noticeWrite.do" class="primary-button "><span>WRITE</span></a>
+				</div>
+						
+
+				
+
 				<!-- 여기까지 작성 -->
 
 				<!-- ============================== [[ Body  section]] ==============================-->
