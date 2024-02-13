@@ -64,7 +64,7 @@
 									<div class="form-block">
 										<div class="form-field subject">
 											<div class="field-label">제목</div>
-											<select id="board_category" name="board_category"
+											<select id="board_category" name="qnaCategory"
 												fw-filter="" fw-label="" fw-msg="">
 												<option value="1">입급/결제관련 문의</option>
 												<option value="2">배송관련 문의</option>
@@ -72,8 +72,8 @@
 												<option value="4">교환/반품 문의</option>
 												<option value="5">상품관련 문의</option>
 												<option value="6">기타 문의</option>
-											</select><input id="subject" name="subject" fw-filter="isFill"
-												fw-label="제목" fw-msg="" class="inputTypeText" placeholder=""
+											</select><input id="subject" name="qnaTitle" fw-filter="isFill"
+												fw-label="제목" fw-msg="" class="inputTypeText" placeholder="제목을 입력하세요"
 												maxLength="125" value="" type="text" />
 											<div class="checkbox"></div>
 											<div class="checkbox"></div>
@@ -92,7 +92,7 @@
 												href="//img.echosting.cafe24.com/editors/froala/css/themes/ec_froala.css?vs=2402071282">
 
 											<!-- HTML -->
-											<textarea style="width: 100%;" name="content" id="content"
+											<textarea style="width: 100%;" name="qnaContent" id="content"
 												class="ec-fr-never-be-duplicated"></textarea>
 											<input type="hidden" id="content_hidden"
 												fw-filter="isSimplexEditorFill" fw-label="내용"
@@ -118,7 +118,7 @@
 											</script>
 										</div>
 										<div class="field-label">첨부파일</div>
-										<input name="attach_file[]" type="file">
+										<input name="qnaImage" type="file">
 									</div>
 								</div>
 								<div class="form-block">
@@ -133,9 +133,9 @@
 								</div>
 							</div>
 						</div>
+						</form>
 						<div class="form-action">
-							<a href="#none"
-								onclick="BOARD_WRITE.form_submit('boardWriteForm');"
+							<a href="./qnaWriteSubmit.do"
 								class="button primary-button"><span>SUBMIT</span></a>
 						</div>
 				</div>
