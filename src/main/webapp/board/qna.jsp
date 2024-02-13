@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,19 +38,6 @@
 						<h3>
 							<font color="#555555">Q&A</font>
 						</h3>
-						<div
-							class="xans-element- xans-board xans-board-category board-categories ">
-							<select id="board_category" name="board_category" fw-filter=""
-								fw-label="" fw-msg="">
-								<option value="" selected="selected">전체</option>
-								<option value="1">입급/결제관련 문의</option>
-								<option value="2">배송관련 문의</option>
-								<option value="3">배송 전 변경/취소 문의</option>
-								<option value="4">교환/반품 문의</option>
-								<option value="5">상품관련 문의</option>
-								<option value="6">기타 문의</option>
-							</select>
-						</div>
 					</div>
 
 					<div
@@ -62,126 +51,39 @@
 								</a>
 							</div>
 						</div>
-						<div class="xans-element- xans-board xans-board-list qna-list">
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29457/" class="post-link"> <span
-									class="number">4918</span> <span class="title">배송 전
-										변경/취소 문의</span> <span class="date ">김****</span>
-								</a>
+							<div class="xans-element- xans-board xans-board-list qna-list">
+							    <c:forEach items="${list}" var="dto" varStatus="loop">
+							        <div class="list-item xans-record-">
+							            <a href="/article/qa/5/29400/" class="post-link">
+							                <span class="number">${dto.qnaSeq}</span> 
+							                <span class="title">${dto.qnaTitle}</span>
+							                <span class="date">${dto.userId}</span>
+							            </a>
+							        </div>
+							    </c:forEach>
 							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29458/" class="post-link"> <span
-									class="number">4917</span> <span class="title">배송 전
-										변경/취소 문의</span> <span class="date "></span>
-								</a>
+							
+							
+							<div class="xans-element- xans-board xans-board-empty message displaynone ">
+							
 							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29455/" class="post-link"> <span
-									class="number">4916</span> <span class="title">배송관련 문의</span> <span
-									class="date ">정****</span>
-								</a>
+													<div style="text-align: center;">
+
+								<c:if test="${currentPage > 1}">
+									<a href="qna.do?page=${currentPage - 1}"
+										style="display: inline-block; margin: 0 5px;">&nbsp;Prev</a>
+								</c:if>
+
+								<c:forEach items="${pageList}" var="page">
+									<a href="qna.do?page=${page}"
+										style="display: inline-block; margin: 0 5px;">&nbsp;${page}</a>
+								</c:forEach>
+
+								<c:if test="${currentPage < 7}">
+									<a href="qna.do?page=${currentPage + 1}"
+										style="display: inline-block; margin: 0 5px;">&nbsp;Next</a>
+								</c:if>
 							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29456/" class="post-link"> <span
-									class="number">4915</span> <span class="title">배송관련 문의</span> <span
-									class="date "></span>
-								</a>
-							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29439/" class="post-link"> <span
-									class="number">4914</span> <span class="title">배송관련 문의</span> <span
-									class="date ">정****</span>
-								</a>
-							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29441/" class="post-link"> <span
-									class="number">4913</span> <span class="title">배송관련 문의</span> <span
-									class="date "></span>
-								</a>
-							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29435/" class="post-link"> <span
-									class="number">4912</span> <span class="title">배송관련 문의</span> <span
-									class="date ">심****</span>
-								</a>
-							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29437/" class="post-link"> <span
-									class="number">4911</span> <span class="title">배송관련 문의</span> <span
-									class="date "></span>
-								</a>
-							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29427/" class="post-link"> <span
-									class="number">4910</span> <span class="title">교환/반품 문의</span>
-									<span class="date ">J****</span>
-								</a>
-							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29428/" class="post-link"> <span
-									class="number">4909</span> <span class="title">교환/반품 문의</span>
-									<span class="date "></span>
-								</a>
-							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29423/" class="post-link"> <span
-									class="number">4908</span> <span class="title">입급/결제관련
-										문의</span> <span class="date ">정****</span>
-								</a>
-							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29426/" class="post-link"> <span
-									class="number">4907</span> <span class="title">입급/결제관련
-										문의</span> <span class="date "></span>
-								</a>
-							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29409/" class="post-link"> <span
-									class="number">4906</span> <span class="title">교환/반품 문의</span>
-									<span class="date ">김****</span>
-								</a>
-							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29421/" class="post-link"> <span
-									class="number">4905</span> <span class="title">교환/반품 문의</span>
-									<span class="date "></span>
-								</a>
-							</div>
-							<div class="list-item xans-record-">
-								<a href="/article/qa/5/29400/" class="post-link"> <span
-									class="number">4904</span> <span class="title">교환/반품 문의</span>
-									<span class="date ">김****</span>
-								</a>
-							</div>
-						</div>
-						<div
-							class="xans-element- xans-board xans-board-empty message displaynone "></div>
-						<div class="xans-element- xans-board xans-board-paging pagination">
-							<a href="?board_no=5&page=1" class="page-nav-button">Prev</a>
-							<ul>
-								<li class="xans-record-"><a href="?board_no=5&page=1"
-									class="this">1</a></li>
-								<li class="xans-record-"><a href="?board_no=5&page=2"
-									class="other">2</a></li>
-								<li class="xans-record-"><a href="?board_no=5&page=3"
-									class="other">3</a></li>
-								<li class="xans-record-"><a href="?board_no=5&page=4"
-									class="other">4</a></li>
-								<li class="xans-record-"><a href="?board_no=5&page=5"
-									class="other">5</a></li>
-								<li class="xans-record-"><a href="?board_no=5&page=6"
-									class="other">6</a></li>
-								<li class="xans-record-"><a href="?board_no=5&page=7"
-									class="other">7</a></li>
-								<li class="xans-record-"><a href="?board_no=5&page=8"
-									class="other">8</a></li>
-								<li class="xans-record-"><a href="?board_no=5&page=9"
-									class="other">9</a></li>
-								<li class="xans-record-"><a href="?board_no=5&page=10"
-									class="other">10</a></li>
-							</ul>
-							<a href="?board_no=5&page=2" class="page-nav-button">Next</a>
-						</div>
 						<form id="boardSearchForm" name="" action="/board/free/qna.html"
 							method="get" target="_top" enctype="multipart/form-data">
 							<input id="board_no" name="board_no" value="5" type="hidden" />
@@ -211,8 +113,8 @@
 							</div>
 						</form>
 						<div
-							class="xans-element- xans-board xans-board-buttonlist board-admin-actions  ">
-							<a href="/board/free/write.html?board_no=5"
+							class="xans-element- xans-board xans-board-buttonlist board-admin-actions">
+							<a href="qnaWrite.do"
 								class="primary-button "><span>WRITE</span></a>
 						</div>
 					</div>
