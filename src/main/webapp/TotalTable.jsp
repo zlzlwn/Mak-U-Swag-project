@@ -61,7 +61,7 @@
         <button id="queryButton">검색</button>
     </div>
 	<div id="result"></div>
-    <script src="./js/queryTable.js"></script> <!-- queryTable.js 파일을 불러옴 -->
+    <script src="./js/querytotal.js"></script> <!-- queryTable.js 파일을 불러옴 -->
     <script>
         $(document).ready(function() {
             // 검색 버튼 클릭 시 결과 영역의 높이를 조절
