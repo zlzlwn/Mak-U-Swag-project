@@ -14,6 +14,7 @@ import com.javalec.command.MCommand;
 import com.javalec.command.MFaqCommand;
 import com.javalec.command.MNoticeCommand;
 import com.javalec.command.ManagerCommand;
+import com.javalec.command.MqnaCommand;
 
 /**
  * Servlet implementation class SFrontController
@@ -178,6 +179,9 @@ public class MFrontController extends HttpServlet {
 		
 		// ------------- admin  ---------------------
 		case("/adminmain.do"):
+			viewPage ="Adminmain.jsp";
+		command= new ManagerCommand();
+		command.execute(request,response);
 			viewPage ="Adminmain.jsp";
 		break;
 		case("/manager.do"):
