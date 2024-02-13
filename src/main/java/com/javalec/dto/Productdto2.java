@@ -1,5 +1,6 @@
 package com.javalec.dto;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class Productdto2 {
@@ -13,10 +14,39 @@ public class Productdto2 {
 	  private String proGender;
 	  private String proPrice;
 	  private int totalQuantity;
+	  private Timestamp proDate;
 	  
 	  public Productdto2() {
 		  
 	  }
+	  
+	  
+
+	public Timestamp getProDate() {
+		return proDate;
+	}
+
+
+
+	public void setProDate(Timestamp proDate) {
+		this.proDate = proDate;
+	}
+
+
+
+	public Productdto2(String proCategory, String proName, String proColor, String proGender, String proPrice,
+			int totalQuantity, Timestamp proDate) {
+		super();
+		this.proCategory = proCategory;
+		this.proName = proName;
+		this.proColor = proColor;
+		this.proGender = proGender;
+		this.proPrice = proPrice;
+		this.totalQuantity = totalQuantity;
+		this.proDate = proDate;
+	}
+
+
 
 	public Productdto2(ArrayList<String> labels5, ArrayList<Integer> data6) {
 		super();

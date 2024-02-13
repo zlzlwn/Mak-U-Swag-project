@@ -51,7 +51,9 @@ function handleClick(index){
 	inputproColor.value = dataReal[index].proColor
 	inputproQty.value = dataReal[index].proQty
 	inputproPrice.value = dataReal[index].proPrice
-	 inputproImage.src = dataReal[index].proImage;
+	inputproImage.value = dataReal[index].proImage
+	
+	console.log(inputproImage)
 
 }
 
@@ -76,62 +78,108 @@ $(document).ready(function() {
 
 	
 	$(document).ready(function() {
-		/* 버튼 클릭시 AJAX 요청 */
-		$("#submitBtn").click(function() {
-			/* 입력된 데이터 가져오기 */
-			let Category = $("#proCategory").val()   //servlet에서 받는 코드가 code
-			let Name = $("#proName").val()
-			let Gender = $("#proGender").val()
-			let Color = $("#proColor").val()
-			let Qty = $("#proQty").val()
-			let Price = $("#proPrice").val()
-			let Image = $("#proImage").val()
-			/* AJAX 요청 */
-			$.ajax({
-				type: "POST",
-				url: "UpdateAction",
-				data: {
-					Category : Category,
-					Name : Name,
-					Gender : Gender,
-					Color : Color,
-					Qty : Qty,
-					Price : Price,
-					Image : Image
-				},
-				success: function(response) {
-					/* 서버에서 받은 응답 처리 */
-					//$("#result").html(response)
-					//수정 후 디비를 다시불러와야함.
-						$.ajax({
-							type: "POST",
-							url: "UpdateServlet",
-							data: {name : ""},
-							success: function(response) {
-									/* 서버에서 받은 응답 처리 */
-								createTable(response) //json
-		}
-	})
-	
-	 $("#proCategory").val("");
-                $("#proName").val("");
-                $("#proGender").val("");
-                $("#proColor").val("");
-                $("#proQty").val("");
-                $("#proPrice").val("");
-                 $("#proImage").val("");
+    $("#submitBtn").click(function() {
+        // proImage1과 proImage 필드의 값을 가져옴
+        let proImage1 = $("#proImage1").val();
+        let proImage = $("#proImage").val();
+        
+        // proImage1에 값이 없고 proImage에만 값이 있는 경우
+        if (!proImage1 && proImage) {
+            // 이미지를 업로드하지 않고 나머지 필드만 업데이트하는 AJAX 요청
+            updateProductWithoutImage();
+        } else {
+            // proImage1에 값이 있는 경우 이미지를 포함하여 모든 필드를 업데이트하는 AJAX 요청
+            uploadAndUpdateProduct();
+        }
+    });
+});
 
-					alert("수정되었습니다.")
-					
-				},
-				error : function(xhr,status,error){
-					alert("수정 문제 발생"+ error)
-				}
-			})
-		})
-		
-	})
-	
-	
+// 이미지를 업로드하지 않고 나머지 필드만 업데이트하는 함수
+function updateProductWithoutImage() {
+    let Category = $("#proCategory").val();
+    let Name = $("#proName").val();
+    let Gender = $("#proGender").val();
+    let Color = $("#proColor").val();
+    let Qty = $("#proQty").val();
+    let Price = $("#proPrice").val();
+    let Image = $("#proImage").val();
+    
+    // AJAX 요청
+    $.ajax({
+        type: "POST",
+        url: "UpdateProductServlet", // 제품을 업데이트할 서블릿 주소
+        data: {
+            Category: Category,
+            Name: Name,
+            Gender: Gender,
+            Color: Color,
+            Qty: Qty,
+            Price: Price,
+            Image: Image // 이미지 파일의 경로를 전달
+        },
+        success: function(response) {
+            // 업데이트 성공 시 처리
+            alert("제품이 성공적으로 업데이트되었습니다.");
+        },
+        error: function(xhr, status, error) {
+            // 업데이트 실패 시 처리
+            alert("업데이트 중 문제가 발생했습니다: " + error);
+        }
+    });
+}
 
-$("#name").addClass("dataInput");
+// 이미지를 포함하여 모든 필드를 업데이트하는 함수
+function uploadAndUpdateProduct() {
+    // 이미지 파일 선택
+    let file = $("#proImage1")[0].files[0];
+    alert(file.name);
+    
+    // 이미지를 FormData에 추가
+    let formData = new FormData();
+    formData.append('image', file);
+    
+    // 이미지를 서버에 업로드하는 AJAX 요청
+    $.ajax({
+        type: "POST",
+        url: "UploadImageServlet", // 이미지를 업로드할 서블릿 주소
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(imagePath) {
+            // 이미지가 성공적으로 업로드되면 imagePath를 받아와서 나머지 필드와 함께 업데이트 요청
+            let Category = $("#proCategory").val();
+            let Name = $("#proName").val();
+            let Gender = $("#proGender").val();
+            let Color = $("#proColor").val();
+            let Qty = $("#proQty").val();
+            let Price = $("#proPrice").val();
+            
+            // AJAX 요청
+            $.ajax({
+                type: "POST",
+                url: "UpdateProductServlet", // 제품을 업데이트할 서블릿 주소
+                data: {
+                    Category: Category,
+                    Name: Name,
+                    Gender: Gender,
+                    Color: Color,
+                    Qty: Qty,
+                    Price: Price,
+                    ImagePath: imagePath // 이미지 파일의 경로를 전달
+                },
+                success: function(response) {
+                    // 업데이트 성공 시 처리
+                    alert("제품이 성공적으로 업데이트되었습니다.");
+                },
+                error: function(xhr, status, error) {
+                    // 업데이트 실패 시 처리
+                    alert("업데이트 중 문제가 발생했습니다: " + error);
+                }
+            });
+        },
+        error: function(xhr, status, error) {
+            // 이미지 업로드 실패 시 처리
+            alert("이미지 업로드 중 문제가 발생했습니다: " + error);
+        }
+    });
+}
