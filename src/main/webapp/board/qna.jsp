@@ -51,39 +51,47 @@
 								</a>
 							</div>
 						</div>
-							<div class="xans-element- xans-board xans-board-list qna-list">
-							    <c:forEach items="${list}" var="dto" varStatus="loop">
-							        <div class="list-item xans-record-">
-							            <a href="/article/qa/5/29400/" class="post-link">
-							                <span class="number">${dto.qnaSeq}</span> 
-							                <span class="title">${dto.qnaTitle}</span>
-							                <span class="date">${dto.userId}</span>
-							            </a>
-							        </div>
-							    </c:forEach>
-							</div>
-							
-							
-							<div class="xans-element- xans-board xans-board-empty message displaynone ">
-							
-							</div>
-													<div style="text-align: center;">
+						<div class="xans-element- xans-board xans-board-list qna-list">
+							<c:forEach items="${list}" var="dto" varStatus="loop">
+								<div class="list-item xans-record-">
+									<a href="qnaContent.do" class="post-link"> <span
+										class="number">${dto.qnaSeq}</span> <span class="title">${dto.qnaTitle}</span>
+										<span class="date">${dto.userId}</span>
+									</a>
+								</div>
+							</c:forEach>
+						</div>
 
-								<c:if test="${currentPage > 1}">
-									<a href="qna.do?page=${currentPage - 1}"
-										style="display: inline-block; margin: 0 5px;">&nbsp;Prev</a>
-								</c:if>
 
-								<c:forEach items="${pageList}" var="page">
-									<a href="qna.do?page=${page}"
-										style="display: inline-block; margin: 0 5px;">&nbsp;${page}</a>
-								</c:forEach>
+						<div
+							class="xans-element- xans-board xans-board-empty message displaynone ">
 
-								<c:if test="${currentPage < 7}">
-									<a href="qna.do?page=${currentPage + 1}"
-										style="display: inline-block; margin: 0 5px;">&nbsp;Next</a>
-								</c:if>
-							</div>
+						</div>
+						<div style="text-align: center;">
+
+							<c:if test="${currentPage > 1}">
+								<a href="qna.do?page=${currentPage - 1}"
+									style="display: inline-block; margin: 10px;">&nbsp;이전</a>
+							</c:if>
+
+							<c:forEach items="${pageList}" var="page">
+								<c:choose>
+									<c:when test="${page == currentPage}">
+										<span
+											style="display: inline-block; margin: 10px; font-weight: bold;">&nbsp;${page}</span>
+									</c:when>
+									<c:otherwise>
+										<a href="qna.do?page=${page}"
+											style="display: inline-block; margin: 10px;">&nbsp;${page}</a>
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
+
+							<c:if test="${currentPage < totalPage}">
+								<a href="qna.do?page=${currentPage + 1}"
+									style="display: inline-block; margin: 10px;">&nbsp;다음</a>
+							</c:if>
+						</div>
 						<form id="boardSearchForm" name="" action="/board/free/qna.html"
 							method="get" target="_top" enctype="multipart/form-data">
 							<input id="board_no" name="board_no" value="5" type="hidden" />
@@ -112,11 +120,6 @@
 								</fieldset>
 							</div>
 						</form>
-						<div
-							class="xans-element- xans-board xans-board-buttonlist board-admin-actions">
-							<a href="qnaWrite.do"
-								class="primary-button "><span>WRITE</span></a>
-						</div>
 					</div>
 				</div>
 

@@ -112,6 +112,19 @@ public int countTuple() {
 
     return count;
 }
+public int calculateTotalPage(int numOfTuplesPerPage) {
+    int countedTuple = countTuple();
+    int totalPage = 0;
+
+    if (countedTuple % numOfTuplesPerPage == 0) {
+        totalPage = countedTuple / numOfTuplesPerPage;
+    } else {
+        totalPage = countedTuple / numOfTuplesPerPage + 1;
+    }
+
+    return totalPage;
+}
+
 
 
 }

@@ -41,6 +41,18 @@ public class QnaDto {
 		this.qnaTitle = qnaTitle;
 		this.userId = userId;
 	}
+	
+	
+	
+	
+
+
+	public QnaDto(String qnaTitle, String qnaContent, String qnaDate) {
+		super();
+		this.qnaTitle = qnaTitle;
+		this.qnaContent = qnaContent;
+		this.qnaDate = qnaDate;
+	}
 
 
 	public int getQnaSeq() {
