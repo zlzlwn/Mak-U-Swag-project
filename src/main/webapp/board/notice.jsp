@@ -19,28 +19,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="./js/accordion.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-	function submitSearchForm12(event) {
-		console.log("버튼이 클릭되었습니다!");
-		// 검색어 입력란의 값을 가져옴
-		var searchInput = document.getElementById("search").value;
-		var searchDate = document.getElementById("search_date").value;
-		var searchKey = document.getElementById("search_key").value;
-		console.log(searchInput+searchDate+searchKey);
-		// URL에 검색 조건 값을 추가한 값
-		var newUrl = "notice.do?searchDate=" + searchDate + "&searchKey="
-				+ searchKey + "&search=" + searchInput;
-
-		// 콘솔에 로그 출력
-		console.log("New URL: " + newUrl);
-		
-		window.location.href = "saveToSession.do?searchDate=" + searchDate + "&searchKey=" + searchKey + "&search=" + searchInput;
-		/* // 브라우저의 콘솔에 메시지 출력 후 URL로 이동
-		window.location.href = newUrl; */
-
-		event.preventDefault();
-	}
-</script>
+ <script src="./js/searchFunctions.js"></script>
 
 
 </head>
