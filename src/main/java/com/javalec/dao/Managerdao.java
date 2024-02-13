@@ -20,6 +20,7 @@ import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
 import com.javalec.dto.ManagerMonthdto;
 import com.javalec.dto.ManagerYeardto;
 import com.javalec.dto.ManagerDaydto;
+import com.javalec.dto.ManagerDeletedto;
 
 public class Managerdao {
 
@@ -158,6 +159,33 @@ public ManagerYeardto view3() {
 	        e.printStackTrace();
 	    }return new ManagerYeardto(labels3,data4);
 	}
+
+
+public ManagerDeletedto view4() {
+	
+	ArrayList<String> labels4 = new ArrayList<>();
+    ArrayList<Integer> data5 = new ArrayList<>();
+    Connection connection = null;
+    
+    String query="SELECT DATE(deactive) AS deactive_date, COUNT(*) AS user_count FROM user WHERE deactive IS NOT NULL GROUP BY deactive_date";
+    try {
+    	connection = dataSource.getConnection();
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Statement stmt_mysql = connection.createStatement();
+        ResultSet rs = stmt_mysql.executeQuery(query);
+
+        // ResultSet에서 데이터 추출하여 ArrayList에 추가
+        while (rs.next()) {
+            labels4.add(rs.getString(1));
+            data5.add(rs.getInt(2));
+        }
+
+        connection.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }return new ManagerDeletedto(labels4,data5);
+}
+
 	
 
 	

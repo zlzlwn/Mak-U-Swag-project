@@ -14,7 +14,7 @@ window.onload = function() {
 
 function createTable(data) {
     let table = "<table border='1'>"
-    table += "<tr><th>Category</th><th>Product</th><th>Color</th><th>Gender</th><th>Price</th><th>totalQnt</th></tr>"
+    table += "<tr><th>Category</th><th>Product</th><th>Color</th><th>Gender</th><th>Price</th><th>totalQnt</th><th>Date</th></tr>"
     //데이터 행 추가
     for (let i = 0; i < data.length; i++) {
         table += "<tr>" +
@@ -24,6 +24,7 @@ function createTable(data) {
             "<td style='width: 7%'>" + (data[i].proGender ? data[i].proGender : '') + "</td>" +
             "<td style='width: 7%'>" + (data[i].proPrice ? data[i].proPrice : '') + "</td>" +
             "<td style='width: 7%'>"+ (data[i].totalQuantity ? data[i].totalQuantity : '') + "</td>" +
+             "<td style='width: 7%'>"+ (data[i].proDate ? data[i].proDate : '') + "</td>" +
             "</tr>";
     }
     table += "</table>"
@@ -35,12 +36,13 @@ $(document).ready(function() {
     /* 버튼 클릭시 AJAX 요청 */
     $("#queryButton").click(function() {
         /* 입력된 데이터 가져오기 */
-        let name = $("#name").val()
+        let name = $("#name").val();
+        var selectedDate = $("#datepicker").val();
         /* AJAX 요청 */
         $.ajax({
             type: "POST",
             url: "QueryServletPro",
-            data: {name: name},
+            data: {name: name, selectedDate: selectedDate},
             success: function(response) {
                 /* 서버에서 받은 응답 처리 */
                 //$("#result").html(response)
