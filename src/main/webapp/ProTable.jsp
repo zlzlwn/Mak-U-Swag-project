@@ -64,7 +64,7 @@
     </div>
 	<div id="result"></div>
 	
-    <script src="./js/queryTablePro.js"></script> <!-- queryTable.js 파일을 불러옴 -->
+    <script src="js/queryTablePro.js"></script> <!-- queryTable.js 파일을 불러옴 -->
     
      
     <script>

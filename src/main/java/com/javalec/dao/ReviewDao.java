@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 import com.javalec.dto.NoticeDtoPJH;
 
 
-public class NoticeDao {
+public class ReviewDao {
 
 	
 DataSource dataSource;
@@ -20,7 +20,7 @@ DataSource dataSource;
 	
 	
 //DataSource 초기화를 위한 생성자
-public NoticeDao() {
+public ReviewDao() {
     try {
         // JNDI를 사용하여 DataSource 설정
         Context context = new InitialContext();

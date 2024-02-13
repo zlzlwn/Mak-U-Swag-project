@@ -57,7 +57,13 @@ admin 페이지 회원목록 차트 구현
 
 
 
+<br>
+## 팀원 깃 활동
+<br>
+박지환<br>
 
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=zlzlwn&show_icons=true&theme=radical)
+<br>
 
 
 

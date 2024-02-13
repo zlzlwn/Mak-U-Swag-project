@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.javalec.command.MCommand;
 import com.javalec.command.MFaqCommand;
 import com.javalec.command.MNoticeCommand;
+import com.javalec.command.MReviewCommand;
 import com.javalec.command.ManagerCommand;
 import com.javalec.command.MqnaCommand;
 import com.javalec.command.MqnaContentCommand;
@@ -152,8 +153,8 @@ public class MFrontController extends HttpServlet {
 			viewPage = "./board/notice.jsp";
 			break;
 		case ("/review.do"): // review
-//			command = new BListCommand();
-//			command.execute(request, response);
+			command = new MReviewCommand();
+			command.execute(request, response);
 			viewPage = "./board/review.jsp";
 			break;
 		case ("/qna.do"): // qna
@@ -189,25 +190,18 @@ public class MFrontController extends HttpServlet {
 			break;
 
 		// ------------- admin ---------------------
-		case ("/adminmain.do"):
-			viewPage = "Adminmain.jsp";
-			command = new ManagerCommand();
-			command.execute(request, response);
-			viewPage = "Adminmain.jsp";
-			break;
+		
 		case ("/manager.do"):
 			command = new ManagerCommand();
 			command.execute(request, response);
-			viewPage = "UserManageAdmin.jsp";
+			viewPage = "./admin/UserManageAdmin.jsp";
 			break;
 
 		case ("/productmanager.do"):
 //			//			command= new PmCommand();
   			command= new ProductCommand();
 			command.execute(request,response);
-			viewPage="Product.jsp";
-			viewPage="ProductManager.jsp";
-			viewPage = "Product.jsp";
+			viewPage="./admin/ProductManager.jsp";
 			break;
 
 		case ("/productinsert.do"):
@@ -216,7 +210,7 @@ public class MFrontController extends HttpServlet {
 		break;
 
 		case ("/productupdate.do"):
-			viewPage = "ProductInsert.jsp";
+			viewPage="./admin/TotalAdmin.jsp";
 			break;
 
 		case ("/noticemanager.do"):
@@ -237,16 +231,7 @@ public class MFrontController extends HttpServlet {
 //			command= new TotalCommand();
 			command= new TotalCommand();
 			command.execute(request,response);
-			viewPage="Noticeupdate.jsp";
-			viewPage="TotalAdmin.jsp";
-			break;
-		case("/insert.do"):
-			command= new ProductCommand();
-			command.execute(request, response);
-			viewPage="ProductInsertAdmin.jsp";
-			break;
-		case("/update.do"):
-			viewPage="update.jsp";
+			viewPage="./admin/TotalAdmin.jsp";
 			break;
 
 		// ------------- logout ---------------------

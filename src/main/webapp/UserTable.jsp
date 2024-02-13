@@ -64,7 +64,7 @@
         <button id="queryButton">검색</button>
     </div>
     <div id="result"></div>
-    <script src="./js/queryTable.js"></script>
+    <script src="js/queryTable.js"></script>
     <script>
         $(function() {
         	 $("#joinDatepicker").datepicker(); // 가입날짜 캘린더 초기화

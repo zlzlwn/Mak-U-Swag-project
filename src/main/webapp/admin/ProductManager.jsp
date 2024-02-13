@@ -9,7 +9,7 @@
 <body>
 <!-- ============================== [[ Header  section]] ==============================-->
     
-	<%@ include file="include/sidebar.jsp" %>
+	<%@ include file="../include/sidebar.jsp" %>
 	<%@ include file="ProductManagerhead.jsp" %>
 
 	
