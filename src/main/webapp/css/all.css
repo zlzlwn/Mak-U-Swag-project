@@ -1531,7 +1531,7 @@ body.nav-expanded .site-header .hamburger .patty:after {
     float: left;
     width: 300px;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .site-main .main {
@@ -1828,7 +1828,6 @@ body.nav-expanded .site-header .hamburger .patty:after {
 
 #wrap {
     position: relative;
-    width: 1460px;
     margin: 27px auto 0;
 }
 
