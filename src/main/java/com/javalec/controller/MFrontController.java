@@ -150,14 +150,19 @@ public class MFrontController extends HttpServlet {
 			viewPage ="./board/review.jsp";
 		break;
 		case("/qna.do"): // qna
-//			command = new BListCommand();
-//			command.execute(request, response);
+			command = new MqnaCommand();
+			command.execute(request, response);
 			viewPage ="./board/qna.jsp";
 		break;
 		case("/faq.do"): // board
 			command = new MFaqCommand();
 			command.execute(request, response);
 			viewPage ="./board/faq.jsp";
+		break;
+		case("/qnaWrite.do"):// Q&A 에서 글쓰기 버튼을 눌렀을 시 글쓰기 페이지로 가는 컨트롤러
+//			command = new MqnaWriteCommand();
+//			command.execute(request, response);
+			viewPage="qnaWrite.jsp";
 		break;
 		
 		// ------------- member 폴더 ------------------
