@@ -1,0 +1,8 @@
+@charset "UTF-8";
+.about .manifesto p {
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.85;
+    word-break: keep-all;
+}
