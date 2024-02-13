@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-		<div class="site-nav sidebar">
+	<script src="https://kit.fontawesome.com/177bef69e2.js" crossorigin="anonymous"></script>
+		<div class="site-nav sidebar fixed">
 			<div class="nav-col col-left">
 				<div class="site-menu">
 					<ul>
@@ -38,10 +39,10 @@
 					<ul>
 						<li class="menu-item"><a
 							href="https://www.youtube.com/channel/UCNzODSZC2sraPyh4lDMQhpQ?view_as=subscriber"
-							target="_blank">YouTube</a></li>
+							target="_blank">YouTube</a>&nbsp;<i class="fa-brands fa-youtube"></i></li>
 						<li class="menu-item"><a
 							href="https://www.instagram.com/faderoom_official/"
-							target="_blank">Instagram</a></li>
+							target="_blank">Instagram</a>&nbsp;<i class="fa-brands fa-instagram"></i></li>
 					</ul>
 				</div>
 				<div class="site-menu">

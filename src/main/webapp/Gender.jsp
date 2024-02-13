@@ -61,8 +61,8 @@ canvas {
                 label: '성별 비율',
                 data: [data1[0], data2[1]], // 남자와 여자 데이터만 사용
                 backgroundColor: [
-                    'rgb(255, 99, 132)', // 남자의 색상
-                    'rgb(54, 162, 235)' // 여자의 색상
+                    'rgb(54, 162, 235)', 
+                    'rgb(255, 99, 132)'
                 ],
                 borderWidth: 0 // 선 제거
             }]

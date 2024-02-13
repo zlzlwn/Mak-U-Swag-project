@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>About us</title>
+<link rel="stylesheet" href="./css/about.css">
 <link rel="stylesheet" href="./css/all.css">
 <link rel="stylesheet" href="./css/all2.css">
 <link rel="icon" href="./images/CompanyLogo.png"> <!-- 인터넷 창 아이콘에 로고 나오게 하기 -->
@@ -32,11 +33,29 @@
 
 				<!-- 여기서 부터 작성 -->
 				
-			<%@ include file="../include/cardAni.jsp"%>
+				<div class="about">
+	
+					<div class="manifesto">
+						<span class="site-logo">
+							<h1 style="text-align: center;">
+								<a href="main.do">
+									<img src="./images/CompanyLogo.png" alt="로고" class="logo-img" width="200px" height="100px">
+								</a>
+							</h1>
+						</span>
+						<br>
+						<br>
+						<br>
+						<p>Mak U Swag은 가장 개인적인 공간에서 전개되는 캐주얼 셀렉샵입니다.</p>
+						<p>단순 셀러로서가 아닌 인테리어, 디자인, 포토, 스타일링등 전체적인 조화를 추구하는 갤러리 스토어입니다.</p>
+						<p>개인의 취향이 가득 담긴 공간으로 패션을 사랑하는 분들이라면 누구나 편하게 즐길 수 있습니다.</p>
+						<br>
+						<br>
+						<br>
+					</div>
+				</div>
 				
-				
-				
-				
+				<%@ include file="../include/cardAni.jsp"%>
 				
 				<!-- 여기까지 작성 -->
 

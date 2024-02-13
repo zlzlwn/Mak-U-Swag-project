@@ -96,7 +96,7 @@ body {
     <img src="./images/CompanyLogo.png" alt="로고" style="width: 82.2px; margin-top:45.2px; margin-left: 38.5px;">
 </a>
         </div>
-                <ul class="navbar__menu">
+        <ul class="navbar__menu">
             <li><a href="manager.do">회원관리</a></li>
             <li><a href="productmanager.do">상품관리</a></li>
             <li><a href="totalmanager.do">매출</a></li>
@@ -113,17 +113,19 @@ body {
     </nav>
 </header>
 
+
 <div class="content">
 
     <div class="frame-container" >
-        <iframe src="Manager.jsp" frameborder="0" style="width: 60%; margin-top: 50px;z-index: 3;"></iframe>
-        <iframe src="Gender.jsp" frameborder="0" style="position: absolute; left: calc(70% - 70px); width: calc(20% - 30px); height: calc(50% + 300px); margin-top: 90px;"></iframe>
+        <iframe src="Total.jsp" frameborder="0" style="width: 60%; margin-top: 50px;z-index: 3;"></iframe>
+        <iframe src="TotalGender.jsp" frameborder="0" style="position: absolute; left: calc(70% - 70px); width: calc(20% - 30px); height: calc(50% + 300px); margin-top: 90px;"></iframe>
+   
     </div>
-    <iframe src="UserTable.jsp" frameborder="0" style="position: absolute; width: 80%; height: 45%; margin: 10px auto; align-items: center; z-index: 999"></iframe>
+    <iframe src="TotalTable.jsp" frameborder="0" style="position: absolute; width: 80%; height: 45%; margin: 10px auto; align-items: center; z-index: 999"></iframe>
 </div>
 
 
-<script src="queryTable.js"></script>
+<script src="querytotal.js"></script>
 <script>
     // 창 크기가 변경될 때 iframe의 크기를 다시 계산하여 조절하는 함수
     function resizeIframes() {

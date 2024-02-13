@@ -10,8 +10,8 @@
 <!-- ============================== [[ Header  section]] ==============================-->
     
 	<%@ include file="include/sidebar.jsp" %>
-	<%@ include file="ProductInserthead.jsp" %>
-	<%@ include file="ProductInsert.jsp" %>
+	<%@ include file="ProductManagerhead.jsp" %>
+
 	
 
 	
