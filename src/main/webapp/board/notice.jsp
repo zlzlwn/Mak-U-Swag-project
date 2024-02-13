@@ -19,34 +19,26 @@
 <script type="text/javascript" src="./js/accordion.js"></script>
   
   
-  <%@ page session="true" %>
- <script>
- function submitSearchForm12(event) {
-	 event.preventDefault();
+<script>
+	function submitSearchForm12(event) {
+		console.log("버튼이 클릭되었습니다!");
+		// 검색어 입력란의 값을 가져옴
+		var searchInput = document.getElementById("search").value;
+		var searchDate = document.getElementById("search_date").value;
+		var searchKey = document.getElementById("search_key").value;
+		console.log(searchInput+searchDate+searchKey);
+		// URL에 검색 조건 값을 추가한 값
+		var newUrl = "notice.do?searchDate=" + searchDate + "&searchKey="
+    + searchKey + "&searchInput=" + searchInput;
 
-	    var searchInput = document.getElementById("search").value;
-	    var searchDate = document.getElementById("search_date").value;
-	    var searchKey = document.getElementById("search_key").value;
+window.location.href = newUrl;
 
-	    // AJAX를 사용하여 서버에 검색 요청 전송
-	    $.ajax({
-	        type: "POST",
-	        url: "searchController",
-	        data: {
-	            searchInput: searchInput,
-	            searchDate: searchDate,
-	            searchKey: searchKey
-	        },
-	        success: function (data) {
-	            // 검색 결과를 처리하는 코드
-	            console.log("검색 결과를 처리합니다.");
-	        },
-	        error: function (error) {
-	            console.error("에러:", error);
-	        }
-	    });
- }
- </script>
+		/* // 브라우저의 콘솔에 메시지 출력 후 URL로 이동
+		window.location.href = newUrl; */
+
+		event.preventDefault();
+	}
+</script>
 
 
 
@@ -157,7 +149,6 @@
 								
 								
 								<a onclick="submitSearchForm12(event)" href="notice.do" class="search-button"></a>
-								<a href="#" onclick="submitSearchForm12(event);">Search</a>
 							
 							
 						</fieldset>
