@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>AJAX MySQL Table Query1</title>
-<link rel="stylesheet" type="text/css" href="./css/style.css"> <!-- style.css 파일을 불러옴 -->
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <style>
 #searchContainer {
     position: fixed;
@@ -57,16 +59,22 @@
 <body>
     <div id="searchContainer">
         <input type="text" id="name" placeholder="제품 입력">
+         <input type="text" id="datepicker" placeholder="날짜 선택">
         <button id="queryButton">검색</button>
     </div>
 	<div id="result"></div>
+	
     <script src="./js/queryTablePro.js"></script> <!-- queryTable.js 파일을 불러옴 -->
+    
+     
     <script>
-        $(document).ready(function() {
-            // 검색 버튼 클릭 시 결과 영역의 높이를 조절
-            $('#queryButton').click(function() {
-                adjustResultHeight();
-            });
+    $(function() {
+        $("#datepicker").datepicker(); // 캘린더 초기화
+
+        // 검색 버튼 클릭 시 결과 영역의 높이를 조절
+        $('#queryButton').click(function() {
+            adjustResultHeight();
+        });
 
             // 페이지 로드 시 테이블 결과 영역의 높이를 조절
             adjustResultHeight();

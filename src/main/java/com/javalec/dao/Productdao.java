@@ -37,7 +37,7 @@ public class Productdao {
 		
 		try {
 			connection = dataSource.getConnection();
-			String query = "INSERT INTO product (proCategory, proName, proGender, proIntroduction,proColor, proQty, proPrice,proImage) VALUES (?, ?, ?, ?,?, ?, ?,?);";
+			String query = "INSERT INTO product (proCategory, proName, proGender, proIntroduction,proColor, proQty, proPrice,proImage,proDate) VALUES (?, ?, ?, ?,?, ?, ?,?,now());";
 			preparedStatement =connection.prepareStatement(query);
 			preparedStatement.setString(1, proCategory);
 			preparedStatement.setString(2, proName);
