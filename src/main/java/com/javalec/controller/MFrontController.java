@@ -231,16 +231,7 @@ public class MFrontController extends HttpServlet {
 //			command= new TotalCommand();
 			command= new TotalCommand();
 			command.execute(request,response);
-			viewPage="Noticeupdate.jsp";
-			viewPage="TotalAdmin.jsp";
-			break;
-		case("/insert.do"):
-			command= new ProductCommand();
-			command.execute(request, response);
-			viewPage="ProductInsertAdmin.jsp";
-			break;
-		case("/update.do"):
-			viewPage="update.jsp";
+			viewPage="./admin/TotalAdmin.jsp";
 			break;
 
 		// ------------- logout ---------------------
