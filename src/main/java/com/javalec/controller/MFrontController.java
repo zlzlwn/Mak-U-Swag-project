@@ -15,6 +15,8 @@ import com.javalec.command.MFaqCommand;
 import com.javalec.command.MNoticeCommand;
 import com.javalec.command.ManagerCommand;
 import com.javalec.command.MqnaCommand;
+import com.javalec.command.MqnaContentCommand;
+import com.javalec.command.MqnaWriteCommand;
 import com.javalec.command.ProductCommand;
 import com.javalec.command.TotalCommand;
 
@@ -164,8 +166,13 @@ public class MFrontController extends HttpServlet {
 		case ("/qnaWrite.do"):// Q&A 에서 글쓰기 버튼을 눌렀을 시 글쓰기 페이지로 가는 컨트롤러
 //			command = new MqnaWriteCommand();
 //			command.execute(request, response);
-			viewPage = "qnaWrite.jsp";
+			viewPage = "./board/qnaWrite.jsp";
 			break;
+		case ("/qnaContent.do"):// Q&A 에서 글 클릭시 컨트롤러
+			command = new MqnaContentCommand();
+			command.execute(request, response);
+			viewPage = "./board/qnaContent.jsp";
+		break;
 
 		// ------------- member 폴더 ------------------
 		case ("/agreement.do"): // agreement
