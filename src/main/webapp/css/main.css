@@ -5,7 +5,7 @@
    블록요소에는 자체 크기가 있어서 줄바꿈<br>이 아니어도 자동으로 줄바꿈됨
    나머지 공간은 모두 여백(margin-밖, padding-안)으로 채움 
    인라인 요소 : <img> <span>
-*/
+*/ 
 .container {
 	display: flex;/* block, inline, inline-block, flex box */
 	flex-direction: column; 
@@ -15,7 +15,6 @@
 }
 .main_header {
 	display: flex;
-	width: 90%;
 	max-width: 1200px;
 	justify-content: space-between;
 	margin-bottom:20px;	
@@ -24,7 +23,6 @@
 	display: flex;
 	text-align: center;
 	flex-direction: column; 
-	width: 90%;
 	border: 2px solid lightGray;
 	border-radius: 20px;
 	padding: 10px;
@@ -34,7 +32,6 @@
 }
 .main_footer {
 	display: flex;
-	width: 90%;
 	max-width: 1200px;
 	justify-content: space-between;
 	margin-bottom:20px;	

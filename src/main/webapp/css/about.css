@@ -6,3 +6,14 @@
     line-height: 1.85;
     word-break: keep-all;
 }
+
+.about .about-photos {
+    text-align: center;
+    padding: 0 5%;
+}
+
+.about .about-photos img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 60px;
+}
