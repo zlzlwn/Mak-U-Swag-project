@@ -18,10 +18,11 @@
     background-color: linear-gradient(180deg, rgba(228, 220, 207, 1) 0%, rgba(245, 240, 187, 1) 38%, rgba(125, 157, 156, 1) 100%);
     padding: 10px;
     z-index: 2; /* 다른 요소들 위에 보이도록 z-index 설정 */
+    margin-top: 1%;
 }
 
 #result {
-    margin-top: 48%; /* 검색창과 겹치지 않게 여백 추가 */
+    margin-top: 50%; /* 검색창과 겹치지 않게 여백 추가 */
     /* 여기에 테이블 결과의 스타일을 추가하세요 */
     overflow-y: auto; /* 테이블 결과가 넘칠 경우 스크롤 표시 */
     max-height: calc(100vh - 200px); /* 화면 높이의 100%에서 검색창과 여백 높이만큼 제외한 값으로 최대 높이 지정 */
@@ -59,14 +60,11 @@
 <body>
     <div id="searchContainer">
         <input type="text" id="name" placeholder="제품 입력">
-         <input type="text" id="datepicker" placeholder="날짜 선택">
+        <input type="text" id="datepicker" placeholder="날짜 선택">
         <button id="queryButton">검색</button>
     </div>
 	<div id="result"></div>
-	
-    <script src="./js/queryTablePro.js"></script> <!-- queryTable.js 파일을 불러옴 -->
-    
-     
+    <script src="js/querytotal.js"></script> <!-- queryTable.js 파일을 불러옴 -->
     <script>
     $(function() {
         $("#datepicker").datepicker(); // 캘린더 초기화

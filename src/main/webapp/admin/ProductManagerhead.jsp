@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <script src="main.js" defer></script>
+    <script src="./js/main.js" defer></script>
 <style>
 
 html,
@@ -108,7 +108,7 @@ body {
     <nav class="navbar">
         <div class="navbar__logo">
             
-            <a href="adminmain.do">
+            <a href="manager.do">
     <img src="./images/CompanyLogo.png" alt="로고" style="width: 82.2px; margin-top:45.2px; margin-left: 38.5px;">
 </a>
         </div>
@@ -134,10 +134,10 @@ body {
 <div class="content">
 
     <div class="frame-container" >
-        <iframe src="ProductBar.jsp" frameborder="0" style="width: 60%; margin-top: 50px;z-index: 3;"></iframe>
-         <iframe src="ProductPer.jsp" frameborder="0" style="position: absolute; left: calc(70% - 70px); width: calc(20% - 30px); height: calc(50% + 300px); margin-top: 90px;"></iframe>
+        <iframe src="./admin/ProductBar.jsp" frameborder="0" style="width: 60%; margin-top: 50px;z-index: 3;"></iframe>
+         <iframe src="./admin/ProductPer.jsp" frameborder="0" style="position: absolute; left: calc(70% - 70px); width: calc(20% - 30px); height: calc(50% + 300px); margin-top: 90px;"></iframe>
     </div>
- <iframe src="ProTable.jsp" frameborder="0" style="position: absolute; width: 70%; height: 45%;align-items: center; z-index: 999; overflow: hidden;"></iframe>
+ <iframe src="./ProTable.jsp" frameborder="0" style="position: absolute; width: 70%; height: 45%;align-items: center; z-index: 999; overflow: hidden;"></iframe>
 </div>
 
 
