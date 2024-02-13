@@ -17,6 +17,9 @@ public class MNoticeCommand implements MCommand {
 	//페이지 및 목록 계산: 사용자가 요청한 페이지에 따라 NoticeDao를 통해 공지사항 데이터를 가져옴
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		String searchInput = request.getParameter("searchInput");
+		System.out.println(searchInput);
 		//사용자가 요청한 페이지 번호 초기값은 가장 최신글을 보여주는 1
 	    int requestPage = 1;
 	    //페이지당 표시할 게시글의 수
@@ -72,6 +75,9 @@ public class MNoticeCommand implements MCommand {
 	    return arr;
 	}
 
+
+	
+	
 	
 
 	

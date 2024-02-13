@@ -2,7 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="com.javalec.dto.NoticeDtoPJH"%>
 
 
 
@@ -18,8 +17,38 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="./js/accordion.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="./js/searchFunctions.js"></script>
+  
+  
+  <%@ page session="true" %>
+ <script>
+ function submitSearchForm12(event) {
+	 event.preventDefault();
+
+	    var searchInput = document.getElementById("search").value;
+	    var searchDate = document.getElementById("search_date").value;
+	    var searchKey = document.getElementById("search_key").value;
+
+	    // AJAX를 사용하여 서버에 검색 요청 전송
+	    $.ajax({
+	        type: "POST",
+	        url: "searchController",
+	        data: {
+	            searchInput: searchInput,
+	            searchDate: searchDate,
+	            searchKey: searchKey
+	        },
+	        success: function (data) {
+	            // 검색 결과를 처리하는 코드
+	            console.log("검색 결과를 처리합니다.");
+	        },
+	        error: function (error) {
+	            console.error("에러:", error);
+	        }
+	    });
+ }
+ </script>
+
+
 
 
 </head>
@@ -101,7 +130,7 @@
 								</c:forEach>
 
 								<c:if test="${currentPage < totalPage}">
-									<a href="notice.do?page=${currentPage + 1}"
+									<a href="notice.do?page=${currentPage + 1}" 
 										style="display: inline-block; margin: 10px;">&nbsp;다음</a>
 								</c:if>
 							</div>
@@ -125,8 +154,12 @@
 								<option value="content">내용</option>
 							</select> <input id="search" name="search" class="inputTypeText"
 								placeholder="검색어를 입력하세요" value="" type="text" /> 
+								
+								
 								<a onclick="submitSearchForm12(event)" href="notice.do" class="search-button"></a>
-								<input type="submit" onclick="submitSearchForm12(event)" >
+								<a href="#" onclick="submitSearchForm12(event);">Search</a>
+							
+							
 						</fieldset>
 					</div>
 					<div
