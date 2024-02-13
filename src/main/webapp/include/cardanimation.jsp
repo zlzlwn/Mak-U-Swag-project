@@ -3,7 +3,7 @@
 <div class="content2">
 	<div class="possibilities">
 		<div class="option active"
-			style="--optionBackground: url(./images/member/LDG.jpg);">
+			style="--optionBackground: url(../images/member/LDG.jpg);">
 			<div class="shadow"></div>
 			<div class="label">
 				<div class="icon">
@@ -16,7 +16,7 @@
 			</div>
 		</div>
 		<div class="option"
-			style="--optionBackground: url(./images/member/PJM.jpg);">
+			style="--optionBackground: url(../images/member/PJM.jpg);">
 			<div class="shadow"></div>
 			<div class="label">
 				<div class="icon">
@@ -29,7 +29,7 @@
 			</div>
 		</div>
 		<div class="option"
-			style="--optionBackground: url(./images/member/PJH.jpg);">
+			style="--optionBackground: url(../images/member/PJH.jpg);">
 			<div class="shadow"></div>
 			<div class="label">
 				<div class="icon">
@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<div class="option"
-			style="--optionBackground: url(./images/member/JSJ.jpg);">
+			style="--optionBackground: url(../images/member/JSJ.jpg);">
 			<div class="shadow"></div>
 			<div class="label">
 				<div class="icon">

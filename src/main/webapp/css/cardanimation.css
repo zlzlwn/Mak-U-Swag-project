@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body .content2 {
     display: flex; /* 일단 이거 */
+     justify-content: center;
 }
 
 body .content2 .possibilities {
@@ -73,7 +74,7 @@ body .content2 .possibilities .option .shadow {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  height: 180px;
+  height: 120px;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 body .content2 .possibilities .option .label {
