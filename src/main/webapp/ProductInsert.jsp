@@ -7,7 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combo Box Example</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
+        <style>
+    @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+    	h3{
+    	    margin-top: 12%; /* 수정된 부분: 헤딩의 상단 마진을 줄임 */
+    	    margin-bottom: 5%; /* 수정된 부분: 헤딩의 하단 마진을 줄임 */
+    	    margin-left: 15%;
+    	}
+    	body {
+    	    height: 200vh;
+    	    background-size: 100% 100%;
+            background :   linear-gradient(180deg, rgba(228, 220, 207, 1) 0%, rgba(245, 240, 187, 1) 38%, rgba(125, 157, 156, 1) 100%);; /* 짝수 행의 배경색을 지정합니다. */
+        }
+        queryButton{
+    	    margin-left: 15%;
+    	}
         #textField,#genderText {
             text-align: center; /* 텍스트를 가운데 정렬합니다. */
         }
@@ -20,128 +41,215 @@
         table {
             border-collapse: collapse; /* 테이블 셀 경계를 병합하여 경계를 만듭니다. */
             width: 80%;
+            height: 500px;
+            margin: 0 auto;
+            margin-top: 0%;
+            margin-left: 15%;
+            margin-bottom: 2%; /* 수정된 부분: 테이블의 하단 마진을 줄임 */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
+#queryButton {
+    margin-left: 15%; /* 원하는 위치로 버튼을 이동합니다. */
+    margin-top: 5%; /* 버튼의 위쪽 여백을 설정합니다. */
+    width: 20%;
+    padding: 10px 20px; /* 내부 여백 설정 */
+    border: none; /* 테두리 제거 */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    color: black; /* 글자색 설정 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    text-decoration: none; /* 텍스트에 밑줄 제거 */
+    display: inline-block; /* 인라인 요소로 표시 */
+    font-size: 16px; /* 글자 크기 설정 */
+    transition-duration: 0.4s; /* 호버 효과의 전환 지속 시간 설정 */
+    cursor: pointer; /* 커서 모양 설정 */
+}
         th, td {
-            border: 1px solid #dddddd; /* 테이블 셀 경계를 실선으로 지정합니다. */
-            text-align: left; /* 텍스트를 왼쪽으로 정렬합니다. */
-            padding: 8px;
-            width:20px;
+            border: none; /* 테이블 셀 경계를 없앰 */
+            text-align: center; /* 텍스트를 가운데 정렬합니다. */
+            padding: 10px;
+            width: 20px;
         }
         th {
             background-color: #f2f2f2; /* 테이블 헤더 배경색을 지정합니다. */
+        }
+         tr:nth-child(even) {
+            background-color: linear-gradient(180deg, rgba(228, 220, 207, 1) 0%, rgba(245, 240, 187, 1) 38%, rgba(125, 157, 156, 1) 100%);; /* 짝수 행의 배경색을 지정합니다. */
+        }
+        tr:hover {
+            background-color: white;
         }
         .error-message {
             color: red; /* 빨간색으로 메시지 색상 지정 */
             font-size: 10px;
         }
+        select {
+            text-align: center;
+        }
     </style>
-
 </head>
 <body>
-    <h3>제품등록</h3>
-    <table>
+    <h3 style="font-size: 30px;">제품 등록</h3>
+    <form action="insert.do" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td>ProCategory:</td>
+                <td>
+                    <select id="Category" name="Category">
+                    	<option value="default">선택하세요</option>
+                        <option value="BEST 100">BEST 100</option>
+                        <option value="All-in-one">All-in-one</option>
+                        <option value="Outer">Outer</option>
+                        <option value="Top(short sleeve)">Top(short sleeve)</option>
+                        <option value="Top(long sleeve)">Top(long sleeve)</option>
+                        <option value="Bottoms">Bottoms</option>
+                        <option value="Bags">Bags</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Shoes">Shoes</option>
+                        <option value="Woman only">Woman only</option>
+                        <!-- 다른 카테고리 옵션들 -->
+                    </select>
+                    <input type="text" id="proCategory" name="proCategory" readonly="readonly" >
+                </td>
+            </tr>
         <tr>
-            <th>항목</th>
-            <th>내용</th>
-        </tr>
-        <tr>
-            <td>ProCategory:</td>
-            <td>
-                <select id="comboBox">
+    	<td>ProName:</td>
+    	<td>
+        	<input type="text" id="proName" name="proName" size="15">
+        	<span id="errorMessage" class="error-message"></span>
+   		</td>
+		</tr>
+            <tr>
+                <td>ProGender:</td>
+                <td>
+                    <select id="Gender" name="Gender">
+                    	<option value="default">선택하세요</option>
+                        <option value="남">남</option>
+                        <option value="여">여</option>
+                    </select>
+                    <!-- 텍스트 필드 추가 -->
+                    <input type="text" id="proGender"  name="proGender" size="5" readonly="readonly">
+                </td>
+            </tr>
+            <tr>
+                <td>ProIntroduction:</td>
+                <td><input type="text"id="proIntroduction" name="proIntroduction" size="30"></td>
+                
+            </tr>
+            <tr>
+                <td>ProColor:</td>
+                <td>
+                    <select id="Color" name="Color">
+                    	<option value="default">선택하세요</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Black">Black</option>
+                        <option value="Beige">Beige</option>
+                        <option value="Gray">Gray</option>
+                        <option value="White">White</option>
+                        <option value="Skyblue">Skyblue</option>
+                        <option value="Darkblue">Darkblue</option>
+                        <!-- 다른 카테고리 옵션들 -->
+                    </select>
+                    <input type="text" id="proColor" name="proColor" readonly="readonly" >
+                </td>
+            </tr>
+            <tr>
+                <td>ProQty:</td>
+                <td>
+                    <select id="quantity" name="quantity">
                     <option value="default">선택하세요</option>
-                    <option value="BEST 100">BEST 100</option>
-                    <option value="All-in-one">All-in-one</option>
-                    <option value="Outer">Outer</option>
-                    <option value="Top(short sleeve)">Top(short sleeve)</option>
-                    <option value="Top(long sleeve)">Top(long sleeve)</option>
-                    <option value="Bottoms">Bottoms</option>
-                    <option value="Bags">Bags</option>
-                    <option value="Accessories">Accessories</option>
-                    <option value="Shoes">Shoes</option>
-                    <option value="Woman only">Woman only</option>
-                </select>
-                <input type="text" id="textField" value="" readonly size="15">
-            </td>
-        </tr>
-          <tr>
-            <td>ProName:</td>
-            <td>
-                <input type="text" id="name" value="" size="15">
-                <span id="errorMessage" class="error-message"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>ProGender:</td>
-            <td>
-                <select id="genderSelect">
-                    <option value="default">선택하세요</option>
-                    <option value="남">남</option>
-                    <option value="여">여</option>
-                </select>
-                <input type="text" id="genderText" value="" size="5" readonly>
-            </td>
-        </tr>
-        <tr>
-            <td>ProIntroduction:</td>
-            <td><input type="text" id="name" value="" size="30"></td>
-        </tr>
-        <tr>
-            <td>ProQty:</td>
-            <td>
-                <select id="Qty">
-                    <option value="default">선택하세요</option> 
-                    <% for (int i = 1; i <= 100; i++) { %>
-                    <option value="<%= i %>"> <%= i %> </option>
-                    <% } %>
-                </select>
-                <input type="text" id="qty" value="" size="5" readonly="readonly">
-            </td>
-        </tr>
-        <tr>
-            <td>ProPrice:</td>
-            <td><input type="text" id="price" value="" size="7"> 원</td>
-        </tr>
-        <tr>
-            <td>ProImage:</td>
-            <td>
-                <input type="file" id="imageUpload" accept="image/*">
-                <div id="imagePreview"></div>
-            </td>
-        </tr>
-    </table>
-
-    <script>
-        $(document).ready(function() {
-            // 콤보박스 변경 시 이벤트 처리
-            $("#comboBox").change(function() {
-                var selectedOption = $(this).val(); // 선택된 옵션 값 가져오기
-                if (selectedOption === "default") { // 선택하세요 옵션을 선택한 경우
-                    $("#textField").val(""); // 텍스트 필드 비우기
-                    $("#textField").prop("readonly", true); // 텍스트 필드 readonly 설정
-                } else { // 나머지 옵션을 선택한 경우
-                    $("#textField").val(selectedOption); // 텍스트 필드에 선택된 옵션 값 설정
-                    $("#textField").prop("readonly", true); // 텍스트 필드 readonly 설정
+                        <% for (int i = 1; i <= 100; i++) { %>
+                            <option value="<%= i %>"> <%= i %> </option>
+                        <% } %>
+                    </select>
+                    <!-- 텍스트 필드 추가 -->
+                    <input type="text" id="proQty" name="proQty" size="5" readonly="readonly" > ea
+                </td>
+            </tr>
+            <tr>
+                <td>ProPrice:</td>
+                <td><input type="text" id="proPrice" name="proPrice" size="7"> KRW
+                <span id="proPriceError" class="error-message"></span>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>ProImage:</td>
+                <td>
+                    <input type="file" id="proImage" name="proImage" accept="image/*" onchange="previewImage(event)">
+                    <div id="imagePreview"></div>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" id="queryButton" value="등록하기" onclick="insert()"/>
+        <span id="errorMessage1" class="error-message"></span>
+    </form>
+    <script type="text/javascript">
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('imagePreview');
+                output.innerHTML = '<img src="' + reader.result + '" width="100" />';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+        $(document).ready(function(){
+            // ProCategory 콤보박스 선택 시 해당 값을 텍스트 필드에 넣기
+            $("#Category").change(function(){
+                var selectedCategory = $(this).val();
+                if(selectedCategory == "default") {
+                    $("#proCategory").val(""); // 선택하세요를 선택했을 때 텍스트 필드를 비움
+                } else {
+                    $("#proCategory").val(selectedCategory); // 다른 옵션을 선택했을 때 해당 값으로 채움
                 }
             });
         });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#imageUpload").on("change", function(event) {
-                var selectedFile = event.target.files[0]; // 선택된 파일 가져오기
-                var reader = new FileReader(); // FileReader 객체 생성
-
-                reader.onload = function(event) {
-                    // 이미지 미리 보기 엘리먼트에 선택된 이미지 추가
-                    $("#imagePreview").html('<img src="' + event.target.result + '" style="max-width: 200px; max-height: 200px;">');
-                };
-
-                // FileReader를 사용하여 이미지를 읽고 미리보기로 표시
-                reader.readAsDataURL(selectedFile);
+        $(document).ready(function(){ 
+            // ProGender 콤보박스 선택 시 해당 값을 텍스트 필드에 넣기
+            $("#Gender").change(function(){
+            	var selectedGender = $(this).val();
+                if(selectedGender == "default") {
+                    $("#proGender").val(""); // 선택하세요를 선택했을 때 텍스트 필드를 비움
+                } else {
+                    $("#proGender").val(selectedGender); // 다른 옵션을 선택했을 때 해당 값으로 채움
+                }
             });
         });
-    </script>
-    <script>
+        $(document).ready(function(){ 
+            $("#quantity").change(function(){
+            	var selectedquantity = $(this).val();
+                if(selectedquantity == "default") {
+                    $("#proQty").val(""); // 선택하세요를 선택했을 때 텍스트 필드를 비움
+                } else {
+                    $("#proQty").val(selectedquantity); // 다른 옵션을 선택했을 때 해당 값으로 채움
+                }
+            });   
+        });
+        $(document).ready(function(){
+            // ProCategory 콤보박스 선택 시 해당 값을 텍스트 필드에 넣기
+            $("#Color").change(function(){
+                var selectedColor = $(this).val();
+                if(selectedColor == "default") {
+                    $("#proColor").val(""); // 선택하세요를 선택했을 때 텍스트 필드를 비움
+                } else {
+                    $("#proColor").val(selectedColor); // 다른 옵션을 선택했을 때 해당 값으로 채움
+                }
+            });
+        });
+        $(document).ready(function(){
+            $('#proName').on('input', function() {
+                var inputVal = $(this).val();
+                var regex = /^[a-zA-Z0-9\s]*$/; // 특수문자를 허용하지 않는 정규식
+
+                if (!regex.test(inputVal)) {
+                    $('#errorMessage').text('특수문자는 입력할 수 없습니다.');
+                    $(this).val(''); // 입력한 값을 지우고
+                } else {
+                    $('#errorMessage').text(''); // 에러 메시지를 지웁니다.
+                }
+            });
+        });
+
         $(document).ready(function() {
             $("#name").on("input", function() {
                 var inputText = $(this).val(); // 입력된 텍스트 가져오기
@@ -154,8 +262,6 @@
                 }
             });
         });
-    </script>
-    <script>
         $(document).ready(function() {
             // 입력 필드의 값을 콤마로 변환하는 함수
             function addCommas(input) {
@@ -170,43 +276,56 @@
             }
 
             // 입력 필드의 값을 감시하여 콤마를 추가하는 이벤트 핸들러
-            $("input#price").on("input", function() {
+            $("input#proPrice").on("input", function() {
                 // 입력값에서 콤마를 제거하고 콤마를 추가하여 변환한 후 다시 입력 필드에 넣어줌
                 $(this).val(addCommas(removeCommas($(this).val())));
             });
-        });
-    </script>
-     <script>
-        $(document).ready(function() {
-            // 콤보박스 변경 시 이벤트 처리
-            $("#Qty").change(function() { // 여기서 Qty 대신 #Qty 사용
-                var selectedOption = $(this).val(); // 선택된 옵션 값 가져오기
-                if (selectedOption === "default") { // 선택하세요 옵션을 선택한 경우
-                    $("#qty").val(""); // 텍스트 필드 비우기
-                    $("#qty").prop("readonly", true); // 텍스트 필드 readonly 설정
-                } else { // 나머지 옵션을 선택한 경우
-                    $("#qty").val(selectedOption); // 텍스트 필드에 선택된 옵션 값 설정
-                    $("#qty").prop("readonly", true); // 텍스트 필드 readonly 설정
+            $("input#proPrice").on("keypress", function(event) {
+                // 입력된 키 코드 가져오기
+                var keyCode = event.keyCode || event.which;
+                // 숫자(0-9) 키 코드 범위인지 확인
+                if (keyCode < 48 || keyCode > 57) {
+                    // 숫자가 아니면 입력을 취소
+                    event.preventDefault();
+                    $("#proPriceError").text("숫자만 입력할 수 있습니다.");
+                } else {
+                    // 숫자인 경우 에러 메시지 제거
+                    $("#proPriceError").text("");
                 }
             });
         });
-    </script>
-    <script>
         $(document).ready(function() {
-            var genderSelect = $('#genderSelect');
-            var genderText = $('#genderText');
-            // 콤보박스 변경 시 이벤트 처리
-            genderSelect.change(function() {
-                var selectedOption = $(this).val(); // 선택된 옵션 값 가져오기
-                if (selectedOption === 'default') { // '선택하세요' 옵션을 선택한 경우
-                    genderText.val(''); // 텍스트 필드 비우기
-                    genderText.prop('readonly', true); // 텍스트 필드 readonly 설정
-                }	else { // 다른 옵션을 선택한 경우
-                    genderText.val(selectedOption); // 텍스트 필드에 선택된 옵션 값 설정
-                    genderText.prop('readonly', true); // 텍스트 필드 readonly 설정
+            // 등록하기 버튼 클릭 시 이벤트 처리
+            $("#queryButton").on("click", function() {
+                // 텍스트 필드와 이미지 요소 가져오기
+                var textFieldValue = $("#proName").val();
+                var textFieldValue1 = $("#proGender").val();
+                var textFieldValue2 = $("#proPrice").val();
+                var textFieldValue3 = $("#proQty").val();
+                var textFieldValue4 = $("#proCategory").val();
+                var textFieldValue5 = $("#proIntroduction").val();
+                var textFieldValue6 = $("#proColor").val();
+
+                
+                var imageSrc = $("#imagePreview img").attr("src");
+
+                // 값이 없는 경우 에러 메시지 표시
+                if (!textFieldValue6 || textFieldValue6.trim() === "" ||!textFieldValue5 || textFieldValue5.trim() === "" ||!textFieldValue4 || textFieldValue4.trim() === "" ||!textFieldValue3 || textFieldValue3.trim() === "" ||!textFieldValue2 || textFieldValue2.trim() === "" ||!textFieldValue1 || textFieldValue1.trim() === "" ||!textFieldValue || textFieldValue.trim() === "" || !imageSrc || imageSrc.trim() === "") {
+                    $("#errorMessage1").text("모든 필드를 입력하세요.");// 폼 전송 방지
+                    return false;
+                } else {
+                    // 값이 있는 경우 페이지 이동
+                    alert("상품이 등록되었습니다");
+                    window.location.href = "aaa.do";
+                    return true;
+
                 }
             });
         });
+        
+        
+      
     </script>
+
 </body>
 </html>
