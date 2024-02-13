@@ -76,8 +76,8 @@
 
 				<div class="main-section new-products">
 					<div class="section-header">
-						<h3>The Latest Update</h3>
-						<h4>Unisex Clothes</h4>
+						<h3><b>The Latest Update</b></h3>
+						<h4><b>Unisex Clothes</b></h4>
 					</div>
 				</div>
 
@@ -95,7 +95,7 @@
 				
 				<div class="main-section best-products">
 					<div class="section-header">
-						<h3>Best of the Week</h3>
+						<h3><b>Best of the Week</b></h3>
 					</div>
 				</div>
 				
@@ -113,7 +113,7 @@
 				
 				<div class="main-section accessories">
 					<div class="section-header">
-						<h3>Accessories you'll love</h3>
+						<h3><b>Accessories you'll love</b></h3>
 					</div>
 				</div>
 				
