@@ -35,15 +35,15 @@
 				</div>
 						<div class="xans-element- xans-board xans-board-read ">
 							<div class="post-header">
-											<h3 class = "number">${dto.qnaTitle}</h3>
+											<h3 class = "number">${qnaTitle}</h3>
 											<div class="post-meta">
-												<span class="date">${dto.qnaDate }</span>
+												<span class="date">${qnaDate }</span>
 											</div>
 										</div>
 							<div class="post-content">
 											<div class="content">
 												<div class="images"></div>
-												<div class="article"><div class="fr-view fr-view-article"><p>${dto.qnaContent }</p></div></div>
+												<div class="article"><div class="fr-view fr-view-article"><p>${qnaContent }</p></div></div>
 											</div>
 										</div>
 							<div class="post-footer">

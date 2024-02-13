@@ -47,8 +47,9 @@ public class QnaDto {
 	
 
 
-	public QnaDto(String qnaTitle, String qnaContent, String qnaDate) {
+	public QnaDto(int qnaSeq, String qnaTitle, String qnaContent, String qnaDate) {
 		super();
+		this.qnaSeq = qnaSeq;
 		this.qnaTitle = qnaTitle;
 		this.qnaContent = qnaContent;
 		this.qnaDate = qnaDate;

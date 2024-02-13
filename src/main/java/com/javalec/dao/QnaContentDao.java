@@ -32,31 +32,33 @@ public class QnaContentDao {
 	        e.printStackTrace();
 	    }
 	}
-	public ArrayList<QnaDto> list() {
-	    ArrayList<QnaDto> dtos = new ArrayList<QnaDto>();
-	    Connection connection = null;
+	public QnaDto infomation(String qnaSeq) {
+		
+		QnaDto dto_viewContent = null;
+		
+		int qnaSeq_int = Integer.parseInt(qnaSeq);
+		
+		Connection connection = null;
 	    PreparedStatement preparedStatement = null;
 	    ResultSet resultSet = null;
 
 	    try {
 	        connection = dataSource.getConnection();
-	        // SQL 쿼리를 사용하여 페이지 및 페이지당 튜플 수에 기반한 제한된 수의 공지사항을 가져옴
-	        String query = "SELECT qnaTitle, qnaContent, qnaDate FROM qna";
+	        String query = "SELECT qnaTitle, qnaContent, qnaDate FROM qna WHERE qnaSeq = ?";
 	        preparedStatement = connection.prepareStatement(query);
-	        
+	        preparedStatement.setString(1, qnaSeq);
 	        resultSet = preparedStatement.executeQuery();
 
-
-	        	String qnaTitle = resultSet.getString("qnaTitle");
-	        	String qnaContent = resultSet.getString("qnaContent");
-	        	String qnaDate = resultSet.getString("qnaDate");
-
-	            QnaDto dto = new QnaDto(qnaTitle, qnaContent, qnaDate);
-	            dtos.add(dto);
-
-	    
-	    
-	    
+	        while (resultSet.next()) {
+	        	
+	            String qnaTitle = resultSet.getString("qnaTitle");
+	            String qnaContent = resultSet.getString("qnaContent");
+	            String qnaDate = resultSet.getString("qnaDate");
+	            
+	            dto_viewContent = new QnaDto(qnaSeq_int, qnaTitle, qnaContent, qnaDate);
+	            
+	            
+	        }
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    } finally {
@@ -67,9 +69,8 @@ public class QnaContentDao {
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }
-
 	    }
-	    return dtos;
+	    return dto_viewContent;
 	}
-	
+
 }
