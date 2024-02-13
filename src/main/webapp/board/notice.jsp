@@ -27,11 +27,12 @@
 		var searchDate = document.getElementById("search_date").value;
 		var searchKey = document.getElementById("search_key").value;
 		console.log(searchInput+searchDate+searchKey);
+		
 		// URL에 검색 조건 값을 추가한 값
 		var newUrl = "notice.do?searchDate=" + searchDate + "&searchKey="
     + searchKey + "&searchInput=" + searchInput;
 
-		window.location.href = notice.do;
+		window.location.href = newUrl;
 
 		/* // 브라우저의 콘솔에 메시지 출력 후 URL로 이동
 		window.location.href = newUrl; */
