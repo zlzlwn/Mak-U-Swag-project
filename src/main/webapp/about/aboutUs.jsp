@@ -5,12 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>About us</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="./css/cardanimation.css" />
 <link rel="stylesheet" href="./css/all.css">
 <link rel="stylesheet" href="./css/all2.css">
 <link rel="stylesheet" href="./css/about.css">
 <link rel="icon" href="./images/CompanyLogo.png"> <!-- 인터넷 창 아이콘에 로고 나오게 하기 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="./js/index.js"></script>
 </head>
 <body class="nav-expended">
 	<!-- ============================== [[ Header  section]] ==============================-->
@@ -52,12 +54,6 @@
 						<br>
 						<br>
 						<br>
-				
-						<%@ include file="../include/cardAni.jsp"%>
-						
-						<br>
-						<br>
-						<br>
 						
 						<div class="about-photos">
 							<img src="./images/about/about-photo-1.jpg" alt="1" width="1132px" height="754px" style="text-align: center;">&nbsp;
@@ -65,9 +61,20 @@
 							<img src="./images/about/about-photo-2.jpg" alt="2">&nbsp;
 							<br>
 							<img src="./images/about/about-photo-3.jpg" alt="3">&nbsp;
-							<br>
 						</div>
-			
+						
+						<!-- 크루 소개 -->
+						<h1 style="text-align: center;">Crew</h1>
+						<br>
+						<br>
+						
+						<%@ include file="../include/cardanimation.jsp"%>
+						<script type="text/javascript" src="./js/index.js"></script>
+						<!-- 크루 소개 -->
+						
+						<br>
+						<hr>
+						<br>
 						<br>
 						<br>
 						
