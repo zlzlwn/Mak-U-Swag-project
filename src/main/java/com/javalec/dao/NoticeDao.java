@@ -123,7 +123,14 @@ public int countTuple(String searchInput) {
      System.out.println("list-count fail");
      e.printStackTrace();
  } finally {
-     // ... (이하 생략)
+	    try {
+            if (rs != null) rs.close();
+            if (psmt != null) psmt.close();
+            if (conn != null) conn.close();
+            System.out.println("< rs, psmt, conn close 성공 (노티스다오)>");
+        } catch (Exception e) {
+            System.out.println("< rs, psmt, conn close Fail>");
+        }
  }
 
  return count;
