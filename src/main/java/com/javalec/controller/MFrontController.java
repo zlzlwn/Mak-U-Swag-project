@@ -16,7 +16,6 @@ import com.javalec.command.MNoticeCommand;
 import com.javalec.command.ManagerCommand;
 import com.javalec.command.MqnaCommand;
 import com.javalec.command.MqnaContentCommand;
-import com.javalec.command.MqnaWriteCommand;
 import com.javalec.command.ProductCommand;
 import com.javalec.command.TotalCommand;
 
@@ -144,6 +143,9 @@ public class MFrontController extends HttpServlet {
 
 		// ------------- board 폴더 ------------------
 		case ("/notice.do"): // notice
+			String searchInput = request.getParameter("search");
+			String searchDate = request.getParameter("search");
+			String searchKey = request.getParameter("search");
 			command = new MNoticeCommand();
 			command.execute(request, response);
 			viewPage = "./board/notice.jsp";

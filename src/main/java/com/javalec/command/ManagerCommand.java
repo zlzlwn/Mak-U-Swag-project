@@ -12,6 +12,7 @@ import com.javalec.dao.Managerdao;
 import com.javalec.dto.ManagerMonthdto;
 import com.javalec.dto.ManagerYeardto;
 import com.javalec.dto.ManagerDaydto;
+import com.javalec.dto.ManagerDeletedto;
 
 public class ManagerCommand implements MCommand {
 
@@ -61,6 +62,13 @@ public class ManagerCommand implements MCommand {
 	        session.setAttribute("labels3", labels3);
 	        session.setAttribute("data4", data4);
 	        
+	        Managerdao managerdao5 = new Managerdao();
+	        ManagerDeletedto dto5 = managerdao5.view4();
+	        
+	        ArrayList<String> labels4 = dto5.getLabels4();
+	        ArrayList<Integer> data5 = dto5.getData5();
+	        session.setAttribute("labels4", labels4);
+	        session.setAttribute("data5", data5);
 
 
 	        

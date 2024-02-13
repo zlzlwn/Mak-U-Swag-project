@@ -31,18 +31,20 @@ function createTable(data) {
     table += "</table>"
      $("#result").html(table); //result 는 index에 있는 div id="result"
    	 $("#result").css("width", "100%");
+   	  $(".activeHeader").css("width", "50%"); 
 }
 
 $(document).ready(function() {
     /* 버튼 클릭시 AJAX 요청 */
     $("#queryButton").click(function() {
         /* 입력된 데이터 가져오기 */
-        let name = $("#name").val()
+        let name = $("#name").val();
+         var selectedDate = $("#datepicker").val();
         /* AJAX 요청 */
         $.ajax({
             type: "POST",
             url: "QueryServletTotal",
-            data: {name: name},
+            data: {name: name, selectedDate: selectedDate},
             success: function(response) {
                 /* 서버에서 받은 응답 처리 */
                 //$("#result").html(response)
