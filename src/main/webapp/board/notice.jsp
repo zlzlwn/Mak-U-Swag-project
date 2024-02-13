@@ -19,31 +19,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="./js/accordion.js"></script>
 
-<script>
-function submitSearchForm12() {
-	 event.preventDefault();
-	    console.log("submitSearchForm 함수 호출됨");
 
-    // 검색어 입력란의 값을 가져옴
-    var searchInput = document.getElementById("search").value;
-    // 검색 조건 값들을 가져옴
-    var searchDate = document.getElementById("search_date").value;
-    var searchKey = document.getElementById("search_key").value;
-
-    // 세션 스토리지에 검색 조건 저장
-    sessionStorage.setItem("searchKeyword", searchInput);
-    sessionStorage.setItem("searchDate", searchDate);
-    sessionStorage.setItem("searchKey", searchKey);
-
-    // 콘솔에 저장된 세션 값 출력 (테스트용)
-    console.log("검색어 저장됨: " + sessionStorage.getItem("searchKeyword"));
-    console.log("검색 날짜 저장됨: " + sessionStorage.getItem("searchDate"));
-    console.log("검색 키 저장됨: " + sessionStorage.getItem("searchKey"));
-
-    // 기본 폼 제출 동작 방지
-    return false;
-}
-</script>
 
 </head>
 <body class="nav-expended">
@@ -145,7 +121,7 @@ function submitSearchForm12() {
 							</select> 
 							<input id="search" name="search"  class="inputTypeText" placeholder="검색어를 입력하세요" value="" type="text" /> 
 								
-						<button onclick="submitSearchForm12()" class="search-button"></button>
+						<button onclick="" class="search-button"></button>
 								
 						</fieldset>
 					</div>

@@ -78,7 +78,7 @@ public ArrayList<NoticeDtoPJH> list(int requestPage, int numOfTuplePerPage) {
     return dtos;
 }
 
-// 데이터베이스에 저장된 공지사항의 총 수를 계산하는 메서드
+// 데이터베이스에 저장된 공지사항의 총 수를 계산하는 method
 public int countTuple() {
     Connection conn = null;
     PreparedStatement psmt = null;
@@ -114,7 +114,7 @@ public int countTuple() {
 
     return count;
 }
-
+// 페이지 수를 계산하는 method
 public int calculateTotalPage(int numOfTuplesPerPage) {
     int countedTuple = countTuple();
     int totalPage = 0;

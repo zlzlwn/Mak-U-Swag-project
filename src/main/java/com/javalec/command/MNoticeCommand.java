@@ -11,9 +11,13 @@ import com.javalec.dto.NoticeDtoPJH;
 
 public class MNoticeCommand implements MCommand {
 
+	
+	
+	//execute 메서드:  공지사항 목록을 가져오고, 페이지 목록 및 총 페이지 수를 계산합니다.
+	//페이지 및 목록 계산: 사용자가 요청한 페이지에 따라 NoticeDao를 통해 공지사항 데이터를 가져옴
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		 //사용자가 요청한 페이지 번호 초기값은 가장 최신글을 보여주는 1
+		//사용자가 요청한 페이지 번호 초기값은 가장 최신글을 보여주는 1
 	    int requestPage = 1;
 	    //페이지당 표시할 게시글의 수
 	    int numOfTuplesPerPage = 5;
@@ -22,7 +26,7 @@ public class MNoticeCommand implements MCommand {
 	    NoticeDao dao = new NoticeDao();
 	    HttpSession session = request.getSession();
 
-	    //최초 목록 진입시 page값을 넘겨주지 않음 -> 초기값인 1페이지 목록을 보여줌
+	    //초기화면에서는 page값을 넘겨주지 안줌 -> 초기값인 1페이지 목록을 보여줌
 	    //목록에서 page요청 -> 해당 페이지 번호로 requestPage 설정
 	    if (request.getParameter("page") != null) {
 	        requestPage = Integer.parseInt(request.getParameter("page"));
@@ -30,7 +34,7 @@ public class MNoticeCommand implements MCommand {
 	        session.setAttribute("currentPage", requestPage);
 	        currentPageRange = (requestPage - 1) / numOfTuplesPerPage + 1;
 	    }
-
+        // 계산된 페이지 목록
         ArrayList<Integer> pageList = calcNumOfPage(dao.countTuple(), numOfTuplesPerPage, currentPageRange);
 
         // MNoticeCommand 클래스에 totalPage 계산 메서드 추가
