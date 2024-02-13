@@ -43,7 +43,7 @@ public ArrayList<NoticeDtoPJH> list(int requestPage, int numOfTuplePerPage) {
     try {
         connection = dataSource.getConnection();
         // SQL 쿼리를 사용하여 페이지 및 페이지당 튜플 수에 기반한 제한된 수의 공지사항을 가져옴
-        String query = "SELECT noCategory, noTitle, noDate, noContent, noImage FROM notice LIMIT ?,?";
+        String query = "SELECT noCategory, noTitle, noDate, noContent, noImage FROM notice WHERE noTitle LIKE '%"+"%' LIMIT ?,?";
 
         preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, offset);
@@ -88,7 +88,7 @@ public int countTuple() {
     try {
         conn = dataSource.getConnection();
         // SQL 쿼리를 사용하여 공지사항의 총 수를 계산
-        String query = "SELECT COUNT(*) FROM notice";
+        String query = "SELECT COUNT(*) FROM notice WHERE noTitle LIKE '%"+"%'";
         psmt = conn.prepareStatement(query);
         rs = psmt.executeQuery();
 
@@ -114,6 +114,20 @@ public int countTuple() {
 
     return count;
 }
+
+public int calculateTotalPage(int numOfTuplesPerPage) {
+    int countedTuple = countTuple();
+    int totalPage = 0;
+
+    if (countedTuple % numOfTuplesPerPage == 0) {
+        totalPage = countedTuple / numOfTuplesPerPage;
+    } else {
+        totalPage = countedTuple / numOfTuplesPerPage + 1;
+    }
+
+    return totalPage;
+}
+
 
 
 }
