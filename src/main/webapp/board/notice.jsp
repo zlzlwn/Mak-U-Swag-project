@@ -31,7 +31,7 @@
 		var newUrl = "notice.do?searchDate=" + searchDate + "&searchKey="
     + searchKey + "&searchInput=" + searchInput;
 
-window.location.href = newUrl;
+		window.location.href = notice.do;
 
 		/* // 브라우저의 콘솔에 메시지 출력 후 URL로 이동
 		window.location.href = newUrl; */
