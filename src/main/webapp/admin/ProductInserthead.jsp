@@ -9,11 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/3624917c4f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style1.css">
+    <link rel="stylesheet" href="../css/style1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <script src="main.js" defer></script>
+    <script src="../js/main.js" defer></script>
 <style>
 
 
@@ -31,7 +31,7 @@
         <div class="navbar__logo">
             
             <a href="adminmain.do">
-    <img src="./images/CompanyLogo.png" alt="로고" style="width: 82.2px; margin-top:45.2px; margin-left: 38.5px;">
+    <img src="../images/CompanyLogo.png" alt="로고" style="width: 82.2px; margin-top:45.2px; margin-left: 38.5px;">
 </a>
         </div>
                 <ul class="navbar__menu">

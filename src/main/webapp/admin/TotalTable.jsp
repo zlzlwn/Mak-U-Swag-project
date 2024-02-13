@@ -64,7 +64,7 @@
         <button id="queryButton">검색</button>
     </div>
 	<div id="result"></div>
-    <script src="./js/querytotal.js"></script> <!-- queryTable.js 파일을 불러옴 -->
+    <script src="../js/querytotal.js"></script> <!-- queryTable.js 파일을 불러옴 -->
     <script>
     $(function() {
         $("#datepicker").datepicker(); // 캘린더 초기화
