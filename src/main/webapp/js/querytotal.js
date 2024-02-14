@@ -19,13 +19,13 @@ function createTable(data) {
     for (let i = 0; i < data.length; i++) {
         table += "<tr>" +
              "<td style='width: 10%; height: 2%'>"+ (data[i].proCategory ? data[i].proCategory : '') + "</td>" +
-             "<td style='width: 18%'>" + (data[i].proName ? data[i].proName : '') + "</td>" +
-             "<td style='width: 18%'>" + (data[i].proGender ? data[i].proGender : '') + "</td>" +
-            "<td style='width: 7%'>"+ (data[i].proColor ? data[i].proColor : '') + "</td>" +
+             "<td style='width: 14%'>" + (data[i].proName ? data[i].proName : '') + "</td>" +
+             "<td style='width: 6%'>" + (data[i].proGender ? data[i].proGender : '') + "</td>" +
+            "<td style='width: 9%'>"+ (data[i].proColor ? data[i].proColor : '') + "</td>" +
             "<td style='width: 7%'>" + (data[i].pQty ? data[i].pQty : '') + "</td>" +
             "<td style='width: 7%'>" + (data[i].pPrice ? data[i].pPrice : '') + "</td>" +
-            "<td style='width: 7%'>"+ (data[i].pMethod ? data[i].pMethod : '') + "</td>" +
-             "<td style='width: 7%'>"+ (data[i].pDate ? data[i].pDate : '') + "</td>" +
+            "<td style='width: 9%'>"+ (data[i].pMethod ? data[i].pMethod : '') + "</td>" +
+             "<td style='width: 15%'>"+ (data[i].pDate ? data[i].pDate : '') + "</td>" +
             "</tr>";
     }
     table += "</table>"
