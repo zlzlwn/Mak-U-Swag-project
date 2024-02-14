@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>Insert title here</title>
-<link rel="icon" href="../images/CompanyLogo.png"> 
+<link rel="icon" href="./images/CompanyLogo.png"> 
 </head>
 <body>
 <!-- ============================== [[ Header  section]] ==============================-->
