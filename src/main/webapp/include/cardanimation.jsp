@@ -7,7 +7,7 @@
 			<div class="shadow"></div>
 			<div class="label">
 				<div class="icon">
-					<i class="fas fa-walking"></i>
+					<i class="fa-solid fa-code"></i>
 				</div>
 				<div class="info">
 					<div class="main">Daegeun Lee</div>
@@ -20,7 +20,7 @@
 			<div class="shadow"></div>
 			<div class="label">
 				<div class="icon">
-					<i class="fas fa-snowflake"></i>
+					<img alt="코딩" src="./images/member/coding.png" width="15" height="13">
 				</div>
 				<div class="info">
 					<div class="main">Jungmin Park</div>
@@ -33,7 +33,7 @@
 			<div class="shadow"></div>
 			<div class="label">
 				<div class="icon">
-					<i class="fas fa-tree"></i>
+					<i class="fa-brands fa-square-js"></i>
 				</div>
 				<div class="info">
 					<div class="main">Jihwan Park</div>
@@ -46,7 +46,7 @@
 			<div class="shadow"></div>
 			<div class="label">
 				<div class="icon">
-					<i class="fas fa-tint"></i>
+					<i class="fa-solid fa-file-code"></i>
 				</div>
 				<div class="info">
 					<div class="main">Sungjin Jin</div>
