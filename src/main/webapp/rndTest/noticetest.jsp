@@ -134,7 +134,26 @@
 						</div>
 					</div>
 
-					
+					<div
+						class="xans-element- xans-board xans-board-search board-search-form ">
+						<fieldset>
+							<select id="search_date" name="search_date">
+								<option value="week">일주일</option>
+								<option value="month">한달</option>
+								<option value="month3">세달</option>
+								<option value="all">전체</option>
+							</select> <select id="search_key" name="search_key">
+								<option value="subject">제목</option>
+								<option value="content">내용</option>
+							</select> <input id="search" name="search" class="inputTypeText"
+								placeholder="검색어를 입력하세요" value="" type="text" /> 
+								
+								
+								<a onclick="submitSearchForm12(event)" href="notice.do" class="search-button"></a>
+							
+							
+						</fieldset>
+					</div>
 					<div
 						class="xans-element- xans-board xans-board-buttonlist board-admin-actions  ">
 						<a href="/noticeWrite.do" class="primary-button "><span>WRITE</span></a>
