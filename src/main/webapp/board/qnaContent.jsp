@@ -43,7 +43,7 @@
 							<div class="post-content">
 											<div class="content">
 												<div class="images"></div>
-												<div class="article"><div class="fr-view fr-view-article"><p>${qnaContent }</p></div></div>
+												<div class="article"><div class="fr-view fr-view-article"><p>${qnaContent }</p><br></div></div>
 											</div>
 										</div>
 							<div class="post-footer">
