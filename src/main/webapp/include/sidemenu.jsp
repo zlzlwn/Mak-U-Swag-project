@@ -63,8 +63,8 @@
 				</li>
 			</ul>
 		</div>
-		<form id="searchBarForm" name="" action="/product/search.html"
-			method="get" target="_self" enctype="multipart/form-data">
+		<form id="searchBarForm" name="" action="search.do"
+			method="post" target="_self" enctype="multipart/form-data">
 			<input id="banner_action" name="banner_action" value="" type="hidden">
 			<div
 				class="xans-element- xans-layout xans-layout-searchside search-bar ">

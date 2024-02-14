@@ -22,6 +22,12 @@ public class UserDto {
 		// TODO Auto-generated constructor stub
 	}
 
+	public UserDto(String userId, String userPw) {
+		super();
+		this.userId = userId;
+		this.userPw = userPw;
+	}
+
 	public UserDto(String userId, String userPw, String name, String address, String phone, String email, String gender,
 			String birthday, String account, int point, String howToLogin) {
 		super();

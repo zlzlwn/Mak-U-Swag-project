@@ -19,36 +19,34 @@ public class LoginCommand implements MCommand {
 
 		if (userId.isEmpty() || userPasswd.isEmpty()) {
 			// ID or PW is empty, set an attribute for error handling
-			request.setAttribute("redirectURL", "loginerror.jsp");
+			request.setAttribute("redirectURL", "error.jsp");
 		}
-
+		System.out.println(1);
+		System.out.println(userId);
+		System.out.println(userPasswd);
+		
 		UserDao userdao = new UserDao();
+		System.out.println(2);
+		System.out.println(userId);
+		System.out.println(userPasswd);
 
-//		UserDto user = userdao.view(userId, userPasswd);
-//
-//		if (user != null && user.getUserPw().equals(userPasswd)) {
-//			// Login successful
-//
+		UserDto user = userdao.view(userId, userPasswd);
+		System.out.println(3);
+		System.out.println(userId);
+		System.out.println(userPasswd);
+
+		if (user != null && user.getUserPw().equals(userPasswd)) {
 //			session.setAttribute("user", user);
-//			// You can set additional attributes or redirect to a specific page
-//			request.setAttribute("redirectURL", "loginSuccess.jsp");
-//			System.out.println(user.getName());
+
+			request.setAttribute("redirectURL", "loginSuccess.jsp");
+			System.out.println(user.getName());
 //		} else if (admin != null && admin.getPassword().equals(pw)) {
-//			// Administrator login successful
-//
-//			session.setAttribute("admin", admin);
-//			System.out.println(admin.getName());
-//
-//			// You can set additional attributes or redirect to a specific admin page
-//			request.setAttribute("redirectURL", "adminSuccess.jsp");
-//		}
-//		// Display a success message using JavaScript alert
-//
-//		else {
-//			// Login failed
-//			request.setAttribute("redirectURL", "loginerror.jsp");
-//
-//			// Forward back to the login page with an error message
-//		}
+
+			request.setAttribute("redirectURL", "adminSuccess.jsp");
+		}else {
+			// 로그인 에러시
+			request.setAttribute("redirectURL", "error.jsp");
+
+		}
 	}
 }
