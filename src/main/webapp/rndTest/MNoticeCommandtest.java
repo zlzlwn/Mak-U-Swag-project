@@ -20,6 +20,14 @@ public class MNoticeCommand implements MCommand {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		
+		//필드에 입력된 값을 가져온다
+		System.out.println("인풋확인");
+		String searchInput = request.getParameter("searchInput");
+		System.out.println(searchInput);
+//		String searchDate = request.getParameter("searchInput");
+//		System.out.println(searchDate);
+//		String searchKey = request.getParameter("searchInput");
+//		System.out.println(searchKey);
 		//사용자가 요청한 페이지 번호 초기값은 가장 최신글을 보여주는 1
 	    int requestPage = 1;
 	    //페이지당 표시할 게시글의 수
