@@ -4,6 +4,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -21,41 +22,44 @@ import javax.servlet.http.Part;
 )
 public class UploadImageServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    
+    public UploadImageServlet() {
+    	super();
+    	
+    	
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String uploadDir = "/Team1_project/images";
 
-        try {
-            Part filePart = request.getPart("image");
-            String fileName = getFileName(filePart);
+    	
+        
+        // 이미지 파일 받기
+    	 Part filePart = request.getPart("image");
 
-            File uploadDirFile = new File(uploadDir);
-            if (!uploadDirFile.exists()) {
-                uploadDirFile.mkdirs();
-            }
+    	    // 파일명 및 파일 경로 생성
+    	    String originalFileName = getFileName(filePart);
+    	    String uploadPath = getServletContext().getRealPath("/") + "images" + File.separator + originalFileName;
 
-            String filePath = uploadDir + File.separator + fileName;
-            try (OutputStream out = new FileOutputStream(filePath); InputStream fileContent = filePart.getInputStream()) {
-                int read;
-                final byte[] bytes = new byte[1024];
-                while ((read = fileContent.read(bytes)) != -1) {
-                    out.write(bytes, 0, read);
-                }
-            }
+    	    // 이미지 파일 저장
+    	    try (InputStream fileContent = filePart.getInputStream();
+    	         OutputStream outputStream = new FileOutputStream(uploadPath)) {
+    	        int bytesRead;
+    	        final byte[] buffer = new byte[1024];
+    	        while ((bytesRead = fileContent.read(buffer)) != -1) {
+    	            outputStream.write(buffer, 0, bytesRead);
+    	        }
+    	    } catch (IOException e) {
+    	        e.printStackTrace();
+    	        response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "이미지 업로드 중 문제가 발생했습니다.");
+    	        return;
+    	    }
 
-            response.getWriter().write(filePath);
-        } catch (IOException | ServletException e) {
-            e.printStackTrace();
-            response.getWriter().write("Upload failed");
-        }
+    	    String relativeImagePath = originalFileName;
+    	    // 업데이트 성공 시 응답
+    	    response.getWriter().write(relativeImagePath);
     }
 
+    	// 파일명을 추출하는 메서드
     private String getFileName(Part part) {
-        for (String content : part.getHeader("content-disposition").split(";")) {
-            if (content.trim().startsWith("filename")) {
-                return content.substring(content.indexOf('=') + 1).trim().replace("\"", "");
-            }
-        }
-        return null;
-    }
-}
+        return part.getSubmittedFileName();
+    }}

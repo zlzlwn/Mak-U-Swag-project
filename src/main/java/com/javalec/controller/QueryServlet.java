@@ -6,10 +6,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.TimeZone;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -100,9 +102,10 @@ public class QueryServlet extends HttpServlet {
                 student.setGender(rs.getString("gender"));
                 student.setAccount(rs.getString("account"));
                 student.setPoint(rs.getInt("point"));
-                student.setActive(rs.getTimestamp("active"));
-                student.setDeactive(rs.getTimestamp("deactive"));
+                student.setActive(rs.getString("active"));
+                student.setDeactive(rs.getString("deactive"));
                 student.setHowToLogin(rs.getString("howToLogin"));
+               
                 
                 studentList.add(student);
             }

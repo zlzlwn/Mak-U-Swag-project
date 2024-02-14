@@ -1,6 +1,6 @@
 package com.javalec.dto;
 
-import java.sql.Timestamp;
+import java.sql.String;
 
 public class Productdto4 {
 	   private String proCategory;
@@ -12,7 +12,7 @@ public class Productdto4 {
 	   private String pMethod;
 	   private int pSpendPoint;
 	   private int pStackPoint;
-	   private Timestamp pDate;
+	   private String pDate;
 	   
 	   public Productdto4() {
 		   
@@ -88,16 +88,16 @@ public class Productdto4 {
 		this.pStackPoint = pStackPoint;
 	}
 
-	public Timestamp getpDate() {
+	public String getpDate() {
 		return pDate;
 	}
 
-	public void setpDate(Timestamp pDate) {
+	public void setpDate(String pDate) {
 		this.pDate = pDate;
 	}
 
 	public Productdto4(String proCategory, String proName, int pQty, String pPrice, String pMethod, int pSpendPoint,
-			int pStackPoint, Timestamp pDate) {
+			int pStackPoint, String pDate) {
 		super();
 		this.proCategory = proCategory;
 		this.proName = proName;
@@ -112,7 +112,7 @@ public class Productdto4 {
 
 
 	public Productdto4(String proCategory, String proName, String proColor, int pQty, String pPrice, String pMethod,
-			int pSpendPoint, int pStackPoint, Timestamp pDate) {
+			int pSpendPoint, int pStackPoint, String pDate) {
 		super();
 		this.proCategory = proCategory;
 		this.proName = proName;
@@ -128,7 +128,7 @@ public class Productdto4 {
 
 
 	public Productdto4(String proCategory, String proName, String proGender, String proColor, int pQty, String pPrice,
-			String pMethod, int pSpendPoint, int pStackPoint, Timestamp pDate) {
+			String pMethod, int pSpendPoint, int pStackPoint, String pDate) {
 		super();
 		this.proCategory = proCategory;
 		this.proName = proName;
