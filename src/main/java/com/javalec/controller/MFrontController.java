@@ -145,9 +145,6 @@ public class MFrontController extends HttpServlet {
 
 		// ------------- board 폴더 ------------------
 		case ("/notice.do"): // notice
-			String searchInput = request.getParameter("search");
-			String searchDate = request.getParameter("searchDate");
-			String searchKey = request.getParameter("searchKey");
 			command = new MNoticeCommand();
 			command.execute(request, response);
 			viewPage = "./board/notice.jsp";
@@ -192,6 +189,15 @@ public class MFrontController extends HttpServlet {
 			break;
 		case ("/login.do"): // login
 			viewPage = "./member/login.jsp";
+			break;
+		case ("/findId.do"): // 아이디 찾기
+			viewPage = "./member/findId.jsp";
+			break;
+		case ("/findPasswd.do"): // 비밀번호 찾기
+			viewPage = "./member/findPasswd.jsp";
+			break;
+		case ("/memberJoin.do"): // 회원가입
+			viewPage = "./member/Join.jsp";
 			break;
 
 		// ------------- admin ---------------------
