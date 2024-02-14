@@ -14,7 +14,7 @@ window.onload = function() {
 
 function createTable(data) {
     let table = "<table border='1'>"
-    table += "<tr><th>Category</th><th>Product</th><th>Color</th><th>Gender</th><th>Price</th><th>totalQnt</th><th>Date</th><th>Image</th></tr>"
+    table += "<tr><th>카테고리</th><th>제품</th><th>색상</th><th>성별</th><th>개당가격</th><th>총 수량</th><th>등록일/수정일</th><th>이미지</th></tr>"
     //데이터 행 추가
     for (let i = 0; i < data.length; i++) {
         table += "<tr>" +
@@ -23,8 +23,8 @@ function createTable(data) {
             "<td style='width: 8%'>"+ (data[i].proColor ? data[i].proColor : '') + "</td>" +
             "<td style='width: 7%'>" + (data[i].proGender ? data[i].proGender : '') + "</td>" +
             "<td style='width: 9%'>" + (data[i].proPrice ? data[i].proPrice : '') + "</td>" +
-            "<td style='width: 7%'>"+ (data[i].totalQuantity ? data[i].totalQuantity : '') + "</td>" +
-             "<td style='width: 12%'>"+ (data[i].proDate ? data[i].proDate : '') + "</td>" +
+            "<td style='width: 10%'>"+ (data[i].totalQuantity ? data[i].totalQuantity : '') + "</td>" +
+             "<td style='width: 15%'>"+ (data[i].proDate ? data[i].proDate : '') + "</td>" +
              "<td><img src='/Team1_project/images/" + data[i].proImage + "' width='100' height='100'></td>" +
             "</tr>";
             "</tr>";
