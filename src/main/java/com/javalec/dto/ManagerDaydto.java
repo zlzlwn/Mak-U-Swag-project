@@ -32,8 +32,8 @@ public class ManagerDaydto {
     private String gender;
     private String account;
     private int point;
-    private Timestamp active;
-    private Timestamp deactive;
+    private String active;
+    private String deactive;
     private String howToLogin;
     
     
@@ -116,7 +116,7 @@ public class ManagerDaydto {
 
 
 	public ManagerDaydto(String userId, String userPw, String name, String address, String phone, String email,
-			String gender, String account, int point, Timestamp active, Timestamp deactive, String howToLogin) {
+			String gender, String account, int point, String active, String deactive, String howToLogin) {
 		super();
 		this.userId = userId;
 		this.userPw = userPw;
@@ -223,22 +223,22 @@ public class ManagerDaydto {
 	}
 
 
-	public Timestamp getActive() {
+	public String getActive() {
 		return active;
 	}
 
 
-	public void setActive(Timestamp active) {
+	public void setActive(String active) {
 		this.active = active;
 	}
 
 
-	public Timestamp getDeactive() {
+	public String getDeactive() {
 		return deactive;
 	}
 
 
-	public void setDeactive(Timestamp deactive) {
+	public void setDeactive(String deactive) {
 		this.deactive = deactive;
 	}
 

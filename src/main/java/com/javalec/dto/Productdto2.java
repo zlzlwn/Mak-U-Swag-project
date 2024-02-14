@@ -1,6 +1,5 @@
 package com.javalec.dto;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class Productdto2 {
@@ -14,28 +13,66 @@ public class Productdto2 {
 	  private String proGender;
 	  private String proPrice;
 	  private int totalQuantity;
-	  private Timestamp proDate;
+	  private String latestProDate;
+	  private String proDate;
+	  private String proImage;
 	  
 	  public Productdto2() {
 		  
 	  }
 	  
 	  
+	  
+	  
 
-	public Timestamp getProDate() {
+	public String getProImage() {
+		return proImage;
+	}
+
+
+
+
+
+	public void setProImage(String proImage) {
+		this.proImage = proImage;
+	}
+
+
+
+
+
+	public String getLatestProDate() {
+		return latestProDate;
+	}
+
+
+
+
+
+	public void setLatestProDate(String latestProDate) {
+		this.latestProDate = latestProDate;
+	}
+
+
+
+
+
+	public String getProDate() {
 		return proDate;
 	}
 
 
 
-	public void setProDate(Timestamp proDate) {
+	public void setProDate(String proDate) {
 		this.proDate = proDate;
 	}
 
 
+	
+	
 
 	public Productdto2(String proCategory, String proName, String proColor, String proGender, String proPrice,
-			int totalQuantity, Timestamp proDate) {
+			int totalQuantity, String latestProDate, String proImage) {
 		super();
 		this.proCategory = proCategory;
 		this.proName = proName;
@@ -43,7 +80,24 @@ public class Productdto2 {
 		this.proGender = proGender;
 		this.proPrice = proPrice;
 		this.totalQuantity = totalQuantity;
-		this.proDate = proDate;
+		this.latestProDate = latestProDate;
+		this.proImage = proImage;
+	}
+
+
+
+
+
+	public Productdto2(String proCategory, String proName, String proColor, String proGender, String proPrice,
+			int totalQuantity, String latestProDate) {
+		super();
+		this.proCategory = proCategory;
+		this.proName = proName;
+		this.proColor = proColor;
+		this.proGender = proGender;
+		this.proPrice = proPrice;
+		this.totalQuantity = totalQuantity;
+		this.latestProDate = latestProDate;
 	}
 
 
