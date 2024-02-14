@@ -26,7 +26,7 @@ public class WriteDao {
 	    }
 	}
 	
-	public void write(String qnaTitle, String qnaCategory,String qnaContent , String qnaImage ) {
+	public void write(String qnaTitle, String qnaCategory, String qnaContent , String qnaImage ) {
 		Connection connection = null;
 		PreparedStatement preparedStatement =null;
 		

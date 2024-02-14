@@ -64,7 +64,7 @@
 									<div class="form-block">
 										<div class="form-field subject">
 											<div class="field-label">제목</div>
-											<select id="board_category" name="qnaCategory"
+											<select id="board_category" name="qnaCategory" value ="${qnaCategory }"
 												fw-filter="" fw-label="" fw-msg="">
 												<option value="1">입급/결제관련 문의</option>
 												<option value="2">배송관련 문의</option>
@@ -74,7 +74,7 @@
 												<option value="6">기타 문의</option>
 											</select><input id="subject" name="qnaTitle" fw-filter="isFill"
 												fw-label="제목" fw-msg="" class="inputTypeText" placeholder="제목을 입력하세요"
-												maxLength="125" value="" type="text" />
+												maxLength="125" value="${qnaTitle }" type="text" />
 											<div class="checkbox"></div>
 											<div class="checkbox"></div>
 										</div>
@@ -92,7 +92,7 @@
 												href="//img.echosting.cafe24.com/editors/froala/css/themes/ec_froala.css?vs=2402071282">
 
 											<!-- HTML -->
-											<textarea style="width: 100%;" name="qnaContent" id="content"
+											<textarea style="width: 100%;" name="qnaContent" id="content" value = "${qnaContent }"
 												class="ec-fr-never-be-duplicated"></textarea>
 											<input type="hidden" id="content_hidden"
 												fw-filter="isSimplexEditorFill" fw-label="내용"
