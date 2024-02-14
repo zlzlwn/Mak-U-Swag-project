@@ -44,7 +44,7 @@ public class QnaContentDao {
 
 	    try {
 	        connection = dataSource.getConnection();
-	        String query = "SELECT qnaTitle, qnaContent, qnaDate FROM qna WHERE qnaSeq = ?";
+	        String query = "SELECT qnaTitle, qnaContent, qnaImage, qnaDate FROM qna WHERE qnaSeq = ?";
 	        preparedStatement = connection.prepareStatement(query);
 	        preparedStatement.setString(1, qnaSeq);
 	        resultSet = preparedStatement.executeQuery();
@@ -53,9 +53,10 @@ public class QnaContentDao {
 	        	
 	            String qnaTitle = resultSet.getString("qnaTitle");
 	            String qnaContent = resultSet.getString("qnaContent");
+	            String qnaImage = resultSet.getString("qnaImage");
 	            String qnaDate = resultSet.getString("qnaDate");
 	            
-	            dto_viewContent = new QnaDto(qnaSeq_int, qnaTitle, qnaContent, qnaDate);
+	            dto_viewContent = new QnaDto(qnaSeq_int, qnaTitle, qnaContent, qnaImage, qnaDate);
 	            
 	            
 	        }

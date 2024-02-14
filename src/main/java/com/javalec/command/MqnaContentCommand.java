@@ -16,11 +16,13 @@ public class MqnaContentCommand implements MCommand {
 		QnaDto view = dao.infomation(request.getParameter("qnaSeq"));
 		String qnaTitle = view.getQnaTitle();
 		String qnaContent = view.getQnaContent();
+		String qnaImage = view.getQnaImage();
 		String qnaDate = view.getQnaDate();
 		
 		
 		request.setAttribute("qnaTitle", qnaTitle);
 		request.setAttribute("qnaContent", qnaContent);
+		request.setAttribute("qnaImage", qnaImage);
 		request.setAttribute("qnaDate", qnaDate);
 	}
 

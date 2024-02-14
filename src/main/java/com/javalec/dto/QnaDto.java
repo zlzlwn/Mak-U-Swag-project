@@ -47,11 +47,12 @@ public class QnaDto {
 	
 
 
-	public QnaDto(int qnaSeq, String qnaTitle, String qnaContent, String qnaDate) {
+	public QnaDto(int qnaSeq, String qnaTitle, String qnaContent,String qnaImage ,String qnaDate) {
 		super();
 		this.qnaSeq = qnaSeq;
 		this.qnaTitle = qnaTitle;
 		this.qnaContent = qnaContent;
+		this.qnaImage = qnaImage;
 		this.qnaDate = qnaDate;
 	}
 
