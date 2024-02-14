@@ -1,16 +1,32 @@
 
-![CompanyLogo_1번 (4)](https://github.com/zlzlwn/Team1_project/assets/83982135/e10b44d6-fe51-48ab-afe7-cb36be84182d)
+![CompanyLogo_1번 (4)](https://github.com/zlzlwn/Team1_project/assets/8<div align="center">
+
+## 목차
+  - [test1](test1) 
+  - [test2](test2)
+  
+
+## 개요
+- 프로젝트 이름: makeuswag 🏠
+- 프로젝트 지속기간: 2024-00-00~yy.mm.dd
+- 개발 엔진 및 언어: Unity & C#
+- 멤버: 
 
 
-1팀 세미프로젝트
 
-팀장: 진성진 팀원:박정민, 이대근, 박지환
 
-내용 : MVC패턴과 AJAX를 활용한 옷가게 WebPage
+<h2>Mak U Swag <h2></h2>
+  ## 팀 요약
+-팀장: 진성진 팀원:박정민, 이대근, 박지환
 
+-내용 : MVC패턴과 AJAX를 활용한 옷가게 WebPage
+
+
+
+- flow
 2024-01-30<h>
 
-&nbsp; Clone Site List UP 
+Clone Site List UP 
 
 2024-01-31
 
