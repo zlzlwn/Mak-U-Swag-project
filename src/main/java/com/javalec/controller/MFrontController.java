@@ -172,7 +172,7 @@ public class MFrontController extends HttpServlet {
 		case ("/qnaWriteSubmit.do"):// 글쓰기에서 작성후 데이터베이스에 담기
 			command = new MqnaWriteCommand();
 			command.execute(request, response);
-			viewPage = "./board/qna.jsp";
+			viewPage = "qna.do";
 			break;
 		case ("/qnaContent.do"):// Q&A 에서 글 클릭시 컨트롤러
 			command = new MqnaContentCommand();
@@ -216,12 +216,11 @@ public class MFrontController extends HttpServlet {
 			break;
 
 		case ("/productinsert.do"):
-			viewPage="ProductInsert.jsp";
-		viewPage="ProductInsertAdmin.jsp";
+			viewPage="./admin/ProductInsertAdmin.jsp";
 		break;
 
 		case ("/productupdate.do"):
-			viewPage="./admin/TotalAdmin.jsp";
+			viewPage="./admin/ProductUpdateAdmin.jsp";
 			break;
 
 		case ("/noticemanager.do"):
