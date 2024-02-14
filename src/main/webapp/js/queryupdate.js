@@ -21,15 +21,15 @@ function createTable(data) {
     //데이터 행 추가
     for (let i = 0; i < data.length; i++) {
         table += "<tr>" +
-        "<td style='width: 15%'>"+  (data[i].proSeq ? data[i].proSeq : '') + "</td>" +
-             "<td id='"+ data[i].proCategory + ">"  +
+        "<td style='width: 6%'>"+  (data[i].proSeq ? data[i].proSeq : '') + "</td>" +
+             "<td style='width: 10%' id='"+ data[i].proCategory + ">"  +
 		"<a href='#' onclick='handleClick(" + i + ")'>" +data[i].proCategory + "</a>" +
 		"</td>" +
             "<td style='width: 15%'>"+  (data[i].proName ? data[i].proName : '') + "</td>" +
-           "<td style='width: 6%'>"+ (data[i].proGender ? data[i].proGender : '')+ "</td>" +
+           "<td style='width: 8%'>"+ (data[i].proGender ? data[i].proGender : '')+ "</td>" +
             "<td style='width: 8%'>"+ (data[i].proColor ? data[i].proColor : '') + "</td>" +
             "<td style='width: 9%'>"+ (data[i].proQty ? data[i].proQty : '') + "</td>" +
-            "<td style='width: 10%'>"+ (data[i].proPrice ? data[i].proPrice : '')  + "</td>" +
+            "<td style='width: 12%'>"+ (data[i].proPrice ? data[i].proPrice : '')  + "</td>" +
             "<td style='width: 15%'><img src='/Team1_project/images/" + data[i].proImage + "' width='100' height='100'></td>" +
              "<td style='width: 16%'>"+ (data[i].proDate ? data[i].proDate : '') + "</td>" +
             "</tr>";
