@@ -4,18 +4,178 @@ import java.util.ArrayList;
 
 public class Productdto3 {
 	
+	  private int proSeq;
 	  private String proCategory;
 	  private String proName;
-	  private String proGender;
 	  private String proColor;
+	  private String proGender;
 	  private int proQty;
 	  private String proPrice;
+	  private int totalQuantity;
 	  private String proImage;
+	  private String proDate;
+	  private String latestProDate;
 	  
 	  public Productdto3() {
 		  
 	  }
-	  public String getProImage() {
+	  
+	  
+	  
+	
+
+
+
+
+
+
+
+
+	public int getProSeq() {
+		return proSeq;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setProSeq(int proSeq) {
+		this.proSeq = proSeq;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public Productdto3(String proCategory, String proName, String proColor, String proGender, int proQty,
+			String proPrice, String proImage, String proDate) {
+		super();
+		this.proCategory = proCategory;
+		this.proName = proName;
+		this.proColor = proColor;
+		this.proGender = proGender;
+		this.proQty = proQty;
+		this.proPrice = proPrice;
+		this.proImage = proImage;
+		this.proDate = proDate;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public String getProDate() {
+		return proDate;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setProDate(String proDate) {
+		this.proDate = proDate;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public int getTotalQuantity() {
+		return totalQuantity;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setTotalQuantity(int totalQuantity) {
+		this.totalQuantity = totalQuantity;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public String getLatestProDate() {
+		return latestProDate;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setLatestProDate(String latestProDate) {
+		this.latestProDate = latestProDate;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public String getProImage() {
 		return proImage;
 	}
 
@@ -93,6 +253,80 @@ public class Productdto3 {
 		this.proPrice = proPrice;
 		this.proImage = proImage;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	public Productdto3(int proSeq, String proCategory, String proName, String proColor, String proGender, int proQty,
+			String proImage, String proDate) {
+		super();
+		this.proSeq = proSeq;
+		this.proCategory = proCategory;
+		this.proName = proName;
+		this.proColor = proColor;
+		this.proGender = proGender;
+		this.proQty = proQty;
+		this.proImage = proImage;
+		this.proDate = proDate;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public Productdto3(int proSeq, String proCategory, String proName, String proColor, String proGender, int proQty,
+			String proPrice, String proImage, String proDate) {
+		super();
+		this.proSeq = proSeq;
+		this.proCategory = proCategory;
+		this.proName = proName;
+		this.proColor = proColor;
+		this.proGender = proGender;
+		this.proQty = proQty;
+		this.proPrice = proPrice;
+		this.proImage = proImage;
+		this.proDate = proDate;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	
 
 
 	  

@@ -1,13 +1,11 @@
 package com.javalec.controller;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,24 +13,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.javalec.dto.Productdto4;
 import com.javalec.util.SharVar;
 
-@WebServlet("/UpdateProductServlet")
-public class UpdateProductServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 클라이언트로부터 전달된 파라미터 받기
-    	
-    	int Seq = Integer.parseInt(request.getParameter("Seq"));
-    	String Category = request.getParameter("Category");
+/**
+ * Servlet implementation class UpdateProductServlet2
+ */
+@WebServlet("/UpdateProductServlet2")
+public class UpdateProductServlet2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+      
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int Seq = Integer.parseInt(request.getParameter("Seq"));
+		String Category = request.getParameter("Category");
 		String Name = request.getParameter("Name");
 		String Gender = request.getParameter("Gender");
 		String Color = request.getParameter("Color");
 		int Qty = Integer.parseInt(request.getParameter("Qty"));
 		String price = request.getParameter("Price");
-		
+		String Imagepath = request.getParameter("ImagePath");	
+		System.out.println(Imagepath);
 		
 		response.setContentType("text/html;charset=UTF-8");
 		
@@ -45,7 +44,7 @@ public class UpdateProductServlet extends HttpServlet {
 			Statement stmt_mysql = conn_mysql.createStatement();
 			
 			PreparedStatement ps = null;
-			String query = "update product set proName=?,proColor=?,proCategory=?,proGender=?,proQty=?,proPrice=?,proDate=now() where proSeq=?";
+			String query = "update product set proName=?,procolor=?,proCategory=?,proGender=?,proQty=?,proPrice=?,proImage=?,proDate=now() where proSeq=?";
 			ps=conn_mysql.prepareStatement(query);
 			
 			ps.setString(1, Name);
@@ -54,7 +53,8 @@ public class UpdateProductServlet extends HttpServlet {
 			ps.setString(4, Gender);
 			ps.setInt(5, Qty);
 			ps.setString(6, price);
-			ps.setInt(7, Seq);
+			ps.setString(7, Imagepath);
+			ps.setInt(8, Seq);
 			
 			ps.executeUpdate();
 			conn_mysql.close();
