@@ -90,7 +90,7 @@ public class QueryServletTotal extends HttpServlet {
                 product.setpMethod(rs.getString("pMethod"));
                 product.setpSpendPoint(rs.getInt("pSpendPoint"));
                 product.setpStackPoint(rs.getInt("pStackPoint"));
-                product.setpDate(rs.getTimestamp("pDate"));
+                product.setpDate(rs.getString("pDate"));
                 productList.add(product);
             }
 

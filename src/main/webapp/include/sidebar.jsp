@@ -205,7 +205,7 @@ body {
       <ul>
         <li><a href="productmanager.do">상품관리</a></li>
         <li><a href="productinsert.do">상품등록</a></li>
-        <li><a href="javascript:void(0);" onclick="alert('미구현 입니다.');">상품수정</a></li>
+        <li><a href="productupdate.do">상품수정</a></li>
       </ul>
     </li>
     <li>
