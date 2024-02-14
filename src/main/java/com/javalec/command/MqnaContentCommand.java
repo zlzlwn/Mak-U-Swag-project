@@ -22,10 +22,6 @@ public class MqnaContentCommand implements MCommand {
 		request.setAttribute("qnaTitle", qnaTitle);
 		request.setAttribute("qnaContent", qnaContent);
 		request.setAttribute("qnaDate", qnaDate);
-		System.out.println(qnaContent);
-		System.out.println(qnaDate);
-		System.out.println(qnaTitle);
-		 
 	}
 
 }

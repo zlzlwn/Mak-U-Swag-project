@@ -1,4 +1,4 @@
-$(".option2").click(function () {
-  $(".option2").removeClass("active");
+$(".option").click(function () {
+  $(".option").removeClass("active");
   $(this).addClass("active");
 });

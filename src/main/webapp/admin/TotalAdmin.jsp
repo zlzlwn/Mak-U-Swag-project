@@ -9,8 +9,8 @@
 <body>
 <!-- ============================== [[ Header  section]] ==============================-->
     
-	<%@ include file="include/sidebar.jsp" %>
-	<%@ include file="AdminMainhead.jsp" %>
+	<%@ include file="../include/sidebar.jsp" %>
+	<%@ include file="Totalhead.jsp" %>
 
 	
 	

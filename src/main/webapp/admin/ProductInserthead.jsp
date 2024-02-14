@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <script src="main.js" defer></script>
+    <script src="./js/main.js" defer></script>
 <style>
 
 
@@ -30,7 +30,7 @@
     <nav class="navbar">
         <div class="navbar__logo">
             
-            <a href="adminmain.do">
+            <a href="manager.do">
     <img src="./images/CompanyLogo.png" alt="로고" style="width: 82.2px; margin-top:45.2px; margin-left: 38.5px;">
 </a>
         </div>

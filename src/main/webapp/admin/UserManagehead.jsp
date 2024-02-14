@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <script src="main.js" defer></script>
+    <script src="./js/main.js" defer></script>
 <style>
 
 html,
@@ -24,6 +24,7 @@ body {
      z-index: 2; 
 
 }
+
 
 
 .frame-container iframe {
@@ -37,7 +38,6 @@ body {
     margin-left: 5%; /* Gender.jsp와의 간격 조절 */
     z-index: 2; /* z-index 적용 */
 }
-
 
 
 
@@ -81,34 +81,18 @@ body {
             z-index: 2; /* 낮은 z-index 값으로 설정하여 뒤쪽에 배치 */
         }
 
-}
-    
 
-</style>
+        }
+    </style>
 </head>
 <body>
-<%
-    ArrayList<String> labels = (ArrayList<String>) session.getAttribute("labels");
-    ArrayList<Integer> data = (ArrayList<Integer>) session.getAttribute("data");
-
-  
-%>
-
-<script>
-    // 세션에서 가져온 labels와 data 데이터가 null인지 확인
-    // JSON 형식의 데이터를 JavaScript 변수에 할당
-    
-    // JSON 형식의 데이터를 JavaScript 변수에 할당
-    const labels = JSON.parse('<%= new Gson().toJson(labels) %>');
-    const data = JSON.parse('<%= new Gson().toJson(data) %>');
-</script>
 
 
 <header>
     <nav class="navbar">
         <div class="navbar__logo">
             
-            <a href="adminmain.do">
+            <a href="manager.do">
     <img src="./images/CompanyLogo.png" alt="로고" style="width: 82.2px; margin-top:45.2px; margin-left: 38.5px;">
 </a>
         </div>
@@ -129,19 +113,17 @@ body {
     </nav>
 </header>
 
-
-
 <div class="content">
 
     <div class="frame-container" >
-        <iframe src="ProductBar.jsp" frameborder="0" style="width: 60%; margin-top: 50px;z-index: 3;"></iframe>
-         <iframe src="ProductPer.jsp" frameborder="0" style="position: absolute; left: calc(70% - 70px); width: calc(20% - 30px); height: calc(50% + 300px); margin-top: 90px;"></iframe>
+        <iframe src="./admin/Manager.jsp" frameborder="0" style="width: 60%; margin-top: 50px;z-index: 3;"></iframe>
+        <iframe src="./admin/Gender.jsp" frameborder="0" style="position: absolute; left: calc(70% - 70px); width: calc(20% - 30px); height: calc(50% + 300px); margin-top: 90px;"></iframe>
     </div>
- <iframe src="ProTable.jsp" frameborder="0" style="position: absolute; width: 70%; height: 45%;align-items: center; z-index: 999; overflow: hidden;"></iframe>
+    <iframe src="./UserTable.jsp" frameborder="0" style="position: absolute; width: 80%; height: 45%; margin: 10px auto; align-items: center; z-index: 999"></iframe>
 </div>
 
 
-<script src="queryTablePro.js"></script>
+<script type="text/javascript" src="/js/queryTable.js"></script>
 <script>
     // 창 크기가 변경될 때 iframe의 크기를 다시 계산하여 조절하는 함수
     function resizeIframes() {
