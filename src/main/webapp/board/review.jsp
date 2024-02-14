@@ -77,9 +77,8 @@
 									<li class="accordion-item"><a href="#"
 										class="accordion-link">
 											<div class="accordion-name">
-												<span class="number">${dto.noCategory}</span> <span
-													class="title">${dto.noTitle}</span> <span class="views1">조회수</span>
-												<span class="date">${dto.noDate.substring(0, 10)}</span>
+					<span class="title"><img src="//faderoom.co.kr/web/product/tiny/202311/416e1c58fbe02289e0598b83fd2277b8.jpg" border="0" alt="" width="50px"> <span>FELT WOOL BLAZER JACKET<br>만족</span></span>
+					<span class="date ">2024.02.13</span>
 											</div>
 									</a>
 										<div class="accordion-desc">
