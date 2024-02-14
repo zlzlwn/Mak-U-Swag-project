@@ -65,14 +65,14 @@
 								</div>
 								<div class="login-footer">
 									<div class="login-extras">
-										<a href="/member/id/find_id.html">아이디 찾기</a> <a
-											href="/member/passwd/find_passwd_info.html">비밀번호 찾기</a> 
+										<a href="findId.do">아이디 찾기</a> <a
+											href="findPasswd.do">비밀번호 찾기</a> 
 									</div>
 									<div class="login-actions">
 										<span class="auto"></span> <span class="save"></span> <a
 											href="#none" class="primary-button"
 											onclick="MemberAction.login('member_form_2877712340'); return false;"><span>Login</span></a>
-										<a href="/member/join.html" class="primary-button"><span>Join</span></a>
+										<a href="memberJoin.do" class="primary-button"><span>Join</span></a>
 									</div>
 								</div>
 							</fieldset>

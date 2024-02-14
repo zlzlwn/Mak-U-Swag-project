@@ -17,10 +17,125 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="./js/accordion.js"></script>
-  
-  
+
+
 <script>
-	function submitSearchForm12(event) {
+window.onload=function(){
+	init();
+}	
+	
+function init() {
+	paging();
+	productNum();
+	questNum();
+}
+
+//제품현황 Header 알림표시
+function productNum() {
+	
+	$.ajax({
+		type : "POST",
+		url : "adminProductNum.do",
+		success : function(response){
+			document.getElementById('productNum').innerText = response
+		},
+		 error:function(request, status, error){
+			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
+//문의 진행중 갯수 Header 알림표시
+function questNum() {
+	
+	$.ajax({
+		type : "POST",
+		url : "notice.do",
+		success : function(response){
+			document.getElementById('questNum').innerText = response
+		},
+		 error:function(request, status, error){
+			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+	
+function paging(pageNum) {
+	
+	//pageNum이 null일 때 처리
+	if(pageNum == null ){
+		pageNum = "1";
+	}
+	
+	$.ajax({
+		type : "POST",
+		url : "notice.do",
+		data : {pageNum : pageNum},
+		success : function(response){
+			createPaging(response)
+		},
+		 error:function(request, status, error){
+			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+
+
+function createPaging(data) {
+	
+	document.getElementById("result").innerHTML = "";
+	//페이지 번호 보여주기 위해 div태그 생성
+	let rownumber = data.total - data.index_no;	//행번호
+	let index_no = data.index_no;	//행번호
+	let lastPage = data.lastPage;
+	let div = "<div>";
+	
+	//데이터 조회하기 위해 테이블 생성
+	let table = "<table id='listTable' class='table-style'>";
+	table += "<tr><th>행번호</th><th>상품명</th><th>입고갯수</th><th>재고갯수</th><th>상태</th></tr>"
+	
+	//데이터가 없을 때 처리
+	if(data.length == 0) {
+		table += "<tr><td colspan='6'></td></tr>";
+	}
+	
+	//이중 for문으로 페이징처리와 해당 페이지에 데이터 조회를 동시에 처리
+	for(let j= 1; j <= lastPage; j++){
+		
+		for(let i=0; i < data.productList.length; i++){ //=> 범위를 0~9까지 계속 10개씩 가져오는 것이 아니라, data 길이만큼씩 보여주게 해야된다잇!!
+			
+			calc = data.productList[i].pstock - data.productList[i].stock;
+			let backgroundColor = calc <=100 ? "pink" : "";
+			
+			table += "<tr style='background-color : "+backgroundColor+"'>" +
+						"<td style='text-align:center'>" + rownumber +"</td>" +
+						"<td style='text-align:left'>" + data.productList[i].pname +"</td>" +
+						"<td style='text-align:center'>" + data.productList[i].pstock +"</td>" +
+						"<td style='text-align:center'>" + calc +"</td>" +
+						"<td style='text-align:center'>" + data.productList[i].status +"</td>" +
+						"<td hidden style='width:0px;'>" + data.productList[i].productid +"</td>" +
+					"</tr>" 
+					rownumber--;
+					
+			
+		}
+		table += "</table>"
+		div += "<button onclick='paging("+j+")'>"+j+"</button> ";
+		
+	}
+		$("#paging").html(div);
+	$("#result").html(table);
+	
+	// 텍스트 제거
+    var tableElement = document.getElementById("listTable");
+    var nextSibling = tableElement.nextSibling;
+    while (nextSibling) {
+        var nextElement = nextSibling.nextSibling;
+        nextSibling.parentNode.removeChild(nextSibling);
+        nextSibling = nextElement;
+    }
+}	
+	function submitSearchForm12() {
 		console.log("버튼이 클릭되었습니다!");
 		// 검색어 입력란의 값을 가져옴
 		var searchInput = document.getElementById("search").value;
@@ -28,16 +143,9 @@
 		var searchKey = document.getElementById("search_key").value;
 		console.log(searchInput+searchDate+searchKey);
 		
-		// URL에 검색 조건 값을 추가한 값
-		var newUrl = "notice.do?searchDate=" + searchDate + "&searchKey="
-    + searchKey + "&searchInput=" + searchInput;
-
-		window.location.href = newUrl;
-
-		/* // 브라우저의 콘솔에 메시지 출력 후 URL로 이동
-		window.location.href = newUrl; */
-
-		event.preventDefault();
+		window.location.href = notice.do;
+		
+		
 	}
 </script>
 
@@ -123,7 +231,7 @@
 								</c:forEach>
 
 								<c:if test="${currentPage < totalPage}">
-									<a href="notice.do?page=${currentPage + 1}" 
+									<a href="notice.do?page=${currentPage + 1}"
 										style="display: inline-block; margin: 10px;">&nbsp;다음</a>
 								</c:if>
 							</div>
@@ -134,7 +242,25 @@
 						</div>
 					</div>
 
-					
+					<div
+						class="xans-element- xans-board xans-board-search board-search-form ">
+						<fieldset>
+							<select id="search_date" name="search_date">
+								<option value="week">일주일</option>
+								<option value="month">한달</option>
+								<option value="month3">세달</option>
+								<option value="all">전체</option>
+							</select> <select id="search_key" name="search_key">
+								<option value="subject">제목</option>
+								<option value="content">내용</option>
+							</select> <input id="search" name="search" class="inputTypeText"
+								placeholder="검색어를 입력하세요" value="" type="text" /> <a
+								onclick="submitSearchForm12()" href="notice.do"
+								class="search-button"></a>
+
+
+						</fieldset>
+					</div>
 					<div
 						class="xans-element- xans-board xans-board-buttonlist board-admin-actions  ">
 						<a href="/noticeWrite.do" class="primary-button "><span>WRITE</span></a>

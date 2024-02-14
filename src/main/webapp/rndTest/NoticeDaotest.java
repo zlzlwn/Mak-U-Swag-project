@@ -44,12 +44,18 @@ public ArrayList<NoticeDtoPJH> list(int requestPage, int numOfTuplePerPage, Stri
         connection = dataSource.getConnection();
         // SQL 쿼리를 사용하여 페이지 및 페이지당 튜플 수에 기반한 제한된 수의 공지사항을 가져옴
         
-        String query = "SELECT noCategory, noTitle, noDate, noContent, noImage FROM notice LIMIT ?,?";
-        
+        String query = "SELECT noCategory, noTitle, noDate, noContent, noImage FROM notice";
+        if (searchInput != null && !searchInput.isEmpty()) {
+            query += " WHERE noTitle LIKE ? ";
+        }
+        query += " LIMIT ?,?";
         preparedStatement = connection.prepareStatement(query);
 
         // 조건부 WHERE 절의 파라미터 설정
         int parameterIndex = 1;
+        if (searchInput != null && !searchInput.isEmpty()) {
+            preparedStatement.setString(parameterIndex++, "%" + searchInput + "%");
+        }
 
         preparedStatement.setInt(parameterIndex++, offset);
         preparedStatement.setInt(parameterIndex, numOfTuplePerPage);
@@ -95,8 +101,15 @@ public int countTuple(String searchInput) {
      conn = dataSource.getConnection();
      // SQL 쿼리를 사용하여 공지사항의 총 수를 계산
      String query = "SELECT COUNT(*) FROM notice";
+     if (searchInput != null && !searchInput.isEmpty()) {
+         query += " WHERE noTitle LIKE ?";
+     }
      psmt = conn.prepareStatement(query);
 
+     // 조건부 WHERE 절의 파라미터 설정
+     if (searchInput != null && !searchInput.isEmpty()) {
+         psmt.setString(1, "%" + searchInput + "%");
+     }
 
      rs = psmt.executeQuery();
 

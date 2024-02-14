@@ -64,6 +64,7 @@ a {
 .navbar__toggleBtn {
     display: none;
     position: absolute;
+    margin-top:100px;
     right: 12px;
     font-size: 24px;
 }

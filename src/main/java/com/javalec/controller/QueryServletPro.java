@@ -54,22 +54,8 @@ public class QueryServletPro extends HttpServlet {
         ArrayList<Productdto2> studentList = new ArrayList<Productdto2>();
         
         // 쿼리 초기화
-        String query = "SELECT \r\n"
-                + "    proCategory, \r\n"
-                + "    proName, \r\n"
-                + "    proColor, \r\n"
-                + "    proGender, \r\n"
-                + "    proPrice, \r\n"
-                + "    proDate, \r\n" // proDate 추가
-                + "    SUM(proQty) AS totalQuantity\r\n"
-                + "FROM \r\n"
-                + "    Product\r\n"
-                + "WHERE \r\n"
-                + "    proName LIKE '%" + name + "%'\r\n"
-                + "GROUP BY \r\n"
-                + "    proCategory, proName, proColor, proGender, proPrice, proDate\r\n" // proDate 추가
-                + "ORDER BY \r\n"
-                + "    proCategory ASC, proName, proColor, proGender, proPrice;";
+        String query = "SELECT proCategory, proName, proColor, proGender, proPrice, SUM(proQty) AS totalQuantity ,MAX(proDate) AS latestProDate,proImage FROM Product where  proName LIKE '%" + name + "%' GROUP BY proCategory, proName, proColor, proGender, proPrice,proImage ORDER BY proCategory ASC, proName, proColor, proGender, proPrice";
+         
         
         // 선택한 날짜에 해당하는 결과만 필터링
         if (selectedDate != null && !selectedDate.isEmpty()) {
@@ -81,23 +67,7 @@ public class QueryServletPro extends HttpServlet {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            query = "SELECT \r\n"
-                    + "    proCategory, \r\n"
-                    + "    proName, \r\n"
-                    + "    proColor, \r\n"
-                    + "    proGender, \r\n"
-                    + "    proPrice, \r\n"
-                    + "    proDate, \r\n" // proDate 추가
-                    + "    SUM(proQty) AS totalQuantity\r\n"
-                    + "FROM \r\n"
-                    + "    Product\r\n"
-                    + "WHERE \r\n"
-                    + "    proName LIKE '%" + name + "%'\r\n"
-                    + "    AND DATE(proDate) = STR_TO_DATE('" + selectedDate + "', '%Y-%m-%d')\r\n" // 선택한 날짜에 해당하는 결과만 필터링
-                    + "GROUP BY \r\n"
-                    + "    proCategory, proName, proColor, proGender, proPrice, proDate\r\n" // proDate 추가
-                    + "ORDER BY \r\n"
-                    + "    proCategory ASC, proName, proColor, proGender, proPrice;";
+            query = "SELECT proCategory, proName, proColor, proGender, proPrice, SUM(proQty) AS totalQuantity ,MAX(proDate) AS latestProDate,proImage FROM Product WHERE  proName LIKE '%" + name + "%' AND DATE(proDate) = STR_TO_DATE('" + selectedDate + "', '%Y-%m-%d') GROUP BY  proCategory, proName, proColor, proGender, proPrice,proImage ORDER BY proCategory ASC, proName, proColor, proGender, proPrice";
         }
         
         try {
@@ -115,7 +85,8 @@ public class QueryServletPro extends HttpServlet {
                 student.setProGender(rs.getString("proGender"));
                 student.setProPrice(rs.getString("proPrice"));
                 student.setTotalQuantity(rs.getInt("totalQuantity"));
-                student.setProDate(rs.getTimestamp("proDate"));
+                student.setProDate(rs.getString("latestProDate"));
+                student.setProImage(rs.getString("proImage"));
                 
                 studentList.add(student); // 이거하나면 하나씩 한줄로 계단식이됨.
             }

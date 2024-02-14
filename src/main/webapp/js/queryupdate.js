@@ -17,26 +17,35 @@ function createTable(data) {
 	dataReal = Array.from(data)
 	
     let table = "<table border='1'>"
-    table += "<tr><th>Category</th><th>Name</th><th>Gender</th><th>Color</th><th>Qty</th><th>Price</th><th>Image</th></tr>"
+    table += "<tr><th>Seq</th><th>Category</th><th>Name</th><th>Gender</th><th>Color</th><th>Qty</th><th>Price</th><th>Image</th><th>Date</th></tr>"
     //데이터 행 추가
     for (let i = 0; i < data.length; i++) {
         table += "<tr>" +
+        "<td style='width: 15%'>"+  (data[i].proSeq ? data[i].proSeq : '') + "</td>" +
              "<td id='"+ data[i].proCategory + ">"  +
 		"<a href='#' onclick='handleClick(" + i + ")'>" +data[i].proCategory + "</a>" +
 		"</td>" +
-            "<td>"+ data[i].proName + "</td>" +
-           "<td>"+ data[i].proGender + "</td>" +
-            "<td>"+ data[i].proColor + "</td>" +
-            "<td>"+ data[i].proQty + "</td>" +
-            "<td>"+ data[i].proPrice + "</td>" +
-            "<td><img src='/Team1_project/images/" + data[i].proImage + "' width='100' height='100'></td>" +
+            "<td style='width: 15%'>"+  (data[i].proName ? data[i].proName : '') + "</td>" +
+           "<td style='width: 6%'>"+ (data[i].proGender ? data[i].proGender : '')+ "</td>" +
+            "<td style='width: 8%'>"+ (data[i].proColor ? data[i].proColor : '') + "</td>" +
+            "<td style='width: 9%'>"+ (data[i].proQty ? data[i].proQty : '') + "</td>" +
+            "<td style='width: 10%'>"+ (data[i].proPrice ? data[i].proPrice : '')  + "</td>" +
+            "<td style='width: 15%'><img src='/Team1_project/images/" + data[i].proImage + "' width='100' height='100'></td>" +
+             "<td style='width: 16%'>"+ (data[i].proDate ? data[i].proDate : '') + "</td>" +
             "</tr>";
     }
     table += "</table>"
      $("#result").html(table); //result 는 index에 있는 div id="result"
-   	 $("#result").css("width", "100%");
+   	 $("#result").css("width", "120%");
 }
 function handleClick(index){
+	
+	$("#proName").prop("readonly",false);
+	$("#proPrice").prop("readonly",false);
+	 $("#Category, #Gender, #quantity,#Color").val("default").prop("disabled", false);
+	
+	
+	let inputproSeq = document.getElementById("proSeq")
 	let inputproCategory = document.getElementById("proCategory")
 	let inputproName = document.getElementById("proName")
 	let inputproGender = document.getElementById("proGender")
@@ -45,6 +54,7 @@ function handleClick(index){
 	let inputproPrice = document.getElementById("proPrice")
 	let inputproImage = document.getElementById("proImage")
 	
+	inputproSeq.value = dataReal[index].proSeq
 	inputproCategory.value = dataReal[index].proCategory
 	inputproName.value = dataReal[index].proName
 	inputproGender.value = dataReal[index].proGender
@@ -52,6 +62,11 @@ function handleClick(index){
 	inputproQty.value = dataReal[index].proQty
 	inputproPrice.value = dataReal[index].proPrice
 	inputproImage.value = dataReal[index].proImage
+	
+	$("#Category").val("default");
+    $("#quantity").val("default");
+    $("#Gender").val("default");
+    $("#Color").val("default");
 	
 	console.log(inputproImage)
 
@@ -96,37 +111,63 @@ $(document).ready(function() {
 
 // 이미지를 업로드하지 않고 나머지 필드만 업데이트하는 함수
 function updateProductWithoutImage() {
+	
+	let Seq = $("#proSeq").val();
     let Category = $("#proCategory").val();
     let Name = $("#proName").val();
     let Gender = $("#proGender").val();
     let Color = $("#proColor").val();
     let Qty = $("#proQty").val();
     let Price = $("#proPrice").val();
-    let Image = $("#proImage").val();
     
     // AJAX 요청
     $.ajax({
         type: "POST",
         url: "UpdateProductServlet", // 제품을 업데이트할 서블릿 주소
         data: {
+			Seq : Seq,
             Category: Category,
             Name: Name,
             Gender: Gender,
             Color: Color,
             Qty: Qty,
             Price: Price,
-            Image: Image // 이미지 파일의 경로를 전달
         },
         success: function(response) {
-            // 업데이트 성공 시 처리
-            alert("제품이 성공적으로 업데이트되었습니다.");
-        },
-        error: function(xhr, status, error) {
-            // 업데이트 실패 시 처리
-            alert("업데이트 중 문제가 발생했습니다: " + error);
-        }
-    });
-}
+					/* 서버에서 받은 응답 처리 */
+					//$("#result").html(response)
+					//수정 후 디비를 다시불러와야함.
+						$.ajax({
+							type: "POST",
+							url: "QueryServletUpdate",
+							data: {name : name},
+							success: function(response) {
+									/* 서버에서 받은 응답 처리 */
+								createTable(response) //json
+		}
+	})
+				$("#proSeq").val("");
+               	$("#proName").val("");
+	 			$("#name").val("");
+                $("#proCategory").val("");
+                $("#proGender").val("");
+                $("#proColor").val("");
+                $("#proQty").val("");
+                $("#proPrice").val("");
+                $('#proImage').val("");
+                $('#Category').val('default');
+                $('#Gender').val('default');
+                $('#quantity').val('default');
+
+					alert("수정되었습니다.")
+					
+				},
+				error : function(xhr,status,error){
+					alert("수정 문제 발생"+ error)
+				}
+			})
+		}
+	
 
 // 이미지를 포함하여 모든 필드를 업데이트하는 함수
 function uploadAndUpdateProduct() {
@@ -145,8 +186,9 @@ function uploadAndUpdateProduct() {
         data: formData,
         processData: false,
         contentType: false,
-        success: function(imagePath) {
+        success: function(relativeImagePath) {
             // 이미지가 성공적으로 업로드되면 imagePath를 받아와서 나머지 필드와 함께 업데이트 요청
+            let Seq = $("#proSeq").val();
             let Category = $("#proCategory").val();
             let Name = $("#proName").val();
             let Gender = $("#proGender").val();
@@ -154,32 +196,59 @@ function uploadAndUpdateProduct() {
             let Qty = $("#proQty").val();
             let Price = $("#proPrice").val();
             
+            
             // AJAX 요청
             $.ajax({
                 type: "POST",
-                url: "UpdateProductServlet", // 제품을 업데이트할 서블릿 주소
+                url: "UpdateProductServlet2", // 제품을 업데이트할 서블릿 주소
                 data: {
+					Seq : Seq,
                     Category: Category,
                     Name: Name,
                     Gender: Gender,
                     Color: Color,
                     Qty: Qty,
                     Price: Price,
-                    ImagePath: imagePath // 이미지 파일의 경로를 전달
+                    ImagePath: relativeImagePath // 이미지 파일의 경로를 전달
                 },
                 success: function(response) {
-                    // 업데이트 성공 시 처리
-                    alert("제품이 성공적으로 업데이트되었습니다.");
-                },
-                error: function(xhr, status, error) {
-                    // 업데이트 실패 시 처리
-                    alert("업데이트 중 문제가 발생했습니다: " + error);
-                }
-            });
-        },
-        error: function(xhr, status, error) {
-            // 이미지 업로드 실패 시 처리
-            alert("이미지 업로드 중 문제가 발생했습니다: " + error);
-        }
-    });
-}
+					/* 서버에서 받은 응답 처리 */
+					 console.log(response);
+					//$("#result").html(response)
+					//수정 후 디비를 다시불러와야함.
+						$.ajax({
+							type: "POST",
+							url: "QueryServletUpdate",
+							data: {name : name},
+							success: function(response) {
+									/* 서버에서 받은 응답 처리 */
+								createTable(response) //json
+		}
+	})
+				$("#proSeq").val("");
+	 			$("#proName").val("");
+	 			$("#name").val("");
+                $("#proCategory").val("");
+                $("#proGender").val("");
+                $("#proColor").val("");
+                $("#proQty").val("");
+                $("#proPrice").val("");
+                $("#proImage1").val("");
+                $('#proImage').val("");
+                $('#Category').val('default');
+                $('#Gender').val('default');
+                $('#quantity').val('default');
+                 var imagePreview = document.getElementById('imagePreview');
+                imagePreview.innerHTML = '';
+                $('#proImage').show();
+
+					alert("수정되었습니다.")
+					
+				},
+				error : function(xhr,status,error){
+					alert("수정 문제 발생"+ error)
+				}
+			})
+		}
+		})}
+				
