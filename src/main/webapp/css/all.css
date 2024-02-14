@@ -513,6 +513,7 @@ li {
 img,fieldset {
     border: none;
     vertical-align: top;
+    margin-right: 15px;
 }
 
 table {
@@ -1275,6 +1276,51 @@ html.remodal-is-locked {
     top: 2px;
 }
 
+.search-form {
+    background-color: #d0c9ba;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    padding: 40px;
+    position: relative;
+}
+
+.search-form .select-field {
+    display: none;
+}
+
+.search-form input[type="text"] {
+    background-color: transparent;
+    border: 1px solid #0e3773;
+    border-radius: 0;
+    box-shadow: none;
+    color: #0e3773;
+    font-family: 'Noto Sans KR',sans-serif;
+    font-size: 15px;
+    outline: none;
+    width: calc(100% - 110px);
+    max-width: 260px;
+    height: 46px;
+    margin-right: 5px;
+    padding: 5px 15px;
+    -webkit-appearance: none;
+}
+
+.search-form .primary-button {
+    border-width: 2px;
+    font-size: 14px;
+    font-weight: 700;
+    position: relative;
+    top: 2px;
+    width: 100px;
+    height: 48px;
+}
+
+.search-container .no-results {
+    font-size: 18px;
+    text-align: center;
+    padding: 200px 0;
+}
 @media (max-width: 1300px) {
     .site-header {
         padding-top:50px;

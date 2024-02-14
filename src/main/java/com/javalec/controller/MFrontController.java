@@ -257,6 +257,17 @@ public class MFrontController extends HttpServlet {
 //			command.execute(request, response);
 			viewPage = "index.jsp";
 			break;
+			
+		// ------------- product ---------------------
+		case ("/search.do"): // 검색
+			viewPage = "./product/search.jsp";
+			break;
+		case ("/search1.do"): // 재 검색
+			viewPage = "./product/search1.jsp";
+		break;
+		case ("/search2.do"): // 다시 검색
+			viewPage = "./product/search2.jsp";
+		break;
 
 		default:
 			break;

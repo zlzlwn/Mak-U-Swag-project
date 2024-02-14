@@ -119,7 +119,7 @@
 				            }
 
 				            // 폼 제출을 위해 submit 버튼 클릭
-				            document.getElementById('submitBtn').click();
+				            document.getElementById('submit').click();
 				        }
 				    });
 				</script>
