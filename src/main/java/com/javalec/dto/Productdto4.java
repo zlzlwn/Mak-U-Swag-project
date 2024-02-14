@@ -1,6 +1,5 @@
 package com.javalec.dto;
 
-import java.sql.String;
 
 public class Productdto4 {
 	   private String proCategory;

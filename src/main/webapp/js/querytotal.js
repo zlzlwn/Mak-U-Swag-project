@@ -14,7 +14,7 @@ window.onload = function() {
 
 function createTable(data) {
     let table = "<table border='1'>"
-    table += "<tr><th>Category</th><th>Product</th><th>Gender</th><th>Color</th><th>Qty</th><th>Price</th><th>Method</th><th>Date</th></tr>"
+    table += "<tr><th>카테고리</th><th>제품</th><th>성별</th><th>색상</th><th>수량</th><th>총가격</th><th>구매방법</th><th>구매일</th></tr>"
     //데이터 행 추가
     for (let i = 0; i < data.length; i++) {
         table += "<tr>" +

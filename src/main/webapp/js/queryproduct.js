@@ -17,7 +17,7 @@ function createTable(data) {
 	dataReal = Array.from(data)
 	
     let table = "<table border='1'>"
-    table += "<tr><th>Category</th><th>Name</th><th>Gender</th><th>Color</th><th>Qty</th><th>Price</th><th>Image</th></tr>"
+    table += "<tr><th>카테고리</th><th>제품이름</th><th>성별</th><th>색상</th><th>수량</th><th>가격</th><th>이미지</th></tr>"
     //데이터 행 추가
     for (let i = 0; i < data.length; i++) {
         table += "<tr>" +
