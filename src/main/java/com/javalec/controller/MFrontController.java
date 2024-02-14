@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.javalec.command.LoginCommand;
 import com.javalec.command.MCommand;
 import com.javalec.command.MFaqCommand;
 import com.javalec.command.MNoticeCommand;
@@ -187,9 +188,14 @@ public class MFrontController extends HttpServlet {
 		case ("/privacy.do"): // privacy
 			viewPage = "./member/privacy.jsp";
 			break;
-		case ("/login.do"): // login
+		case ("/login.do"): // login 화면으로
 			viewPage = "./member/login.jsp";
 			break;
+		case ("/whologin.do"): // login눌렀을시 구분
+			command = new LoginCommand();
+			command.execute(request, response);
+			viewPage = "index.jsp";
+		break;
 		case ("/findId.do"): // 아이디 찾기
 			viewPage = "./member/findId.jsp";
 			break;
@@ -197,7 +203,7 @@ public class MFrontController extends HttpServlet {
 			viewPage = "./member/findPasswd.jsp";
 			break;
 		case ("/memberJoin.do"): // 회원가입
-			viewPage = "./member/Join.jsp";
+			viewPage = "./member/join.jsp";
 			break;
 
 		// ------------- admin ---------------------
