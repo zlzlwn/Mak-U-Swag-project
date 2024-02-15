@@ -32,7 +32,7 @@
 }
 
 #result table {
-    width: 100%; /* 테이블 너비를 100%로 설정 */
+    width: 110%; /* 테이블 너비를 100%로 설정 */
     border-collapse: collapse; /* 테이블 셀 경계를 병합하여 테두리를 생성 */
     margin-top: 4%;
 }

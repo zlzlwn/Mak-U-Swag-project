@@ -29,8 +29,12 @@ public class UpdateProductServlet2 extends HttpServlet {
 		String Gender = request.getParameter("Gender");
 		String Color = request.getParameter("Color");
 		int Qty = Integer.parseInt(request.getParameter("Qty"));
-		String price = request.getParameter("Price");
+		String price1 = request.getParameter("Price");
+		String priceWithoutComma = price1.replaceAll(",", "");
+		int price = Integer.parseInt(priceWithoutComma);
 		String Imagepath = request.getParameter("ImagePath");	
+		String Imagepath1 = request.getParameter("ImagePath1");
+		String Imagepath2 = request.getParameter("ImagePath2");
 		System.out.println(Imagepath);
 		
 		response.setContentType("text/html;charset=UTF-8");
@@ -44,7 +48,7 @@ public class UpdateProductServlet2 extends HttpServlet {
 			Statement stmt_mysql = conn_mysql.createStatement();
 			
 			PreparedStatement ps = null;
-			String query = "update product set proName=?,procolor=?,proCategory=?,proGender=?,proQty=?,proPrice=?,proImage=?,proDate=now() where proSeq=?";
+			String query = "update product set proName=?,procolor=?,proCategory=?,proGender=?,proQty=?,proPrice=?,proImage1=?,proImage2=?,proImage3=?,proDate=now() where proSeq=?";
 			ps=conn_mysql.prepareStatement(query);
 			
 			ps.setString(1, Name);
@@ -52,9 +56,11 @@ public class UpdateProductServlet2 extends HttpServlet {
 			ps.setString(3, Category);
 			ps.setString(4, Gender);
 			ps.setInt(5, Qty);
-			ps.setString(6, price);
+			ps.setInt(6, price);
 			ps.setString(7, Imagepath);
-			ps.setInt(8, Seq);
+			ps.setString(8, Imagepath1);
+			ps.setString(9, Imagepath2);
+			ps.setInt(10, Seq);
 			
 			ps.executeUpdate();
 			conn_mysql.close();

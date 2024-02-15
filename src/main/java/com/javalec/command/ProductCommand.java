@@ -31,6 +31,7 @@ response.setCharacterEncoding("UTF-8");
         try {
             // ServletContext를 사용하여 업로드 경로를 가져옴
             ServletContext context = request.getServletContext();
+            System.out.println(context);
             String uploadPath = context.getRealPath("/images");
             System.out.println(uploadPath);
 
@@ -42,17 +43,30 @@ response.setCharacterEncoding("UTF-8");
             String proCategory = multi.getParameter("proCategory");
             System.out.println(proCategory);
             String proName = multi.getParameter("proName");
+            System.out.println(proName);
             String proGender = multi.getParameter("proGender");
+            System.out.println(proGender);
             String proIntroduction = multi.getParameter("proIntroduction");
+            System.out.println(proIntroduction);
             String proColor = multi.getParameter("proColor");
+            System.out.println(proColor);
             int proQty = Integer.parseInt(multi.getParameter("proQty"));
-            String proPrice = multi.getParameter("proPrice");
-            String proImage = multi.getFilesystemName("proImage");
+            System.out.println(proQty);
+            String price1 = multi.getParameter("proPrice");
+    		String priceWithoutComma = price1.replaceAll(",", "");
+    		int proPrice = Integer.parseInt(priceWithoutComma);
+            System.out.println(proPrice);
             
+            String proImage1 = multi.getFilesystemName("proImage1");
+            String proImage2 = multi.getFilesystemName("proImage2");
+            String proImage3 = multi.getFilesystemName("proImage3");
+
+            // 확인을 위해 콘솔에 출력
+            System.out.println("proImage1: " + proImage1);
+            System.out.println("proImage2: " + proImage2);
+            System.out.println("proImage3: " + proImage3);
             
-            // 성공 메시지 전송
-            response.getWriter().write("성공");
-            dao.write(proCategory, proName, proGender, proIntroduction,proColor, proQty, proPrice, proImage);
+            dao.write(proCategory, proName, proGender, proIntroduction,proColor, proQty, proPrice, proImage1, proImage2,proImage3);
      
         } catch (Exception e) {
             // 업로드 실패 시 오류 메시지 전송

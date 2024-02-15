@@ -174,12 +174,28 @@
                 
             </tr>
             <tr>
-                <td>ProImage:</td>
+                <td>이미지1:</td>
                 <td>
-                    <input type="file" id="proImage" name="proImage" accept="image/*" onchange="previewImage(event)">
+                    <input type="file" id="proImage1" name="proImage1" accept="image/*" onchange="previewImage(event)">
                     <div id="imagePreview"></div>
                 </td>
             </tr>
+            <tr>
+                <td>이미지2:</td>
+                <td>
+                    <input type="file" id="proImage2" name="proImage2" accept="image/*" onchange="previewImage1(event)">
+                    <div id="imagePreview1"></div>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>이미지3:</td>
+                <td>
+                    <input type="file" id="proImage3" name="proImage3" accept="image/*" onchange="previewImage2(event)">
+                    <div id="imagePreview2"></div>
+                </td>
+            </tr>
+            
         </table>
         <input type="submit" id="queryButton" value="등록하기" onclick="insert()"/>
         <span id="errorMessage1" class="error-message"></span>
@@ -193,6 +209,80 @@
             };
             reader.readAsDataURL(event.target.files[0]);
         }
+        $(document).ready(function() {
+            // 파일 선택(input type="file") 요소의 change 이벤트 감지
+            $("#proImage1").change(function() {
+                // 파일이 선택되었는지 확인
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        // 선택된 파일의 미리보기 이미지를 보여줌
+                        $("#imagePreview").html('<img src="' + e.target.result + '" width="100" />');
+                    };
+                    reader.readAsDataURL(this.files[0]);
+                } else {
+                    // 파일이 선택되지 않았을 때는 미리보기 이미지만 지움
+                    $("#imagePreview").html("");
+                }
+            });
+
+            // 파일 선택 요소에 대해 각각의 미리보기 영역과 메시지를 적용하려면 해당 요소들의 ID를 사용하여 각각의 change 이벤트에 대한 처리를 추가하면 됩니다.
+        });
+        function previewImage1(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('imagePreview1');
+                output.innerHTML = '<img src="' + reader.result + '" width="100" />';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+        $(document).ready(function() {
+            // 파일 선택(input type="file") 요소의 change 이벤트 감지
+            $("#proImage2").change(function() {
+                // 파일이 선택되었는지 확인
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        // 선택된 파일의 미리보기 이미지를 보여줌
+                        $("#imagePreview1").html('<img src="' + e.target.result + '" width="100" />');
+                    };
+                    reader.readAsDataURL(this.files[0]);
+                } else {
+                    // 파일이 선택되지 않았을 때는 미리보기 이미지만 지움
+                    $("#imagePreview1").html("");
+                }
+            });
+
+            // 파일 선택 요소에 대해 각각의 미리보기 영역과 메시지를 적용하려면 해당 요소들의 ID를 사용하여 각각의 change 이벤트에 대한 처리를 추가하면 됩니다.
+        });
+        function previewImage2(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('imagePreview2');
+                output.innerHTML = '<img src="' + reader.result + '" width="100" />';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+        $(document).ready(function() {
+            // 파일 선택(input type="file") 요소의 change 이벤트 감지
+            $("#proImage3").change(function() {
+                // 파일이 선택되었는지 확인
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        // 선택된 파일의 미리보기 이미지를 보여줌
+                        $("#imagePreview2").html('<img src="' + e.target.result + '" width="100" />');
+                    };
+                    reader.readAsDataURL(this.files[0]);
+                } else {
+                    // 파일이 선택되지 않았을 때는 미리보기 이미지만 지움
+                    $("#imagePreview2").html("");
+                }
+            });
+
+            // 파일 선택 요소에 대해 각각의 미리보기 영역과 메시지를 적용하려면 해당 요소들의 ID를 사용하여 각각의 change 이벤트에 대한 처리를 추가하면 됩니다.
+        });
+        
         $(document).ready(function(){
             // ProCategory 콤보박스 선택 시 해당 값을 텍스트 필드에 넣기
             $("#Category").change(function(){
@@ -239,7 +329,7 @@
         $(document).ready(function(){
             $('#proName').on('input', function() {
                 var inputVal = $(this).val();
-                var regex = /^[a-zA-Z0-9\s]*$/; // 특수문자를 허용하지 않는 정규식
+                var regex = /^[a-zA-Z0-9\sㄱ-힣]*$/; // 특수문자를 허용하지 않는 정규식
 
                 if (!regex.test(inputVal)) {
                     $('#errorMessage').text('특수문자는 입력할 수 없습니다.');
@@ -295,6 +385,15 @@
             });
         });
         $(document).ready(function() {
+            // proName 입력 필드의 키 입력 이벤트 핸들러
+            $("#proPrice").on("input", function() {
+                // 입력값에서 한글을 필터링하여 제거한 후 다시 입력 필드에 넣어줌
+                var filteredValue = $(this).val().replace(/[ㄱ-ㅎㅏ-ㅣ가-힣]/gi, '');
+                $(this).val(filteredValue);
+            });
+        });
+       
+        $(document).ready(function() {
             // 등록하기 버튼 클릭 시 이벤트 처리
             $("#queryButton").on("click", function() {
                 // 텍스트 필드와 이미지 요소 가져오기
@@ -308,15 +407,16 @@
 
                 
                 var imageSrc = $("#imagePreview img").attr("src");
+                var imageSrc1 = $("#imagePreview1 img").attr("src");
+                var imageSrc2 = $("#imagePreview2 img").attr("src");
 
                 // 값이 없는 경우 에러 메시지 표시
-                if (!textFieldValue6 || textFieldValue6.trim() === "" ||!textFieldValue5 || textFieldValue5.trim() === "" ||!textFieldValue4 || textFieldValue4.trim() === "" ||!textFieldValue3 || textFieldValue3.trim() === "" ||!textFieldValue2 || textFieldValue2.trim() === "" ||!textFieldValue1 || textFieldValue1.trim() === "" ||!textFieldValue || textFieldValue.trim() === "" || !imageSrc || imageSrc.trim() === "") {
+                if (!textFieldValue6 || textFieldValue6.trim() === "" ||!textFieldValue5 || textFieldValue5.trim() === "" ||!textFieldValue4 || textFieldValue4.trim() === "" ||!textFieldValue3 || textFieldValue3.trim() === "" ||!textFieldValue2 || textFieldValue2.trim() === "" ||!textFieldValue1 || textFieldValue1.trim() === "" ||!textFieldValue || textFieldValue.trim() === "" || !imageSrc || imageSrc.trim() === ""|| !imageSrc1 || imageSrc1.trim() === ""|| !imageSrc2 || imageSrc2.trim() === "") {
                     $("#errorMessage1").text("모든 필드를 입력하세요.");// 폼 전송 방지
                     return false;
                 } else {
                     // 값이 있는 경우 페이지 이동
                     alert("상품이 등록되었습니다");
-                    window.location.href = "aaa.do";
                     return true;
 
                 }

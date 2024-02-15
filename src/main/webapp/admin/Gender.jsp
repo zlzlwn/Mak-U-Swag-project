@@ -42,6 +42,7 @@ canvas {
     ArrayList<String> labels1 = (ArrayList<String>) session.getAttribute("labels1");
     ArrayList<Integer> data1 = (ArrayList<Integer>) session.getAttribute("data1"); 
     ArrayList<Integer> data2 = (ArrayList<Integer>) session.getAttribute("data2");
+    
   
 %>
 

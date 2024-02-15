@@ -7,7 +7,7 @@ public class Productdto4 {
 	   private String proGender;
 	   private String proColor;
 	   private int pQty;
-	   private String pPrice;
+	   private int pPrice;
 	   private String pMethod;
 	   private int pSpendPoint;
 	   private int pStackPoint;
@@ -55,11 +55,11 @@ public class Productdto4 {
 		this.pQty = pQty;
 	}
 
-	public String getpPrice() {
+	public int getpPrice() {
 		return pPrice;
 	}
 
-	public void setpPrice(String pPrice) {
+	public void setpPrice(int pPrice) {
 		this.pPrice = pPrice;
 	}
 
@@ -95,7 +95,7 @@ public class Productdto4 {
 		this.pDate = pDate;
 	}
 
-	public Productdto4(String proCategory, String proName, int pQty, String pPrice, String pMethod, int pSpendPoint,
+	public Productdto4(String proCategory, String proName, int pQty, int pPrice, String pMethod, int pSpendPoint,
 			int pStackPoint, String pDate) {
 		super();
 		this.proCategory = proCategory;
@@ -110,7 +110,7 @@ public class Productdto4 {
 
 
 
-	public Productdto4(String proCategory, String proName, String proColor, int pQty, String pPrice, String pMethod,
+	public Productdto4(String proCategory, String proName, String proColor, int pQty, int pPrice, String pMethod,
 			int pSpendPoint, int pStackPoint, String pDate) {
 		super();
 		this.proCategory = proCategory;
@@ -126,7 +126,7 @@ public class Productdto4 {
 
 
 
-	public Productdto4(String proCategory, String proName, String proGender, String proColor, int pQty, String pPrice,
+	public Productdto4(String proCategory, String proName, String proGender, String proColor, int pQty, int pPrice,
 			String pMethod, int pSpendPoint, int pStackPoint, String pDate) {
 		super();
 		this.proCategory = proCategory;
