@@ -12,8 +12,8 @@
 		</div>
 		<ul class="xans-element- xans-layout xans-layout-statelogoff user-menu">
 			<li class="menu-item"><a href="login.do"><b>Login</b></a></li>
-			<li class="menu-item"><a href="/member/login.html?noMemberOrder&amp;returnUrl=%2Fmyshop%2Forder%2Flist.html"><b>Mypage</b></a></li>
-			<li class="menu-item menu--cart"><a href="/order/basket.html"><b>Cart</b><span class="badge displaynone">()</span></a></li>
+			<li class="menu-item"><a href="myPage.do"><b>MyPage</b></a></li>
+			<li class="menu-item menu--cart"><a href="cart.do"><b>Cart</b><span class="badge displaynone">()</span></a></li>
 		</ul>
 		<div class="hamburger" role="button" aria-expanded="false">
 			<span class="patty">

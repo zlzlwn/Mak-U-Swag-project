@@ -114,7 +114,7 @@ public ReviewDao() {
 	            if (rs != null) rs.close();
 	            if (psmt != null) psmt.close();
 	            if (conn != null) conn.close();
-	            System.out.println("< rs, psmt, conn close 성공 (노티스다오)>");
+	            System.out.println("< rs, psmt, conn close 성공 (리뷰다오)>");
 	        } catch (Exception e) {
 	            System.out.println("< rs, psmt, conn close Fail>");
 	        }
