@@ -24,15 +24,15 @@
 
 
 - flow
-2024-01-30<h>
+2024-01-30<br>
 
 Clone Site List UP 
 
-2024-01-31
+2024-01-31<br>
 
 ERD작성
 
-2024-02-01
+2024-02-01<br>
 
   DB,EER 구성
 
@@ -42,34 +42,34 @@ ERD작성
 
   project PPT 작성
 
-2024-02-02
+2024-02-02<br>
 
  Git Project 생성
  chart.js를 활용한 chart R&D
 
-2024-02-03
+2024-02-03<br>
 restfulAPI(카카오, 구글, 네이버 API(로그인, 지도,주소)) R&D
  
 
-2024-02-05
+2024-02-05<br>
 FADEROOM site clone css R&D
 ERD수정(2.0)
 quill editor R&D
  
 
 
-2024-02-06
+2024-02-06<br>
 각 package,folder별 파일 생성
 FADEROOM site clone css를 위한 frame 분할
 accordion 기능 구현 R&D 
 FAQ 완성
 
-2024-02-07
+2024-02-07<br>
 accordion 기능 구현
 NOTICE 구현완료
 admin 페이지 회원목록 차트 구현 
 
-2024-02-08
+2024-02-08<br>
 
 
 
