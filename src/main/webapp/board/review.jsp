@@ -24,30 +24,6 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="./js/accordion.js"></script>
   
-<script>
-	function submitSearchForm12(event) {
-		console.log("버튼이 클릭되었습니다!");
-		// 검색어 입력란의 값을 가져옴
-		var searchInput = document.getElementById("search").value;
-		var searchDate = document.getElementById("search_date").value;
-		var searchKey = document.getElementById("search_key").value;
-		console.log(searchInput+searchDate+searchKey);
-		
-		// URL에 검색 조건 값을 추가한 값
-		var newUrl = "notice.do?searchDate=" + searchDate + "&searchKey="
-    + searchKey + "&searchInput=" + searchInput;
-
-		window.location.href = newUrl;
-
-		/* // 브라우저의 콘솔에 메시지 출력 후 URL로 이동
-		window.location.href = newUrl; */
-
-		event.preventDefault();
-	}
-</script>
-
-	
-	
 </head>
 <body class="nav-expended">
 	<!-- ============================== [[ Header  section]] ==============================-->
@@ -91,23 +67,22 @@
 											<!-- 글씨체 -->
 											<div class="accordion-name">
 											
-											<span class="date">${dto.noDate.substring(0, 10)}</span>
+											<span class="date">${dto.revDate.substring(0, 10)}</span>
 											<div class="title-range">
 											<img src="//faderoom.co.kr/web/product/tiny/202311/416e1c58fbe02289e0598b83fd2277b8.jpg" border="0" alt="" width=50px> 
 											
 											
 											
-											<span>FELT WOOL BLAZER JACKET <br>만족 </span>
+											<span>FELT WOOL BLAZER JACKET <br>${dto.revTitle}</span>
 											</div>
 											</div>
 									</a>
 										<div class="accordion-desc">
-											<span class="title">${dto.noContent}</span>
+											<span class="title">${dto.revContent}</span>
 											<!-- 이미지가  있으면  출력한다-->
-											<c:if test="${not empty dto.noImage}">
-												<span> <img
-													src="${pageContext.request.contextPath}/images/${dto.noImage}"
-													width="756px" height="945px">
+										 	<c:if test="${not empty dto.revImage}">
+												<span> 
+												<img src="${pageContext.request.contextPath}/images/${dto.revImage}" width="756px" height="945px">
 												</span>
 											</c:if>
 								</c:forEach>
@@ -117,7 +92,7 @@
 							<div style="text-align: center;">
 
 								<c:if test="${currentPage > 1}">
-									<a href="notice.do?page=${currentPage - 1}"
+									<a href="review.do?page=${currentPage - 1}"
 										style="display: inline-block; margin: 10px;">&nbsp;이전</a>
 								</c:if>
 
@@ -128,14 +103,14 @@
 												style="display: inline-block; margin: 10px; font-weight: bold;">&nbsp;${page}</span>
 										</c:when>
 										<c:otherwise>
-											<a href="notice.do?page=${page}"
+											<a href="review.do?page=${page}"
 												style="display: inline-block; margin: 10px;">&nbsp;${page}</a>
 										</c:otherwise>
 									</c:choose>
 								</c:forEach>
 
 								<c:if test="${currentPage < totalPage}">
-									<a href="notice.do?page=${currentPage + 1}"
+									<a href="review.do?page=${currentPage + 1}"
 										style="display: inline-block; margin: 10px;">&nbsp;다음</a>
 								</c:if>
 							</div>

@@ -11,16 +11,20 @@ public class LoginCommand implements MCommand {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-
+		
 		String userId = request.getParameter("userId");
 		String userPasswd = request.getParameter("userPasswd");
+		System.out.println(userId);
+		System.out.println(userPasswd);
+		
 		HttpSession session = request.getSession();
-		session.setAttribute("userid", userId);
-
+		session.setAttribute("userId", userId);
+		
 		if (userId.isEmpty() || userPasswd.isEmpty()) {
 			// ID or PW is empty, set an attribute for error handling
-			request.setAttribute("redirectURL", "error.jsp");
+			request.setAttribute("redirectURL", "./status/error.jsp");
 		}
+		
 		System.out.println(1);
 		System.out.println(userId);
 		System.out.println(userPasswd);
@@ -45,7 +49,7 @@ public class LoginCommand implements MCommand {
 			request.setAttribute("redirectURL", "adminSuccess.jsp");
 		}else {
 			// 로그인 에러시
-			request.setAttribute("redirectURL", "error.jsp");
+			request.setAttribute("redirectURL", "./status/error.jsp");
 
 		}
 	}
