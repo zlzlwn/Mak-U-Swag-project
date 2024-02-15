@@ -2,20 +2,20 @@
 ![CompanyLogo_1번 (4)](https://github.com/zlzlwn/Team1_project/assets/8<div align="center">
 
 ## 목차
-  - [test1](test1) 
-  - [test2](test2)
-  
+  1. [개요](#개요)
+  2. 
 
 ## 개요
 - 프로젝트 이름: makeuswag 🏠
 - 프로젝트 지속기간: 2024-00-00~yy.mm.dd
-- 개발 엔진 및 언어: Unity & C#
+- 개발 엔진 및 언어: <img alt="Java" src ="https://img.shields.io/badge/Java-007396.svg?&style=for-the-badge&logo=Java&logoColor=white"/>
+
 - 멤버: 
 
 
 
 
-<h2>Mak U Swag <h2></h2>
+<h2>Mak U Swag </h2>
   ## 팀 요약
 -팀장: 진성진 팀원:박정민, 이대근, 박지환
 
@@ -23,7 +23,7 @@
 
 
 
-- flow
+- 진행상황
 2024-01-30<br>
 
 Clone Site List UP 
