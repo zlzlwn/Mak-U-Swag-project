@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="../css/all.css">
-<link rel="stylesheet" href="../css/all2.css">
-<link rel="stylesheet" href="../css/login.css">
+<title>에러 났대용~</title>
+<link rel="stylesheet" href="./css/all.css">
+<link rel="stylesheet" href="./css/all2.css">
+<link rel="stylesheet" href="./css/login.css">
 <!-- 인터넷 창 아이콘에 로고 나오게 하기 -->
-<link rel="icon" href="../images/CompanyLogo.png">
+<link rel="icon" href="./images/CompanyLogo.png">
 </head>
 <body>
 <br>
@@ -28,7 +28,7 @@
 <br>
 <br>
 <br>
-<a href="../main.do" class="primary-button"><span>뒤로</span></a>
+<a href="login.do" class="primary-button"><span>메인으로</span></a>
 </div>
 </body>
 </html>

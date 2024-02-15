@@ -31,8 +31,7 @@
 
 				<!-- 여기서 부터 작성 -->
 				<div class="entry-page">
-					<form id="member_form" name="" action="whologin.do" method="post"
-						target="_self" enctype="multipart/form-data">
+					<form id="member_form" name="" action="whologin.do" method="post">
 
 						<div class="xans-element- xans-member xans-member-login login ">
 							<div class="login-header">
@@ -98,7 +97,7 @@
 
 							// 유효성 검사 통과 시 폼 제출
 							this.submit();
-						});
+					});
 
 					 // Enter 키 이벤트 리스너 등록
 				    document.addEventListener('keydown', function(e) {
@@ -118,8 +117,6 @@
 				                return;
 				            }
 
-				            // 폼 제출을 위해 submit 버튼 클릭
-				            document.getElementById('submit').click();
 				        }
 				    });
 				</script>
