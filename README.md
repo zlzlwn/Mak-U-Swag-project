@@ -6,9 +6,12 @@
   2. 
 
 ## 개요
-- 프로젝트 이름: makeuswag 🏠
-- 프로젝트 지속기간: 2024-00-00~yy.mm.dd
-- 개발 엔진 및 언어: <img alt="Java" src ="https://img.shields.io/badge/Java-007396.svg?&style=for-the-badge&logo=Java&logoColor=white"/>
+- 프로젝트 이름<br>
+- makeuswag 🏠
+- 프로젝트 지속기간
+-2024-00-00~yy.mm.dd
+- 개발 엔진 및 언어
+- <img alt="Java" src ="https://img.shields.io/badge/Java-007396.svg?&style=for-the-badge&logo=Java&logoColor=white"/>
 
 - 멤버: 
 
