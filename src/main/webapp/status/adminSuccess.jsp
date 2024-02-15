@@ -12,10 +12,10 @@
 %>
         <script type="text/javascript">
             alert('환영합니다, <%= user.getName()+"님" %>!');
-            window.location.href = '<%= "main.do" %>';
+            window.location.href = '<%= "manager.do" %>';
         </script>
 <%
     } else {
-    	response.sendRedirect("./status/error.jsp");
+        response.sendRedirect("./status/error.jsp");
     }
 %>
