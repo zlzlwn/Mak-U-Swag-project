@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>에러 났대용~</title>
 <link rel="stylesheet" href="../css/all.css">
 <link rel="stylesheet" href="../css/all2.css">
 <link rel="stylesheet" href="../css/login.css">
@@ -28,7 +28,7 @@
 <br>
 <br>
 <br>
-<a href="../main.do" class="primary-button"><span>뒤로</span></a>
+<a href="../main.do" class="primary-button"><span>메인으로</span></a>
 </div>
 </body>
 </html>

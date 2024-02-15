@@ -22,10 +22,11 @@ public class UserDto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserDto(String userId, String userPw) {
+	public UserDto(String userId, String userPw, String name) {
 		super();
 		this.userId = userId;
 		this.userPw = userPw;
+		this.name = name;
 	}
 
 	public UserDto(String userId, String userPw, String name, String address, String phone, String email, String gender,
