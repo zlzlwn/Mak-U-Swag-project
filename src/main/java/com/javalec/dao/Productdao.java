@@ -31,13 +31,14 @@ public class Productdao {
 		
 	}
 	
-	public void write(String proCategory, String proName, String proGender, String proIntroduction, String proColor, int proQty, String proPrice, String proImage) {
+	public void write(String proCategory, String proName, String proGender, String proIntroduction, String proColor, int proQty, int proPrice,String proImage1, String proImage2,String proImage3) {
 		Connection connection = null;
 		PreparedStatement preparedStatement =null;
 		
 		try {
+			System.out.println(proImage1);
 			connection = dataSource.getConnection();
-			String query = "INSERT INTO product (proCategory, proName, proGender, proIntroduction,proColor, proQty, proPrice,proImage,proDate) VALUES (?, ?, ?, ?,?, ?, ?,?,now());";
+			String query = "INSERT INTO product (proCategory, proName, proGender, proIntroduction,proColor, proQty, proPrice,proImage1,proImage2,proImage3,proDate) VALUES (?, ?, ?, ?,?, ?, ?,?,?,?,now());";
 			preparedStatement =connection.prepareStatement(query);
 			preparedStatement.setString(1, proCategory);
 			preparedStatement.setString(2, proName);
@@ -45,8 +46,11 @@ public class Productdao {
 			preparedStatement.setString(4, proIntroduction);
 			preparedStatement.setString(5, proColor);
 			preparedStatement.setInt(6, proQty);
-			preparedStatement.setString(7, proPrice);
-			preparedStatement.setString(8, proImage);
+			preparedStatement.setInt(7, proPrice);
+			preparedStatement.setString(8, proImage1);
+			System.out.println(proImage1);
+			preparedStatement.setString(9, proImage2);
+			preparedStatement.setString(10, proImage3);
 			preparedStatement.executeUpdate();
 			
 					
@@ -74,7 +78,7 @@ public class Productdao {
 	    ArrayList<Integer> data5 = new ArrayList<>();
 	    Connection connection = null;
 
-	    String query = "SELECT proName, SUM(proQty) AS totalQty FROM product GROUP BY proName;";
+	    String query = "SELECT proName, SUM(proQty) AS totalQty FROM product where prodelDate is null GROUP BY proName;";
 
 	    try {
 	        connection = dataSource.getConnection();
