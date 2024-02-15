@@ -15,18 +15,9 @@ public class QnaDeleteDto {
 		
 	}
 
-	public QnaDeleteDto(int qnaSeq, String userId, String qnaTitle, String qnaCategory, String qnaContent,
-			String qnaImage, String qnaDate, String qnaPasswd, String qnaAnswer) {
+	public QnaDeleteDto(int qnaSeq) {
 		super();
 		this.qnaSeq = qnaSeq;
-		this.userId = userId;
-		this.qnaTitle = qnaTitle;
-		this.qnaCategory = qnaCategory;
-		this.qnaContent = qnaContent;
-		this.qnaImage = qnaImage;
-		this.qnaDate = qnaDate;
-		this.qnaPasswd = qnaPasswd;
-		this.qnaAnswer = qnaAnswer;
 	}
 
 	public int getQnaSeq() {
