@@ -20,6 +20,7 @@ import com.javalec.command.MqnaCommand;
 import com.javalec.command.MqnaContentCommand;
 import com.javalec.command.MqnaWriteCommand;
 import com.javalec.command.ProductCommand;
+import com.javalec.command.QnaDeleteCommand;
 import com.javalec.command.TotalCommand;
 
 /**
@@ -181,8 +182,8 @@ public class MFrontController extends HttpServlet {
 			viewPage = "./board/qnaContent.jsp";
 			break;
 		case ("/qnaDelete.do"):// Q&A content에서 삭제버튼 누를시 삭제기능
-//			command = new QnaDeleteCommand();
-//		command.execute(request, response);
+			command = new QnaDeleteCommand();
+			command.execute(request, response);
 			viewPage = "qna.do";
 			break;
 
