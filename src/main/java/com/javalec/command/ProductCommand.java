@@ -47,12 +47,14 @@ response.setCharacterEncoding("UTF-8");
             String proColor = multi.getParameter("proColor");
             int proQty = Integer.parseInt(multi.getParameter("proQty"));
             String proPrice = multi.getParameter("proPrice");
-            String proImage = multi.getFilesystemName("proImage");
+            String proImage1 = multi.getFilesystemName("proImage1");
+            String proImage2 = multi.getFilesystemName("proImage2");
+            String proImage3 = multi.getFilesystemName("proImage3");
             
             
             // 성공 메시지 전송
             response.getWriter().write("성공");
-            dao.write(proCategory, proName, proGender, proIntroduction,proColor, proQty, proPrice, proImage);
+            dao.write(proCategory, proName, proGender, proIntroduction,proColor, proQty, proPrice,proImage1, proImage2,proImage3);
      
         } catch (Exception e) {
             // 업로드 실패 시 오류 메시지 전송

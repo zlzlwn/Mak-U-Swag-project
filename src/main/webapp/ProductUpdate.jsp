@@ -10,7 +10,7 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <style>
     body {
-    	height: 200vh;
+    	height: 300vh;
         background :   linear-gradient(180deg, rgba(228, 220, 207, 1) 0%, rgba(245, 240, 187, 1) 38%, rgba(125, 157, 156, 1) 100%); /* 짝수 행의 배경색을 지정합니다. */
     }
    select option {
@@ -32,18 +32,18 @@
     /* 여기에 테이블 결과의 스타일을 추가하세요 */
     overflow-y: auto; /* 테이블 결과가 넘칠 경우 스크롤 표시 */
     max-height: calc(100vh - 200px); /* 화면 높이의 100%에서 검색창과 여백 높이만큼 제외한 값으로 최대 높이 지정 */
-   
+    max-width: calc(100vh - 200px);
     margin: 0 auto 0; /* 수평 가운데 정렬을 위해 좌우 여백을 자동으로 설정 */
     padding: 0; /* 패딩 제거 */
     box-sizing: border-box; /* 박스 모델 속성 설정 */
-    margin-left: 150px;
+    margin-left:50px;
     
 }
 
 #result table {
-    width: 120%; /* 테이블 너비를 100%로 설정 */
+    width: 150%; /* 테이블 너비를 100%로 설정 */
     border-collapse: collapse; /* 테이블 셀 경계를 병합하여 테두리를 생성 */
-    margin-left: 20px;
+
 }
 
 #result th, #result td {
@@ -74,8 +74,14 @@
      
 }
 
+#submitBtn{
+	float: right;
+	margin-left: 200px;
+	width: 100px;
+	height: 30px;
+}
 #result {
-    max-width: 70%; /* 테이블의 최대 너비 설정 */
+    max-width: 100%; /* 테이블의 최대 너비 설정 */
 }
 #text {
         float: left; /* 왼쪽으로 이동 */
@@ -107,13 +113,29 @@
     background-color: #ffffff; /* 테이블 셀의 배경색 설정 */
 }
 #imagePreview {
-    width: 300px; /* 미리보기 컨테이너 고정 너비 */
-    height: 300px; /* 미리보기 컨테이너 고정 높이 */
+    width: 100px; /* 미리보기 컨테이너 고정 너비 */
+    height: 100px; /* 미리보기 컨테이너 고정 높이 */
     overflow: auto; /* 이미지가 컨테이너를 벗어나면 스크롤 표시 */
     margin: auto; /* 가운데 정렬 */
 }
 
 #imagePreview img {
+    max-width: 100%; /* 이미지 너비를 최대 100%로 설정 */
+    max-height: 100%; /* 이미지 높이를 최대 100%로 설정 */
+    display: block; /* 블록 요소로 설정하여 중앙 정렬을 위한 margin을 적용하기 위해 */
+    margin: auto; /* 가로 중앙 정렬을 위해 */
+}
+
+#imagePreview2,
+#imagePreview3 {
+    width: 100px; /* 미리보기 컨테이너 고정 너비 */
+    height: 100px; /* 미리보기 컨테이너 고정 높이 */
+    overflow: auto; /* 이미지가 컨테이너를 벗어나면 스크롤 표시 */
+    margin: auto; /* 가운데 정렬 */
+}
+
+#imagePreview2 img,
+#imagePreview3 img {
     max-width: 100%; /* 이미지 너비를 최대 100%로 설정 */
     max-height: 100%; /* 이미지 높이를 최대 100%로 설정 */
     display: block; /* 블록 요소로 설정하여 중앙 정렬을 위한 margin을 적용하기 위해 */
@@ -209,12 +231,30 @@
                 </tr>
                 <tr>
                     <th>현재<br>이미지</th>
-                    <td><input type="text" id="proImage" size="30"></td>
+                    <td><input type="text" id="proImage" size="30" readonly="readonly"></td>
                 </tr>
                  <tr>
                     <th>이미지</th>
                     <td><input type="file" id="proImage1">
                     <div id="imagePreview"></div></td>
+                </tr>
+                <tr>
+                    <th>현재<br>이미지</th>
+                    <td><input type="text" id="proImage2" size="30" readonly="readonly"></td>
+                </tr>
+                 <tr>
+                    <th>이미지</th>
+                    <td><input type="file" id="proImage3">
+                    <div id="imagePreview2"></div></td>
+                </tr>
+                <tr>
+                    <th>현재<br>이미지</th>
+                    <td><input type="text" id="proImage4" size="30" readonly="readonly"></td>
+                </tr>
+                 <tr>
+                    <th>이미지</th>
+                    <td><input type="file" id="proImage5">
+                    <div id="imagePreview3"></div></td>
                 </tr>
             </table>
             <br>
@@ -244,6 +284,7 @@
                 // 파일이 선택되었으므로 현재 이미지 텍스트 숨기기
                 $('#proImage').hide();
             };
+            
 
             // 파일 읽기 시작
             if (file) {
@@ -256,6 +297,69 @@
             }
         });
     });
+    $(document).ready(function() {
+        // 파일 선택(input) 요소의 변경 이벤트 리스너 등록
+        $('#proImage3').change(function(event) {
+            var file = event.target.files[0]; // 선택된 파일 가져오기
+
+            // FileReader 객체 생성
+            var reader = new FileReader();
+
+            reader.onload = function(event) {
+                var imageUrl = event.target.result; // 이미지 URL 가져오기
+                var imageElement = document.createElement('img'); // img 요소 생성
+                imageElement.src = imageUrl; // 이미지 URL 설정
+
+                // 미리보기 엘리먼트에 이미지 추가
+                var imagePreview = document.getElementById('imagePreview2');
+                imagePreview.innerHTML = ''; // 기존의 미리보기 삭제
+                imagePreview.appendChild(imageElement); // 미리보기 엘리먼트에 이미지 추가
+
+                // 파일이 선택되었으므로 현재 이미지 텍스트 숨기기
+                $('#proImage2').hide();
+            };
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                // 파일이 선택되지 않은 경우 미리보기 이미지 제거 및 현재 이미지 텍스트 보이기
+                var imagePreview = document.getElementById('imagePreview2');
+                imagePreview.innerHTML = '';
+                $('#proImage2').show();
+            }
+        });
+    });
+
+            $(document).ready(function() {
+                // 파일 선택(input) 요소의 변경 이벤트 리스너 등록
+                $('#proImage5').change(function(event) {
+                    var file = event.target.files[0]; // 선택된 파일 가져오기
+
+                    // FileReader 객체 생성
+                    var reader = new FileReader();
+
+                    reader.onload = function(event) {
+                        var imageUrl = event.target.result; // 이미지 URL 가져오기
+                        var imageElement = document.createElement('img'); // img 요소 생성
+                        imageElement.src = imageUrl; // 이미지 URL 설정
+
+                        // 미리보기 엘리먼트에 이미지 추가
+                        var imagePreview = document.getElementById('imagePreview3');
+                        imagePreview.innerHTML = ''; // 기존의 미리보기 삭제
+                        imagePreview.appendChild(imageElement); // 미리보기 엘리먼트에 이미지 추가
+
+                        // 파일이 선택되었으므로 현재 이미지 텍스트 숨기기
+                        $('#proImage4').hide();
+                    };
+                    if (file) {
+                        reader.readAsDataURL(file);
+                    } else {
+                        // 파일이 선택되지 않은 경우 미리보기 이미지 제거 및 현재 이미지 텍스트 보이기
+                        var imagePreview = document.getElementById('imagePreview3');
+                        imagePreview.innerHTML = '';
+                        $('#proImage4').show();
+                    }
+                });
+            });
 </script>
     <script>
     $(document).ready(function() {

@@ -31,7 +31,9 @@ public class UpdateProductServlet extends HttpServlet {
 		String Gender = request.getParameter("Gender");
 		String Color = request.getParameter("Color");
 		int Qty = Integer.parseInt(request.getParameter("Qty"));
-		String price = request.getParameter("Price");
+		String price1 = request.getParameter("Price");
+		String priceWithoutComma = price1.replaceAll(",", "");
+		int price = Integer.parseInt(priceWithoutComma);
 		
 		
 		response.setContentType("text/html;charset=UTF-8");
@@ -53,7 +55,7 @@ public class UpdateProductServlet extends HttpServlet {
 			ps.setString(3, Category);
 			ps.setString(4, Gender);
 			ps.setInt(5, Qty);
-			ps.setString(6, price);
+			ps.setInt(6, price);
 			ps.setInt(7, Seq);
 			
 			ps.executeUpdate();

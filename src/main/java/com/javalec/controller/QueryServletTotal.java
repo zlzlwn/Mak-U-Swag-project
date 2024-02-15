@@ -86,7 +86,7 @@ public class QueryServletTotal extends HttpServlet {
                 product.setProGender(rs.getString("proGender"));
                 product.setProColor(rs.getString("proColor"));
                 product.setpQty(rs.getInt("pQty"));
-                product.setpPrice(rs.getString("pPrice"));
+                product.setpPrice(rs.getInt("pPrice"));
                 product.setpMethod(rs.getString("pMethod"));
                 product.setpSpendPoint(rs.getInt("pSpendPoint"));
                 product.setpStackPoint(rs.getInt("pStackPoint"));

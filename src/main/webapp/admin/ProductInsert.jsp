@@ -174,12 +174,28 @@
                 
             </tr>
             <tr>
-                <td>ProImage:</td>
+                <td>이미지1:</td>
                 <td>
-                    <input type="file" id="proImage" name="proImage" accept="image/*" onchange="previewImage(event)">
+                    <input type="file" id="proImage1" name="proImage1" accept="image/*" onchange="previewImage(event)">
                     <div id="imagePreview"></div>
                 </td>
             </tr>
+            <tr>
+                <td>이미지2:</td>
+                <td>
+                    <input type="file" id="proImage2" name="proImage2" accept="image/*" onchange="previewImage1(event)">
+                    <div id="imagePreview1"></div>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>이미지3:</td>
+                <td>
+                    <input type="file" id="proImage3" name="proImage3" accept="image/*" onchange="previewImage2(event)">
+                    <div id="imagePreview2"></div>
+                </td>
+            </tr>
+            
         </table>
         <input type="submit" id="queryButton" value="등록하기" onclick="insert()"/>
         <span id="errorMessage1" class="error-message"></span>
@@ -193,6 +209,23 @@
             };
             reader.readAsDataURL(event.target.files[0]);
         }
+        function previewImage1(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('imagePreview1');
+                output.innerHTML = '<img src="' + reader.result + '" width="100" />';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+        function previewImage2(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('imagePreview2');
+                output.innerHTML = '<img src="' + reader.result + '" width="100" />';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+        
         $(document).ready(function(){
             // ProCategory 콤보박스 선택 시 해당 값을 텍스트 필드에 넣기
             $("#Category").change(function(){
@@ -308,15 +341,16 @@
 
                 
                 var imageSrc = $("#imagePreview img").attr("src");
+                var imageSrc1 = $("#imagePreview1 img").attr("src");
+                var imageSrc2 = $("#imagePreview2 img").attr("src");
 
                 // 값이 없는 경우 에러 메시지 표시
-                if (!textFieldValue6 || textFieldValue6.trim() === "" ||!textFieldValue5 || textFieldValue5.trim() === "" ||!textFieldValue4 || textFieldValue4.trim() === "" ||!textFieldValue3 || textFieldValue3.trim() === "" ||!textFieldValue2 || textFieldValue2.trim() === "" ||!textFieldValue1 || textFieldValue1.trim() === "" ||!textFieldValue || textFieldValue.trim() === "" || !imageSrc || imageSrc.trim() === "") {
+                if (!textFieldValue6 || textFieldValue6.trim() === "" ||!textFieldValue5 || textFieldValue5.trim() === "" ||!textFieldValue4 || textFieldValue4.trim() === "" ||!textFieldValue3 || textFieldValue3.trim() === "" ||!textFieldValue2 || textFieldValue2.trim() === "" ||!textFieldValue1 || textFieldValue1.trim() === "" ||!textFieldValue || textFieldValue.trim() === "" || !imageSrc || imageSrc.trim() === ""|| !imageSrc1 || imageSrc1.trim() === ""|| !imageSrc2 || imageSrc2.trim() === "") {
                     $("#errorMessage1").text("모든 필드를 입력하세요.");// 폼 전송 방지
                     return false;
                 } else {
                     // 값이 있는 경우 페이지 이동
                     alert("상품이 등록되었습니다");
-                    window.location.href = "aaa.do";
                     return true;
 
                 }

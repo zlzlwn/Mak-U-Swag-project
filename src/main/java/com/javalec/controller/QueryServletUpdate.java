@@ -49,7 +49,7 @@ public class QueryServletUpdate extends HttpServlet {
 				ArrayList<Productdto3> studentList = new ArrayList<Productdto3>();
 				
 				
-				String query = "SELECT proSeq,proCategory, proName, proGender, proColor, proQty, proPrice, proImage,proDate from product   where proName like '%" + name + "%'";
+				String query = "SELECT proSeq,proCategory, proName, proGender, proColor, proQty, proPrice, proImage1,proImage2,proImage3,proDate from product   where proName like '%" + name + "%'";
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					Connection conn_mysql = DriverManager.getConnection(SharVar.url_mysql,SharVar.id_mysql,SharVar.pw_mysql);
@@ -65,8 +65,10 @@ public class QueryServletUpdate extends HttpServlet {
 						student.setProGender(rs.getString("proGender"));
 						student.setProColor(rs.getString("proColor"));
 						student.setProQty(rs.getInt("proQty"));
-						student.setProPrice(rs.getString("proPrice"));
-						student.setProImage(rs.getString("proImage"));
+						student.setProPrice(rs.getInt("proPrice"));
+						student.setProImage1(rs.getString("proImage1"));
+						student.setProImage2(rs.getString("proImage2"));
+						student.setProImage3(rs.getString("proImage3"));
 						student.setProDate(rs.getString("proDate"));
 						
 						studentList.add(student); // 이거하나면 하나씩 한줄로 계단식이됨.

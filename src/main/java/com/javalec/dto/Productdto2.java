@@ -11,11 +11,13 @@ public class Productdto2 {
 	  private String proName;
 	  private String proColor;
 	  private String proGender;
-	  private String proPrice;
+	  private int proPrice;
 	  private int totalQuantity;
 	  private String latestProDate;
 	  private String proDate;
-	  private String proImage;
+	  private String proImage1;
+	  private String proImage2;
+	  private String proImage3;
 	  
 	  public Productdto2() {
 		  
@@ -25,16 +27,48 @@ public class Productdto2 {
 	  
 	  
 
-	public String getProImage() {
-		return proImage;
+	public String getProImage1() {
+		return proImage1;
 	}
 
 
 
 
 
-	public void setProImage(String proImage) {
-		this.proImage = proImage;
+	public void setProImage1(String proImage1) {
+		this.proImage1 = proImage1;
+	}
+
+	
+
+
+
+	public String getProImage2() {
+		return proImage2;
+	}
+
+
+
+
+
+	public void setProImage2(String proImage2) {
+		this.proImage2 = proImage2;
+	}
+
+
+
+
+
+	public String getProImage3() {
+		return proImage3;
+	}
+
+
+
+
+
+	public void setProImage3(String proImage3) {
+		this.proImage3 = proImage3;
 	}
 
 
@@ -71,8 +105,8 @@ public class Productdto2 {
 	
 	
 
-	public Productdto2(String proCategory, String proName, String proColor, String proGender, String proPrice,
-			int totalQuantity, String latestProDate, String proImage) {
+	public Productdto2(String proCategory, String proName, String proColor, String proGender, int proPrice,
+			int totalQuantity, String latestProDate, String proImage1,String proImage2,String proImage3) {
 		super();
 		this.proCategory = proCategory;
 		this.proName = proName;
@@ -81,14 +115,16 @@ public class Productdto2 {
 		this.proPrice = proPrice;
 		this.totalQuantity = totalQuantity;
 		this.latestProDate = latestProDate;
-		this.proImage = proImage;
+		this.proImage1 = proImage1;
+		this.proImage2 = proImage2;
+		this.proImage3 = proImage3;
 	}
 
 
 
 
 
-	public Productdto2(String proCategory, String proName, String proColor, String proGender, String proPrice,
+	public Productdto2(String proCategory, String proName, String proColor, String proGender, int proPrice,
 			int totalQuantity, String latestProDate) {
 		super();
 		this.proCategory = proCategory;
@@ -124,7 +160,7 @@ public class Productdto2 {
 		this.data6 = data6;
 	}
 
-	public Productdto2(String proCategory, String proName, String proColor, String proGender, String proPrice,
+	public Productdto2(String proCategory, String proName, String proColor, String proGender, int proPrice,
 			int totalQuantity) {
 		super();
 		this.proCategory = proCategory;
@@ -167,11 +203,11 @@ public class Productdto2 {
 		this.proGender = proGender;
 	}
 
-	public String getProPrice() {
+	public int getProPrice() {
 		return proPrice;
 	}
 
-	public void setProPrice(String proPrice) {
+	public void setProPrice(int proPrice) {
 		this.proPrice = proPrice;
 	}
 

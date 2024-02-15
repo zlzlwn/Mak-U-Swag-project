@@ -31,13 +31,13 @@ public class Productdao {
 		
 	}
 	
-	public void write(String proCategory, String proName, String proGender, String proIntroduction, String proColor, int proQty, String proPrice, String proImage) {
+	public void write(String proCategory, String proName, String proGender, String proIntroduction, String proColor, int proQty, String proPrice,String proImage1, String proImage2,String proImage3) {
 		Connection connection = null;
 		PreparedStatement preparedStatement =null;
 		
 		try {
 			connection = dataSource.getConnection();
-			String query = "INSERT INTO product (proCategory, proName, proGender, proIntroduction,proColor, proQty, proPrice,proImage,proDate) VALUES (?, ?, ?, ?,?, ?, ?,?,now());";
+			String query = "INSERT INTO product (proCategory, proName, proGender, proIntroduction,proColor, proQty, proPrice,proImage1,proImage2,proImage3,proDate) VALUES (?, ?, ?, ?,?, ?, ?,?,?,?,now());";
 			preparedStatement =connection.prepareStatement(query);
 			preparedStatement.setString(1, proCategory);
 			preparedStatement.setString(2, proName);
@@ -46,7 +46,9 @@ public class Productdao {
 			preparedStatement.setString(5, proColor);
 			preparedStatement.setInt(6, proQty);
 			preparedStatement.setString(7, proPrice);
-			preparedStatement.setString(8, proImage);
+			preparedStatement.setString(8, proImage1);
+			preparedStatement.setString(9, proImage2);
+			preparedStatement.setString(10, proImage3);
 			preparedStatement.executeUpdate();
 			
 					
