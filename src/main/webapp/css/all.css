@@ -899,7 +899,7 @@ button.field-button {
 	font-weight: 900;
 }
 
-@
+
 keyframes paybar-animation {from { left:-50%;
 	
 }
@@ -1050,7 +1050,7 @@ html.remodal-is-locked {
 	height: 30px;
 }
 
-@
+
 keyframes remodal-opening-keyframes {from { transform:scale(1.02);
 	opacity: 0;
 }
@@ -1062,7 +1062,7 @@ to {
 }
 
 }
-@
+
 keyframes remodal-closing-keyframes {from { transform:scale(1);
 	opacity: 1;
 }
@@ -1074,7 +1074,7 @@ to {
 }
 
 }
-@
+
 keyframes remodal-overlay-opening-keyframes {from { opacity:0;
 	
 }
@@ -1084,7 +1084,7 @@ to {
 }
 
 }
-@
+
 keyframes remodal-overlay-closing-keyframes {from { opacity:1;
 	
 }
