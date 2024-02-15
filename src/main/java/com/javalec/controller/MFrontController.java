@@ -194,12 +194,13 @@ public class MFrontController extends HttpServlet {
 			viewPage = "./member/privacy.jsp";
 			break;
 		case ("/login.do"): // login 화면으로
+			session.invalidate();
 			viewPage = "./member/login.jsp";
 			break;
 		case ("/whologin.do"): // login눌렀을시 구분
 			command = new LoginCommand();
 			command.execute(request, response);
-			viewPage = "index.jsp";
+			viewPage = (String) request.getAttribute("redirectURL");
 			break;
 		case ("/findId.do"): // 아이디 찾기
 			viewPage = "./member/findId.jsp";
