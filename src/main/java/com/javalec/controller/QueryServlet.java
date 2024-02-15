@@ -52,7 +52,7 @@ public class QueryServlet extends HttpServlet {
         ArrayList<ManagerDaydto> studentList = new ArrayList<ManagerDaydto>();
         
         // 쿼리 생성
-        String query = "SELECT userId, userPw, name, address, phone, email, gender, account, point, active, deactive, howToLogin " +
+        String query = "SELECT userId, userPw, name, address, phone, email, gender, point, active, deactive, howToLogin " +
                 "FROM user " +
                 "WHERE name LIKE '%" + name + "%' ";
 
@@ -100,7 +100,6 @@ public class QueryServlet extends HttpServlet {
                 student.setPhone(rs.getString("phone"));
                 student.setEmail(rs.getString("email"));
                 student.setGender(rs.getString("gender"));
-                student.setAccount(rs.getString("account"));
                 student.setPoint(rs.getInt("point"));
                 student.setActive(rs.getString("active"));
                 student.setDeactive(rs.getString("deactive"));

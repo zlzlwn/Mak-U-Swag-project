@@ -14,7 +14,7 @@ window.onload = function() {
 
 function createTable(data) {
     let table = "<table border='1'>"
-    table += "<tr><th>유저ID</th><th>이름</th><th>주소</th><th>전화번호</th><th>이메일</th><th>성별</th><th>계좌</th><th>포인트</th><th>가입일자</th><th>탈퇴일자</th><th>로그인방식</th></tr>"
+    table += "<tr><th>유저ID</th><th>이름</th><th>주소</th><th>전화번호</th><th>이메일</th><th>성별</th><th>포인트</th><th>가입일자</th><th>탈퇴일자</th><th>로그인방식</th></tr>"
     //데이터 행 추가
     for (let i = 0; i < data.length; i++) {
         table += "<tr>" +
@@ -24,7 +24,6 @@ function createTable(data) {
             "<td style='width: 8%'>" + (data[i].phone ? data[i].phone : '') + "</td>" +
             "<td style='width: 10%'>" + (data[i].email ? data[i].email : '') + "</td>" +
             "<td style='width: 5%'>" + (data[i].gender ? data[i].gender : '') + "</td>" +
-            "<td style='width: 12%'>" + (data[i].account ? data[i].account : '') + "</td>" +
             "<td style='width: 7%'>" + (data[i].point ? data[i].point : '') + "</td>" +
            "<td style='width: 10%'>" + (data[i].active ? data[i].active : '') + "</td>" +
             "<td style='width: 8%'>" + (data[i].deactive ? data[i].deactive : '') + "</td>" +

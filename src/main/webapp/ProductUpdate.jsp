@@ -17,26 +17,26 @@
         text-align: center;
     }
 #searchContainer {
-    top: 0;
+    top: 10%;
     right: 7%;
     width: 100%;
     background-color: linear-gradient(180deg, rgba(228, 220, 207, 1) 0%, rgba(245, 240, 187, 1) 38%, rgba(125, 157, 156, 1) 100%);
     padding: 10px;
     z-index: 2; /* 다른 요소들 위에 보이도록 z-index 설정 */
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 150px;
 }
 
-#result {
-    margin-top: 30%; /* 검색창과 겹치지 않게 여백 추가 */
+#result { /* 검색창과 겹치지 않게 여백 추가 */
     /* 여기에 테이블 결과의 스타일을 추가하세요 */
+    margin-top: 10px;
     overflow-y: auto; /* 테이블 결과가 넘칠 경우 스크롤 표시 */
     max-height: calc(100vh - 200px); /* 화면 높이의 100%에서 검색창과 여백 높이만큼 제외한 값으로 최대 높이 지정 */
     max-width: calc(100vh - 200px);
     margin: 0 auto 0; /* 수평 가운데 정렬을 위해 좌우 여백을 자동으로 설정 */
     padding: 0; /* 패딩 제거 */
     box-sizing: border-box; /* 박스 모델 속성 설정 */
-    margin-left:50px;
+    margin-left:80px;
     
 }
 
@@ -77,6 +77,12 @@
 #submitBtn{
 	float: right;
 	margin-left: 200px;
+	width: 100px;
+	height: 30px;
+}
+#delBtn{
+	float: right;
+	margin-left: 170px;
 	width: 100px;
 	height: 30px;
 }
@@ -259,8 +265,10 @@
             </table>
             <br>
             <button type="button" id="submitBtn">수정</button>
+            <button type="button" id="delBtn">삭제</button>
         </div>
     </div>
+    
     <script src="js/queryupdate.js"></script> <!-- queryTable.js 파일을 불러옴 -->
     <script>
     $(document).ready(function() {

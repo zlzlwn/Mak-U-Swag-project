@@ -16,7 +16,10 @@ function createTable(data) {
 	
 	dataReal = Array.from(data)
 	
-    let table = "<table border='1'>"
+    let table = "<table border='1' style='margin-top: 20px'>";
+    
+  
+    
     table += "<tr><th>번호</th><th>카테고리</th><th>이름</th><th>성별</th><th>색상</th><th>수량</th><th>개당 가격</th><th>이미지1</th><th>이미지2</th><th>이미지3</th><th>등록일/수정일</th></tr>"
     //데이터 행 추가
     for (let i = 0; i < data.length; i++) {
@@ -169,6 +172,8 @@ function updateProductWithoutImage() {
                 $("#proQty").val("");
                 $("#proPrice").val("");
                 $('#proImage').val("");
+                $('#proImage2').val("");
+                $('#proImage4').val("");
                 $('#Category').val('default');
                 $('#Gender').val('default');
                 $('#quantity').val('default');
@@ -181,7 +186,55 @@ function updateProductWithoutImage() {
 				}
 			})
 		}
+	$(document).ready(function() {
+	$("#delBtn").click(function() {
 	
+	let Seq = $("#proSeq").val();
+    
+    // AJAX 요청
+    $.ajax({
+        type: "POST",
+        url: "DelProductServlet", // 제품을 업데이트할 서블릿 주소
+        data: {
+			Seq : Seq,
+        },
+        success: function(response) {
+					/* 서버에서 받은 응답 처리 */
+					//$("#result").html(response)
+					//수정 후 디비를 다시불러와야함.
+						$.ajax({
+							type: "POST",
+							url: "QueryServletUpdate",
+							data: {name : name},
+							success: function(response) {
+									/* 서버에서 받은 응답 처리 */
+								createTable(response) //json
+		}
+	})
+				$("#proSeq").val("");
+               	$("#proName").val("");
+	 			$("#name").val("");
+                $("#proCategory").val("");
+                $("#proGender").val("");
+                $("#proColor").val("");
+                $("#proQty").val("");
+                $("#proPrice").val("");
+                $('#proImage').val("");
+                 $('#proImage2').val("");
+                  $('#proImage4').val("");
+                $('#Category').val('default');
+                $('#Gender').val('default');
+                $('#quantity').val('default');
+
+					alert("수정되었습니다.")
+					
+				},
+				error : function(xhr,status,error){
+					alert("수정 문제 발생"+ error)
+				}
+			})
+		});
+		});
 
 // 이미지를 포함하여 모든 필드를 업데이트하는 함수
 function uploadAndUpdateProduct() {
@@ -264,6 +317,10 @@ function uploadAndUpdateProduct() {
                 $("#proPrice").val("");
                 $("#proImage1").val("");
                 $('#proImage').val("");
+                $("#proImage2").val("");
+                $('#proImage3').val("");
+                $("#proImage4").val("");
+                $('#proImage5').val("");
                 $('#Category').val('default');
                 $('#Gender').val('default');
                 $('#quantity').val('default');
