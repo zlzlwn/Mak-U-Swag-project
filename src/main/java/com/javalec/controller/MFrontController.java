@@ -179,7 +179,12 @@ public class MFrontController extends HttpServlet {
 			command = new MqnaContentCommand();
 			command.execute(request, response);
 			viewPage = "./board/qnaContent.jsp";
-		break;
+			break;
+		case ("/qnaDelete.do"):// Q&A content에서 삭제버튼 누를시 삭제기능
+//			command = new QnaDeleteCommand();
+//		command.execute(request, response);
+			viewPage = "qna.do";
+			break;
 
 		// ------------- member 폴더 ------------------
 		case ("/agreement.do"): // agreement
@@ -195,7 +200,7 @@ public class MFrontController extends HttpServlet {
 			command = new LoginCommand();
 			command.execute(request, response);
 			viewPage = "index.jsp";
-		break;
+			break;
 		case ("/findId.do"): // 아이디 찾기
 			viewPage = "./member/findId.jsp";
 			break;
@@ -205,6 +210,13 @@ public class MFrontController extends HttpServlet {
 		case ("/memberJoin.do"): // 회원가입
 			viewPage = "./member/join.jsp";
 			break;
+		case ("/myPage.do"): // 마이페이지
+			viewPage = "./member/myPage.jsp";
+		break;
+		case ("/cart.do"): // 장바구니
+			viewPage = "./member/cart.jsp";
+		break;
+			
 
 		// ------------- admin ---------------------
 		

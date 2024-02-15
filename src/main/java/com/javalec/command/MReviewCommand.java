@@ -40,6 +40,7 @@ public class MReviewCommand implements MCommand {
 	        currentPageRange = (requestPage - 1) / numOfTuplesPerPage + 1;
 	    }else {
 	        // 새로운 페이지로 이동할 때 초기화
+	    	
 	        session.setAttribute("currentPage", 1);
 	    }
         // 계산된 페이지 목록
