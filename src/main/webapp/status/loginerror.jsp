@@ -20,7 +20,8 @@
 <h1>에러 에러 에러~~~!!!!!!!!!!</h1>
 <h1>에러 에러 에러~~~!!!!!!!!!!</h1>
 <h1>에러 에러 에러~~~!!!!!!!!!!</h1>
-<h1>에러 에러 에러~~~!!!!!!!!!!</h1>
+<h1 style="color: red;">아이디랑 비밀번호를</h1>
+<h1 style="color: red;">제대로 입력하여 주세요</h1>
 <h1>에러 에러 에러~~~!!!!!!!!!!</h1>
 <h1>에러 에러 에러~~~!!!!!!!!!!</h1>
 <h1>에러 에러 에러~~~!!!!!!!!!!</h1>
@@ -28,7 +29,7 @@
 <br>
 <br>
 <br>
-<a href="login.do" class="primary-button"><span>메인으로</span></a>
+<a href="login.do" class="primary-button"><span>로그인으로</span></a>
 </div>
 </body>
 </html>
