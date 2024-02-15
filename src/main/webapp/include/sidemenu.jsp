@@ -11,20 +11,16 @@
 		</div>
 		<div class="xans-element- xans-layout xans-layout-category site-menu">
 			<ul>
-				<li class="menu-item xans-record-"><a href="best100.do">BEST
-						100</a></li>
+				<li class="menu-item xans-record-"><a href="best100.do">BEST 100</a></li>
 				<li class="menu-item xans-record-"><a href="all_in_one.do">All-in-one</a></li>
 				<li class="menu-item xans-record-"><a href="outer.do">Outer</a></li>
-				<li class="menu-item xans-record-"><a href="topshort.do">Top(short
-						sleeve)</a></li>
-				<li class="menu-item xans-record-"><a href="toplong.do">Top(long
-						sleeve)</a></li>
+				<li class="menu-item xans-record-"><a href="topshort.do">Top(short sleeve)</a></li>
+				<li class="menu-item xans-record-"><a href="toplong.do">Top(long sleeve)</a></li>
 				<li class="menu-item xans-record-"><a href="bottoms.do">Bottoms</a></li>
 				<li class="menu-item xans-record-"><a href="bags.do">Bags</a></li>
 				<li class="menu-item xans-record-"><a href="accessories.do">Accessories</a></li>
 				<li class="menu-item xans-record-"><a href="shoes.do">Shoes</a></li>
-				<li class="menu-item xans-record-"><a href="women.do">Women
-						only</a></li>
+				<li class="menu-item xans-record-"><a href="women.do">Women only</a></li>
 			</ul>
 		</div>
 	</div>

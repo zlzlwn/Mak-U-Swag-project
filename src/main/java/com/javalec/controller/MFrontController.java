@@ -215,7 +215,7 @@ public class MFrontController extends HttpServlet {
 			break;
 
 		case ("/productmanager.do"):
-//			//			command= new PmCommand();
+//			//command= new PmCommand();
   			command= new ProductCommand();
 			command.execute(request,response);
 			viewPage="./admin/ProductManager.jsp";
@@ -258,16 +258,16 @@ public class MFrontController extends HttpServlet {
 			viewPage = "index.jsp";
 			break;
 			
-		// ------------- product ---------------------
+		// ------------- product search ---------------------
 		case ("/search.do"): // 검색
 			viewPage = "./product/search.jsp";
 			break;
 		case ("/search1.do"): // 재 검색
 			viewPage = "./product/search1.jsp";
-		break;
+			break;
 		case ("/search2.do"): // 다시 검색
 			viewPage = "./product/search2.jsp";
-		break;
+			break;
 
 		default:
 			break;
