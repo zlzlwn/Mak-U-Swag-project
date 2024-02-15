@@ -11,44 +11,30 @@ public class LoginCommand implements MCommand {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-
+		
 		String userId = request.getParameter("userId");
 		String userPasswd = request.getParameter("userPasswd");
+		
 		HttpSession session = request.getSession();
-		session.setAttribute("userid", userId);
-
-		if (userId.isEmpty() || userPasswd.isEmpty()) {
-			// ID or PW is empty, set an attribute for error handling
-			request.setAttribute("redirectURL", "loginerror.jsp");
-		}
-
+		session.setAttribute("userId", userId);
+		
 		UserDao userdao = new UserDao();
-
-//		UserDto user = userdao.view(userId, userPasswd);
-//
-//		if (user != null && user.getUserPw().equals(userPasswd)) {
-//			// Login successful
-//
-//			session.setAttribute("user", user);
-//			// You can set additional attributes or redirect to a specific page
-//			request.setAttribute("redirectURL", "loginSuccess.jsp");
-//			System.out.println(user.getName());
-//		} else if (admin != null && admin.getPassword().equals(pw)) {
-//			// Administrator login successful
-//
-//			session.setAttribute("admin", admin);
-//			System.out.println(admin.getName());
-//
-//			// You can set additional attributes or redirect to a specific admin page
-//			request.setAttribute("redirectURL", "adminSuccess.jsp");
-//		}
-//		// Display a success message using JavaScript alert
-//
-//		else {
-//			// Login failed
-//			request.setAttribute("redirectURL", "loginerror.jsp");
-//
-//			// Forward back to the login page with an error message
-//		}
+		UserDto user = userdao.view(userId, userPasswd);
+		
+		if (user != null && user.getUserPw().equals(userPasswd)) {
+			session.setAttribute("user", user);
+			
+			// userId가 "admin1"인 경우 관리자 페이지로 이동
+	        if (user.getUserId().equals("admin1")) {
+	            request.setAttribute("redirectURL", "./status/adminSuccess.jsp");
+	        } else {
+	            // 그 외의 경우 일반 회원 페이지로 이동
+	            request.setAttribute("redirectURL", "./status/loginSuccess.jsp");
+	        }
+		}else {
+			// 로그인 에러시
+			session.invalidate();
+			request.setAttribute("redirectURL", "./status/loginerror.jsp");
+		}
 	}
 }

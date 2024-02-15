@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.javalec.dao.NoticeDao;
+import com.javalec.dao.ReviewDao;
 import com.javalec.dto.NoticeDtoPJH;
+import com.javalec.dto.ReviewDtoPJH;
 import com.mysql.cj.Session;
 
 public class MReviewCommand implements MCommand {
@@ -20,21 +22,13 @@ public class MReviewCommand implements MCommand {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		
-		//필드에 입력된 값을 가져온다
-		System.out.println("인풋확인");
-		String searchInput = request.getParameter("searchInput");
-		System.out.println(searchInput);
-//		String searchDate = request.getParameter("searchInput");
-//		System.out.println(searchDate);
-//		String searchKey = request.getParameter("searchInput");
-//		System.out.println(searchKey);
 		//사용자가 요청한 페이지 번호 초기값은 가장 최신글을 보여주는 1
 	    int requestPage = 1;
 	    //페이지당 표시할 게시글의 수
 	    int numOfTuplesPerPage = 5;
 	    // 현재 페이지 범위 (1에서 5페이지까지 표시)
 	    int currentPageRange = 1;
-	    NoticeDao dao = new NoticeDao();
+	    ReviewDao dao = new ReviewDao();
 	    HttpSession session = request.getSession();
 
 	    //초기화면에서는 page값을 넘겨주지 안줌 -> 초기값인 1페이지 목록을 보여줌
@@ -44,6 +38,10 @@ public class MReviewCommand implements MCommand {
 	        //content에서 목록보기 요청시 최근 페이지 목록으로 돌아가기 위해 세션에 저장
 	        session.setAttribute("currentPage", requestPage);
 	        currentPageRange = (requestPage - 1) / numOfTuplesPerPage + 1;
+	    }else {
+	        // 새로운 페이지로 이동할 때 초기화
+	    	
+	        session.setAttribute("currentPage", 1);
 	    }
         // 계산된 페이지 목록
         ArrayList<Integer> pageList = calcNumOfPage(dao.countTuple(searchInput), numOfTuplesPerPage, currentPageRange);
@@ -52,7 +50,7 @@ public class MReviewCommand implements MCommand {
         int totalPage = dao.calculateTotalPage(numOfTuplesPerPage, searchInput);
 
         // 해당 페이지에 알맞은 번호의 게시글
-        ArrayList<NoticeDtoPJH> dtos = dao.list(requestPage, numOfTuplesPerPage,searchInput);
+        ArrayList<ReviewDtoPJH> dtos = dao.list(requestPage, numOfTuplesPerPage,searchInput);
 
         // request에 게시글들을 태워 보낸다.
         request.setAttribute("list", dtos);
@@ -82,7 +80,6 @@ public class MReviewCommand implements MCommand {
 	    }
 	    return arr;
 	}
-
 
 	
 	

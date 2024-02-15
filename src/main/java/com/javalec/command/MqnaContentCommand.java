@@ -14,13 +14,21 @@ public class MqnaContentCommand implements MCommand {
 		// TODO Auto-generated method stub
 		QnaContentDao dao = new QnaContentDao();
 		QnaDto view = dao.infomation(request.getParameter("qnaSeq"));
+		int qnaSeq = view.getQnaSeq();
 		String qnaTitle = view.getQnaTitle();
 		String qnaContent = view.getQnaContent();
+		String qnaImage = view.getQnaImage();
 		String qnaDate = view.getQnaDate();
 		
 		
+		System.out.println("------------------------");
+		System.out.println(view);
+		System.out.println("------------------------");
+		
+		request.setAttribute("qnaSeq", qnaSeq);
 		request.setAttribute("qnaTitle", qnaTitle);
 		request.setAttribute("qnaContent", qnaContent);
+		request.setAttribute("qnaImage", qnaImage);
 		request.setAttribute("qnaDate", qnaDate);
 	}
 
