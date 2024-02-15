@@ -76,9 +76,7 @@
 												alt="..." title="...">
 										</button>
 									</div>
-										<span class="primary-button"><span>조회<input
-												alt="조회" id="order_search_btn" type="image"
-												src="//img.echosting.cafe24.com/skin/admin_ko_KR/myshop/btn_search.gif"></span></span>
+										<span class="primary-button"><span>조회</span>
 								</fieldset>
 							</div>
 						</div>

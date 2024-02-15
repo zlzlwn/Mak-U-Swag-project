@@ -607,10 +607,11 @@ table.nneditor-table {
 	justify-content: center;
 	font-weight: 700;
 	overflow: hidden;
-	padding: 13px 30px;
+	padding: 12px 40px;
 	position: relative;
 	text-align: center;
 	transition: border-color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	transform: translateX(6px);
 }
 
 .primary-button .naver-pay-icon {
@@ -4626,6 +4627,16 @@ my-account .local-nav {
 
 .order-list .row .item {
     width: 10%;
+}
+
+
+.account-toolbar .search-order .date-range .primary-button input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
 
