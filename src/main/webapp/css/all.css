@@ -533,7 +533,6 @@ li {
 img, fieldset {
 	border: none;
 	vertical-align: top;
-	margin-right: 15px;
 }
 
 table {
@@ -4588,3 +4587,46 @@ my-account .local-nav {
     top: 0;
     left: 0;
 }
+.table-list .list-header .row .item {
+    color: #0e3773;
+    font-size: 12px;
+    font-weight: 700;
+}
+.order-list .row .order-number {
+    width: 50%;
+}
+
+.table-list .row .item {
+    float: left;
+    text-transform: uppercase;
+    padding: 0 10px;
+}
+
+.table-list .list-body {
+    border-top: 1px solid #0e3773;
+}
+
+.table-list .message {
+    font-size: 14px;
+    padding: 75px 0;
+    text-align: center;
+}
+
+.my-account .local-nav {
+    margin-bottom: 60px;
+}
+
+.order-list .row .order-number {
+    width: 50%;
+}
+
+.order-list .row .order-product {
+    width: 20%;
+}
+
+.order-list .row .item {
+    width: 10%;
+}
+
+
+

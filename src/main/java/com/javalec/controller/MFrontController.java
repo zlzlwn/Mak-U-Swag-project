@@ -263,6 +263,11 @@ public class MFrontController extends HttpServlet {
 			command.execute(request,response);
 			viewPage="./admin/TotalAdmin.jsp";
 			break;
+		case ("/insert.do"):
+			command= new ProductCommand();
+			command.execute(request,response);
+			viewPage="./admin/ProductInsertAdmin.jsp";
+		break;
 
 		// ------------- logout ---------------------
 		case ("/logout.do"): // 로그아웃시 메인으로
