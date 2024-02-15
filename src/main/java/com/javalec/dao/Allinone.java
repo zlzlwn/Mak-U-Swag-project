@@ -41,7 +41,7 @@ public class Allinone {
 	        connection = dataSource.getConnection();
 	        // SQL 쿼리를 사용하여 페이지 및 페이지당 튜플 수에 기반한 제한된 수의 공지사항을 가져옴
 	        
-	        String query = "SELECT proName,proPrice,proImage FROM product";
+	        String query = "SELECT proName,proPrice,proImage1 FROM product";
 	        
 	        preparedStatement = connection.prepareStatement(query);
 	        resultSet = preparedStatement.executeQuery();
@@ -51,9 +51,9 @@ public class Allinone {
 	        while (resultSet.next()) {
 	            String proName = resultSet.getString("proName");
 	            String proPrice = resultSet.getString("proPrice");
-	            String proImage = resultSet.getString("proImage");
+	            String proImage1 = resultSet.getString("proImage1");
 
-	            Allinonedto dto = new Allinonedto(proName,proPrice,proImage);
+	            Allinonedto dto = new Allinonedto(proName,proPrice,proImage1);
 	            dtos.add(dto);
 	        }
 
