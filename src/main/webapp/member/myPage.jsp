@@ -7,7 +7,6 @@
 <title>MYPAGE</title>
 <link rel="stylesheet" href="./css/all.css">
 <link rel="stylesheet" href="./css/all2.css">
-<link rel="stylesheet" href="./css/login.css">
 <!-- 인터넷 창 아이콘에 로고 나오게 하기 -->
 <link rel="icon" href="./images/CompanyLogo.png">
 </head>
@@ -40,8 +39,6 @@
 						</div>
 						<div class="nav-items">
 							<a href="/myshop/order/list.html" class="nav-item selected">Orders</a>
-							<a href="/myshop/coupon/coupon.html" class="nav-item">Coupons</a>
-							<a href="/myshop/mileage/historyList.html" class="nav-item">Points</a>
 							<a href="/member/modify.html" class="nav-item">My Info</a>
 						</div>
 					</div>
@@ -56,19 +53,6 @@
 							<div class="search-order">
 								<fieldset>
 									<legend>검색기간설정</legend>
-									<div class="order-status ">
-										<span class="select-field"><select id="order_status"
-											name="order_status" class="fSelect">
-												<option value="all">전체 주문처리상태</option>
-												<option value="shipped_before">입금전</option>
-												<option value="shipped_standby">배송준비중</option>
-												<option value="shipped_begin">배송중</option>
-												<option value="shipped_complate">배송완료</option>
-												<option value="order_cancel">취소</option>
-												<option value="order_exchange">교환</option>
-												<option value="order_return">반품</option>
-										</select></span>
-									</div>
 									<div class="period">
 										<a href="#none" days="00">오늘</a> <a href="#none" days="07">1주일</a>
 										<a href="#none" days="30">1개월</a> <a href="#none" days="90">3개월</a>
@@ -91,10 +75,10 @@
 												src="//img.echosting.cafe24.com/skin/admin_ko_KR/myshop/ico_cal.gif"
 												alt="..." title="...">
 										</button>
+									</div>
 										<span class="primary-button"><span>조회<input
 												alt="조회" id="order_search_btn" type="image"
 												src="//img.echosting.cafe24.com/skin/admin_ko_KR/myshop/btn_search.gif"></span></span>
-									</div>
 								</fieldset>
 							</div>
 						</div>
@@ -196,12 +180,15 @@
 											<a href="#none" class="small-button displaynone" onclick="">반품철회</a>
 										</div>
 									</div>
+									<div>
+									<br>									
 									<div class="item order-returns">
-										<span class="label">취소/교환/반품</span>
+										<span class="label">반품</span>
 										<p class="displaynone">
 											<a href="#none" class="small-button" onclick="">상세정보</a>
 										</p>
 										<p class="displaynone">-</p>
+									</div>
 									</div>
 								</div>
 							</div>
