@@ -53,7 +53,7 @@
 											</div>
 										</div>
 							<div class="post-footer">
-											<span class=""><a href="#none" onclick="BOARD_READ.article_delete('BoardDelForm','5');" class="button"><span>삭제</span></a></span>
+											<span class=""><a href="qnaDelete.do?qnaSeq=${qnaSeq }" class="button"><span>삭제</span></a></span>
 								            <span class=""><a href="/board/free/modify.html?board_act=edit&no=29496&board_no=5" class="button"><span>수정</span></a></span>
 										</div>
 							</div>
