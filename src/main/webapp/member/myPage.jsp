@@ -5,10 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>MYPAGE</title>
+<script src="/MakUSwag2.5/js/mypageList.js"></script>
 <link rel="stylesheet" href="./css/all.css">
 <link rel="stylesheet" href="./css/all2.css">
 <!-- 인터넷 창 아이콘에 로고 나오게 하기 -->
 <link rel="icon" href="./images/CompanyLogo.png">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </head>
 <body class="nav-expended">
 	<!-- ============================== [[ Header  section]] ==============================-->
@@ -76,131 +79,34 @@
 												alt="..." title="...">
 										</button>
 									</div>
-										<span class="primary-button"><span>조회</span>
+									<span class="primary-button" id="searchButton" onclick="searchData()"><span>조회</span>
 								</fieldset>
 							</div>
 						</div>
 						<input id="mode" name="mode" value="" type="hidden"> <input
 							id="term" name="term" value="" type="hidden">
 					</form>
-					<div class="table-list order-list">
-						<!--
-	        $login_url = /member/login.html
-	    -->
-						<div class="list-header">
-							<div class="row">
-								<div class="item order-number">주문일자(주문번호)</div>
-								<div class="item order-product">상품정보</div>
-								<div class="item order-price">구매금액</div>
-								<div class="item order-status">주문처리상태</div>
-								<div class="item order-returns">취소/교환/반품</div>
+					<div>
+						<div class="table-list order-list">
+
+
+
+							<div class="xans-element- xans-board xans-board-list qna-list">
+
+								<div class="list-item xans-record-">
+									<a href="qnaContent.do?qnaSeq=161" class="post-link"> <span
+										class="number">주문번호</span> <span class="number">상품명</span><span
+										class="number">수량</span> <span class="number">가격</span><span
+										class="number">적립포인트</span><span class="number">주문일자</span>
+									</a>
+								</div>
+								<div id="result"></div>
+
 							</div>
+
 						</div>
 
-						<div
-							class="xans-element- xans-myshop xans-myshop-orderhistorylistitem list-body">
-							<div class="displaynone">
-								<div class="row ">
-									<div class="item order-number">
-										<span class="number"> ()</span>
-										<div class="list-actions">
-											<a href="detail.html" class="small-button">상세보기</a> <a
-												href="#none" class="small-button displaynone" onclick="">주문취소</a>
-											<a href="cancel.html" class="small-button displaynone">취소신청</a>
-											<a href="exchange.html" class="small-button displaynone">교환신청</a>
-											<a href="return.html" class="small-button displaynone">반품신청</a>
-										</div>
-									</div>
-									<div class="item order-product">
-										x
-										<div class="option displaynone"></div>
-										<ul
-											class="xans-element- xans-myshop xans-myshop-optionset option">
-											<li class=""><strong></strong> (개)</li>
-										</ul>
-									</div>
-									<div class="item order-price"></div>
-									<div class="item order-status">
-										<span class="label">주문처리상태</span> <span class="status"></span>
-										<div class="list-actions">
-											<p class="displaynone">
-												<a href="#none" class="small-button" onclick="">배송조회</a>
-											</p>
-											<a href="/board/product/write.html"
-												class="small-button displaynone crema-new-review-link"
-												data-cafe24-product-link=""
-												data-review-source="mobile_my_orders">구매후기</a> <a
-												href="#none" class="small-button displaynone" onclick="">취소철회</a>
-											<a href="#none" class="small-button displaynone" onclick="">교환철회</a>
-											<a href="#none" class="small-button displaynone" onclick="">반품철회</a>
-										</div>
-									</div>
-									<div class="item order-returns">
-										<span class="label">취소/교환/반품</span>
-										<p class="displaynone">
-											<a href="#none" class="small-button" onclick="">상세정보</a>
-										</p>
-										<p class="displaynone">-</p>
-									</div>
-								</div>
-								<div class="row ">
-									<div class="item order-number">
-										<span class="number"> ()</span>
-										<div class="list-actions">
-											<a href="detail.html" class="small-button">상세보기</a> <a
-												href="#none" class="small-button displaynone" onclick="">주문취소</a>
-											<a href="cancel.html" class="small-button displaynone">취소신청</a>
-											<a href="exchange.html" class="small-button displaynone">교환신청</a>
-											<a href="return.html" class="small-button displaynone">반품신청</a>
-										</div>
-									</div>
-									<div class="item order-product">
-										x
-										<div class="option displaynone"></div>
-										<ul
-											class="xans-element- xans-myshop xans-myshop-optionset option">
-											<li class=""><strong></strong> (개)</li>
-										</ul>
-									</div>
-									<div class="item order-price"></div>
-									<div class="item order-status">
-										<span class="label">주문처리상태</span> <span class="status"></span>
-										<div class="list-actions">
-											<p class="displaynone">
-												<a href="#none" class="small-button" onclick="">배송조회</a>
-											</p>
-											<a href="/board/product/write.html"
-												class="small-button displaynone crema-new-review-link"
-												data-cafe24-product-link=""
-												data-review-source="mobile_my_orders">구매후기</a> <a
-												href="#none" class="small-button displaynone" onclick="">취소철회</a>
-											<a href="#none" class="small-button displaynone" onclick="">교환철회</a>
-											<a href="#none" class="small-button displaynone" onclick="">반품철회</a>
-										</div>
-									</div>
-									<div>
-									<br>									
-									<div class="item order-returns">
-										<span class="label">반품</span>
-										<p class="displaynone">
-											<a href="#none" class="small-button" onclick="">상세정보</a>
-										</p>
-										<p class="displaynone">-</p>
-									</div>
-									</div>
-								</div>
-							</div>
-							<p class="message ">No results found.</p>
-						</div>
 
-						<div
-							class="xans-element- xans-myshop xans-myshop-orderhistorypaging pagination">
-							<ul>
-								<li class="xans-record-"><a
-									href="?page=1&amp;history_start_date=2023-11-17&amp;history_end_date=2024-02-15&amp;past_year=2023"
-									class="this">1</a></li>
-							</ul>
-						</div>
 					</div>
 
 				</div>
