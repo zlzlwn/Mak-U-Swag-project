@@ -37,9 +37,11 @@ public class MypageServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("마이페이지 서블릿1");
 		// AJAX에서 전달한 데이터 받기
 		String name = request.getParameter("name");
 		response.setContentType("text/html;charset=UTF-8");
+		
 		
 		//박스에 여러개의 데이터 담기
 		ArrayList<PurchaesDto> purchaseList = new ArrayList<PurchaesDto>();
@@ -47,11 +49,14 @@ public class MypageServlet extends HttpServlet {
 		
 		String query = "SELECT p.purSeq, p.pQty, p.pPrice, p.pStackPoint, p.pDate, pr.proName\n"
 				+ "FROM purchase as p\n"
-				+ "JOIN product as pr ON p.proSeq = pr.proSeq;";
-		
+				+ "JOIN product as pr ON p.proSeq = pr.proSeq WHERE p.pDate BETWEEN '2024-02-10' AND '2024-02-16' ;";
+		System.out.println(query);
 		try {
+			System.out.println("마이페이지 서블릿2");
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("마이페이지 서블릿3");
 			Connection conn_mysql = DriverManager.getConnection(SharVar.url_mysql,SharVar.id_mysql,SharVar.pw_mysql);
+			System.out.println("마이페이지 서블릿4");
 			Statement stmt_mysql = conn_mysql.createStatement();
 			
 			ResultSet rs = stmt_mysql.executeQuery(query);
@@ -80,8 +85,11 @@ public class MypageServlet extends HttpServlet {
 			
 			
 			
+			
+			
 		}catch(Exception e) {
 			e.printStackTrace();
+			System.out.println("마이페이지 서블릿4");
 		}
 	}
 	

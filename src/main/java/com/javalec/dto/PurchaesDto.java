@@ -27,6 +27,18 @@ public class PurchaesDto {
 		this.pDate = pDate;
 		this.proName = proName;
 	}
+	
+	 public String toString() {
+	        return "PurchaesDto{" +
+	                "purSeq=" + purSeq +
+	                ", pQty=" + pQty +
+	                ", pPrice=" + pPrice +
+	                ", pStackPoint=" + pStackPoint +
+	                ", pDate='" + pDate + '\'' +
+	                ", proName='" + proName + '\'' +
+	                '}';
+	    }
+	
 
 	public int getPurSeq() {
 		return purSeq;

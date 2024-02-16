@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>MYPAGE</title>
+<script src="/MakUSwag2.5/js/mypageList.js"></script>
 <link rel="stylesheet" href="./css/all.css">
 <link rel="stylesheet" href="./css/all2.css">
 <!-- 인터넷 창 아이콘에 로고 나오게 하기 -->
 <link rel="icon" href="./images/CompanyLogo.png">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="/MakUSwag2.5/js/mypageList.js"></script>
 
 </head>
 <body class="nav-expended">
@@ -79,7 +79,7 @@
 												alt="..." title="...">
 										</button>
 									</div>
-										<span class="primary-button"><span>조회</span>
+									<span class="primary-button" id="searchButton" onclick="searchData()"><span>조회</span>
 								</fieldset>
 							</div>
 						</div>
@@ -87,42 +87,26 @@
 							id="term" name="term" value="" type="hidden">
 					</form>
 					<div>
-					<div class="table-list order-list">
-					
-					
-						 		<div id="result"></div>
-								<div class="xans-element- xans-board xans-board-list qna-list">
-							
+						<div class="table-list order-list">
+
+
+
+							<div class="xans-element- xans-board xans-board-list qna-list">
+
 								<div class="list-item xans-record-">
-									<a href="qnaContent.do?qnaSeq=161" class="post-link"> <span class="number">주문번호</span> <span class="number">상품명</span><span class="number">수량</span>
-									<span class="number">가격</span><span class="number">적립포인트</span><span class="number">주문일자</span>
+									<a href="qnaContent.do?qnaSeq=161" class="post-link"> <span
+										class="number">주문번호</span> <span class="number">상품명</span><span
+										class="number">수량</span> <span class="number">가격</span><span
+										class="number">적립포인트</span><span class="number">주문일자</span>
 									</a>
 								</div>
-							
-								<div class="list-item xans-record-">
-									<a href="qnaContent.do?qnaSeq=161" class="post-link"> <span class="number">10</span> <span class="number">NEW SEASON OVERALLS</span><span class="number">1</span>
-									<span class="number">68,000</span><span class="number">680</span><span class="number">2024-02-15</span>
-									</a>
-								</div>
-							
-							
-								<%-- <c:forEach items="${list}" var="dto" varStatus="loop">
-								<div class="list-item xans-record-">
-									<a href="qnaContent.do?qnaSeq=161" class="post-link"> 
-									<span class="number">주문번호</span> 
-									<span class="number">상품명</span>
-									<span class="number">수량</span>
-									<span class="number">가격</span>
-									<span class="number">적립포인트</span>
-									<span class="number">주문일자</span>
-									</a>
-								</div>
-							</c:forEach> --%>
-										
-															
+								<div id="result"></div>
+
+							</div>
+
 						</div>
-					
-						</div>
+
+
 					</div>
 
 				</div>
