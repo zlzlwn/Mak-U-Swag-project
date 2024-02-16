@@ -212,7 +212,8 @@
 .qna-list .list-item .post-link .number {
 	display: inline-block;
 	font-weight: 500;
-	width: 85px;
+	width: 177px;
+	 text-align: center; 
 }
 
 .qna-list .list-item .post-link .title {
