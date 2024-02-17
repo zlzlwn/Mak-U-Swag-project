@@ -4,7 +4,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -30,36 +29,72 @@ public class UploadImageServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    	
-        
         // 이미지 파일 받기
-    	 Part filePart = request.getPart("image");
+        Part filePart = request.getPart("image");
+        Part filePart1 = request.getPart("image1");
+        Part filePart2 = request.getPart("image2");
 
-    	    // 파일명 및 파일 경로 생성
-    	    String originalFileName = getFileName(filePart);
-    	    String uploadPath = getServletContext().getRealPath("/") + "images" + File.separator + originalFileName;
+        // 파일명 및 파일 경로 생성
+        String originalFileName = getFileName(filePart);
+        String originalFileName1 = getFileName(filePart1);
+        String originalFileName2 = getFileName(filePart2);
+        System.out.println(originalFileName);
+        String uploadPath = getServletContext().getRealPath("/") + "images" + File.separator + originalFileName;
+        System.out.println(uploadPath);
+        String uploadPath1 = getServletContext().getRealPath("/") + "images" + File.separator + originalFileName1;
+        String uploadPath2 = getServletContext().getRealPath("/") + "images" + File.separator + originalFileName2;
 
-    	    // 이미지 파일 저장
-    	    try (InputStream fileContent = filePart.getInputStream();
-    	         OutputStream outputStream = new FileOutputStream(uploadPath)) {
-    	        int bytesRead;
-    	        final byte[] buffer = new byte[1024];
-    	        while ((bytesRead = fileContent.read(buffer)) != -1) {
-    	            outputStream.write(buffer, 0, bytesRead);
-    	        }
-    	    } catch (IOException e) {
-    	        e.printStackTrace();
-    	        response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "이미지 업로드 중 문제가 발생했습니다.");
-    	        return;
-    	    }
+        // 이미지 파일 저장
+        try (InputStream fileContent = filePart.getInputStream();
+             OutputStream outputStream = new FileOutputStream(uploadPath)) {
+            int bytesRead;
+            final byte[] buffer = new byte[1024];
+            while ((bytesRead = fileContent.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "이미지 업로드 중 문제가 발생했습니다.");
+            return;
+        }
+        
+        try (InputStream fileContent1 = filePart1.getInputStream();
+             OutputStream outputStream1 = new FileOutputStream(uploadPath1)) {
+            int bytesRead1;
+            final byte[] buffer1 = new byte[1024];
+            while ((bytesRead1 = fileContent1.read(buffer1)) != -1) {
+                outputStream1.write(buffer1, 0, bytesRead1);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "이미지 업로드 중 문제가 발생했습니다.");
+            return;
+        }
 
-    	    String relativeImagePath = originalFileName;
-    	    // 업데이트 성공 시 응답
-    	    response.getWriter().write(relativeImagePath);
+        // 이미지 파일2 저장
+        try (InputStream fileContent2 = filePart2.getInputStream();
+             OutputStream outputStream2 = new FileOutputStream(uploadPath2)) {
+            int bytesRead2;
+            final byte[] buffer2 = new byte[1024];
+            while ((bytesRead2 = fileContent2.read(buffer2)) != -1) {
+                outputStream2.write(buffer2, 0, bytesRead2);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "이미지 업로드 중 문제가 발생했습니다.");
+            return;
+        }
+
+        // 상대 경로 생성
+        String relativeImagePath = originalFileName;
+        String relativeImagePath1 = originalFileName1;
+        String relativeImagePath2 = originalFileName2;
+
+        // 상대 경로 반환
+        response.getWriter().write(relativeImagePath + "\n" + relativeImagePath1 + "\n" + relativeImagePath2);
     }
 
-    	// 파일명을 추출하는 메서드
+    // 파일명을 추출하는 메서드
     private String getFileName(Part part) {
         return part.getSubmittedFileName();
     }}

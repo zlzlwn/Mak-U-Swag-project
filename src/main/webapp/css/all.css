@@ -212,7 +212,8 @@
 .qna-list .list-item .post-link .number {
 	display: inline-block;
 	font-weight: 500;
-	width: 85px;
+	width: 177px;
+	 text-align: center; 
 }
 
 .qna-list .list-item .post-link .title {
@@ -533,7 +534,6 @@ li {
 img, fieldset {
 	border: none;
 	vertical-align: top;
-	margin-right: 15px;
 }
 
 table {
@@ -608,10 +608,11 @@ table.nneditor-table {
 	justify-content: center;
 	font-weight: 700;
 	overflow: hidden;
-	padding: 13px 30px;
+	padding: 12px 40px;
 	position: relative;
 	text-align: center;
 	transition: border-color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	transform: translateX(6px);
 }
 
 .primary-button .naver-pay-icon {
@@ -4588,3 +4589,56 @@ my-account .local-nav {
     top: 0;
     left: 0;
 }
+.table-list .list-header .row .item {
+    color: #0e3773;
+    font-size: 12px;
+    font-weight: 700;
+}
+.order-list .row .order-number {
+    width: 50%;
+}
+
+.table-list .row .item {
+    float: left;
+    text-transform: uppercase;
+    padding: 0 10px;
+}
+
+.table-list .list-body {
+    border-top: 1px solid #0e3773;
+}
+
+.table-list .message {
+    font-size: 14px;
+    padding: 75px 0;
+    text-align: center;
+}
+
+.my-account .local-nav {
+    margin-bottom: 60px;
+}
+
+.order-list .row .order-number {
+    width: 50%;
+}
+
+.order-list .row .order-product {
+    width: 20%;
+}
+
+.order-list .row .item {
+    width: 10%;
+}
+
+
+.account-toolbar .search-order .date-range .primary-button input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+

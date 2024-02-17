@@ -54,7 +54,7 @@ public class QueryServletPro extends HttpServlet {
         ArrayList<Productdto2> studentList = new ArrayList<Productdto2>();
         
         // 쿼리 초기화
-        String query = "SELECT proCategory, proName, proColor, proGender, proPrice, SUM(proQty) AS totalQuantity ,MAX(proDate) AS latestProDate,proImage FROM Product where  proName LIKE '%" + name + "%' GROUP BY proCategory, proName, proColor, proGender, proPrice,proImage ORDER BY proCategory ASC, proName, proColor, proGender, proPrice";
+        String query = "SELECT proCategory, proName, proColor, proGender, proPrice, SUM(proQty) AS totalQuantity ,MAX(proDate) AS latestProDate,proImage1,proImage2,proImage3 FROM Product where  proName LIKE '%" + name + "%' and prodelDate is null GROUP BY proCategory, proName, proColor, proGender, proPrice,proImage1,proImage2,proImage3 ORDER BY proCategory ASC, proName, proColor, proGender, proPrice";
          
         
         // 선택한 날짜에 해당하는 결과만 필터링
@@ -67,7 +67,7 @@ public class QueryServletPro extends HttpServlet {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            query = "SELECT proCategory, proName, proColor, proGender, proPrice, SUM(proQty) AS totalQuantity ,MAX(proDate) AS latestProDate,proImage FROM Product WHERE  proName LIKE '%" + name + "%' AND DATE(proDate) = STR_TO_DATE('" + selectedDate + "', '%Y-%m-%d') GROUP BY  proCategory, proName, proColor, proGender, proPrice,proImage ORDER BY proCategory ASC, proName, proColor, proGender, proPrice";
+            query = "SELECT proCategory, proName, proColor, proGender, proPrice, SUM(proQty) AS totalQuantity ,MAX(proDate) AS latestProDate,proImage1,proImage2,proImage3 FROM Product WHERE  proName LIKE '%" + name + "%' and prodelDate is null AND DATE(proDate) = STR_TO_DATE('" + selectedDate + "', '%Y-%m-%d') GROUP BY  proCategory, proName, proColor, proGender, proPrice,proImage1,proImage2,proImage3 ORDER BY proCategory ASC, proName, proColor, proGender, proPrice";
         }
         
         try {
@@ -83,10 +83,12 @@ public class QueryServletPro extends HttpServlet {
                 student.setProName(rs.getString("proName"));
                 student.setProColor(rs.getString("proColor"));
                 student.setProGender(rs.getString("proGender"));
-                student.setProPrice(rs.getString("proPrice"));
+                student.setProPrice(rs.getInt("proPrice"));
                 student.setTotalQuantity(rs.getInt("totalQuantity"));
                 student.setProDate(rs.getString("latestProDate"));
-                student.setProImage(rs.getString("proImage"));
+                student.setProImage1(rs.getString("proImage1"));
+                student.setProImage2(rs.getString("proImage2"));
+                student.setProImage3(rs.getString("proImage3"));
                 
                 studentList.add(student); // 이거하나면 하나씩 한줄로 계단식이됨.
             }

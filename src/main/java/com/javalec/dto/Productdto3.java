@@ -10,9 +10,11 @@ public class Productdto3 {
 	  private String proColor;
 	  private String proGender;
 	  private int proQty;
-	  private String proPrice;
+	  private int proPrice;
 	  private int totalQuantity;
-	  private String proImage;
+	  private String proImage1;
+	  private String proImage2;
+	  private String proImage3;
 	  private String proDate;
 	  private String latestProDate;
 	  
@@ -23,6 +25,66 @@ public class Productdto3 {
 	  
 	  
 	
+
+
+
+
+
+
+
+
+	public String getProImage2() {
+		return proImage2;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setProImage2(String proImage2) {
+		this.proImage2 = proImage2;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public String getProImage3() {
+		return proImage3;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setProImage3(String proImage3) {
+		this.proImage3 = proImage3;
+	}
+
+
+
+
 
 
 
@@ -62,7 +124,7 @@ public class Productdto3 {
 
 
 	public Productdto3(String proCategory, String proName, String proColor, String proGender, int proQty,
-			String proPrice, String proImage, String proDate) {
+			int proPrice, String proImage1, String proImage2,String proImage3,String proDate) {
 		super();
 		this.proCategory = proCategory;
 		this.proName = proName;
@@ -70,7 +132,9 @@ public class Productdto3 {
 		this.proGender = proGender;
 		this.proQty = proQty;
 		this.proPrice = proPrice;
-		this.proImage = proImage;
+		this.proImage1 = proImage1;
+		this.proImage2 = proImage2;
+		this.proImage3 = proImage3;
 		this.proDate = proDate;
 	}
 
@@ -175,12 +239,12 @@ public class Productdto3 {
 
 
 
-	public String getProImage() {
-		return proImage;
+	public String getProImage1() {
+		return proImage1;
 	}
 
-	public void setProImage(String proImage) {
-		this.proImage = proImage;
+	public void setProImage1(String proImage1) {
+		this.proImage1 = proImage1;
 	}
 
 
@@ -216,11 +280,11 @@ public class Productdto3 {
 		this.proColor = proColor;
 	}
 
-	public String getProPrice() {
+	public int getProPrice() {
 		return proPrice;
 	}
 
-	public void setProPrice(String proPrice) {
+	public void setProPrice(int proPrice) {
 		this.proPrice = proPrice;
 	}
 
@@ -233,7 +297,7 @@ public class Productdto3 {
 	}
 
 	public Productdto3(String proCategory, String proName, String proGender, String proColor, int proQty,
-			String proPrice) {
+			int proPrice) {
 		super();
 		this.proCategory = proCategory;
 		this.proName = proName;
@@ -243,7 +307,7 @@ public class Productdto3 {
 		this.proPrice = proPrice;
 	}
 	public Productdto3(String proCategory, String proName, String proGender, String proColor, int proQty,
-			String proPrice, String proImage) {
+			int proPrice, String proImage1) {
 		super();
 		this.proCategory = proCategory;
 		this.proName = proName;
@@ -251,7 +315,7 @@ public class Productdto3 {
 		this.proColor = proColor;
 		this.proQty = proQty;
 		this.proPrice = proPrice;
-		this.proImage = proImage;
+		this.proImage1 = proImage1;
 	}
 
 
@@ -278,7 +342,7 @@ public class Productdto3 {
 
 
 	public Productdto3(int proSeq, String proCategory, String proName, String proColor, String proGender, int proQty,
-			String proImage, String proDate) {
+			String proImage1, String proDate) {
 		super();
 		this.proSeq = proSeq;
 		this.proCategory = proCategory;
@@ -286,7 +350,7 @@ public class Productdto3 {
 		this.proColor = proColor;
 		this.proGender = proGender;
 		this.proQty = proQty;
-		this.proImage = proImage;
+		this.proImage1 = proImage1;
 		this.proDate = proDate;
 	}
 
@@ -302,7 +366,7 @@ public class Productdto3 {
 
 
 	public Productdto3(int proSeq, String proCategory, String proName, String proColor, String proGender, int proQty,
-			String proPrice, String proImage, String proDate) {
+			int proPrice, String proImage1,String proImage2,String proImage3, String proDate) {
 		super();
 		this.proSeq = proSeq;
 		this.proCategory = proCategory;
@@ -311,7 +375,9 @@ public class Productdto3 {
 		this.proGender = proGender;
 		this.proQty = proQty;
 		this.proPrice = proPrice;
-		this.proImage = proImage;
+		this.proImage1 = proImage1;
+		this.proImage2 = proImage2;
+		this.proImage3 = proImage3;
 		this.proDate = proDate;
 	}
 

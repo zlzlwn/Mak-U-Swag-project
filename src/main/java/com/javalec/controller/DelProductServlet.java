@@ -16,26 +16,30 @@ import javax.servlet.http.HttpServletResponse;
 import com.javalec.util.SharVar;
 
 /**
- * Servlet implementation class UpdateProductServlet2
+ * Servlet implementation class DelProductServlet
  */
-@WebServlet("/UpdateProductServlet2")
-public class UpdateProductServlet2 extends HttpServlet {
+@WebServlet("/DelProductServlet")
+public class DelProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-      
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DelProductServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		int Seq = Integer.parseInt(request.getParameter("Seq"));
-		String Category = request.getParameter("Category");
-		String Name = request.getParameter("Name");
-		String Gender = request.getParameter("Gender");
-		String Color = request.getParameter("Color");
-		int Qty = Integer.parseInt(request.getParameter("Qty"));
-		String price1 = request.getParameter("Price");
-		String priceWithoutComma = price1.replaceAll(",", "");
-		int price = Integer.parseInt(priceWithoutComma);
-		String Imagepath = request.getParameter("ImagePath");	
-		String Imagepath1 = request.getParameter("ImagePath1");
-		String Imagepath2 = request.getParameter("ImagePath2");
-		System.out.println(Imagepath);
+		
 		
 		response.setContentType("text/html;charset=UTF-8");
 		
@@ -48,19 +52,10 @@ public class UpdateProductServlet2 extends HttpServlet {
 			Statement stmt_mysql = conn_mysql.createStatement();
 			
 			PreparedStatement ps = null;
-			String query = "update product set proName=?,procolor=?,proCategory=?,proGender=?,proQty=?,proPrice=?,proImage1=?,proImage2=?,proImage3=?,proDate=now() where proSeq=?";
+			String query = "update product set prodelDate=now() where proSeq=?";
 			ps=conn_mysql.prepareStatement(query);
 			
-			ps.setString(1, Name);
-			ps.setString(2, Color);
-			ps.setString(3, Category);
-			ps.setString(4, Gender);
-			ps.setInt(5, Qty);
-			ps.setInt(6, price);
-			ps.setString(7, Imagepath);
-			ps.setString(8, Imagepath1);
-			ps.setString(9, Imagepath2);
-			ps.setInt(10, Seq);
+			ps.setInt(1, Seq);
 			
 			ps.executeUpdate();
 			conn_mysql.close();
