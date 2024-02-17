@@ -262,7 +262,6 @@
 														fw-filter="isNumber&amp;isFill" fw-label="휴대전화"
 														fw-alone="N" fw-msg="" placeholder="" value="" type="text">
 												</div>
-												<p class="txtWarn gBlank5" id="result_send_verify_mobile_fail">휴대폰 번호를 입력하세요.</p>
 											</td>
 										</tr>
 										<tr>

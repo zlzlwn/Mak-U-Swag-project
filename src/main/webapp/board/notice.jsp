@@ -17,8 +17,8 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="./js/accordion.js"></script>
-  
-  
+
+
 <script>
 	function submitSearchForm12(event) {
 		console.log("버튼이 클릭되었습니다!");
@@ -123,7 +123,7 @@
 								</c:forEach>
 
 								<c:if test="${currentPage < totalPage}">
-									<a href="notice.do?page=${currentPage + 1}" 
+									<a href="notice.do?page=${currentPage + 1}"
 										style="display: inline-block; margin: 10px;">&nbsp;다음</a>
 								</c:if>
 							</div>
@@ -134,7 +134,7 @@
 						</div>
 					</div>
 
-					
+
 					<div
 						class="xans-element- xans-board xans-board-buttonlist board-admin-actions  ">
 						<a href="/noticeWrite.do" class="primary-button "><span>WRITE</span></a>
@@ -148,12 +148,12 @@
 					<!-- ============================== [[ Body  section]] ==============================-->
 
 					<!-- =============================  [[ Footer section ]]  ============================= -->
-
-					<%@ include file="../include/footer.jsp"%>
-
 				</div>
+				<%@ include file="../include/footer.jsp"%>
+
 			</div>
 		</div>
-		<!-- =============================  [[ Footer section ]]  ============================= -->
+	</div>
+	<!-- =============================  [[ Footer section ]]  ============================= -->
 </body>
 </html>
