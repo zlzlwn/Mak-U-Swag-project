@@ -9,7 +9,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${qnaTitle }Q&A - MakUSwag</title>
+<title>${qnaTitle }&nbsp Q&A - MakUSwag</title>
+<script>
+    function confirmDelete(qnaSeq) {
+        if (confirm("삭제 하시겠습니까?")) {
+            window.location.href = "qnaDelete.do?qnaSeq=" + qnaSeq;
+        } else {
+            // 사용자가 "아니오"를 선택한 경우 아무 작업도 수행하지 않습니다.
+        }
+    }
+    
+    function UpdateQna(qnaSeq){
+    	if(confirm("수정 하시겠습니까?")){
+    		window.location.href = "qnaUpdate.do?qnaSeq=" + qnaSeq;
+    	}else{
+    		// 사용자가 "아니오"를 선택한 경우 아무 작업도 수행 하지 않습니다.
+    	}
+    }
+</script>
 <link rel="stylesheet" href="./css/all.css">
 <link rel="stylesheet" href="./css/all2.css">
 <link rel="icon" href="./images/CompanyLogo.png"> <!-- 인터넷 창 아이콘에 로고 나오게 하기 -->
@@ -53,8 +70,8 @@
 											</div>
 										</div>
 							<div class="post-footer">
-											<span class=""><a href="qnaDelete.do?qnaSeq=${qnaSeq }" class="button"><span>삭제</span></a></span>
-								            <span class=""><a href="/board/free/modify.html?board_act=edit&no=29496&board_no=5" class="button"><span>수정</span></a></span>
+											<span class=""><a href="#" onclick="confirmDelete(${qnaSeq})" class="button"><span>삭제</span></a></span>
+								            <span class=""><a href="#" onclick="UpdateQna(${qnaSeq})" class="button"><span>수정</span></a></span>
 										</div>
 							</div>
 				
