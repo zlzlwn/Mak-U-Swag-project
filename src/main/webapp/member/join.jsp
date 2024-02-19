@@ -32,30 +32,9 @@
 
 				<!-- 여기서 부터 작성 -->
 
-				<form id="joinForm" name="joinForm"
-					action="/exec/front/Member/join/" method="post">
-					<input id="useSimpleSignin" name="useSimpleSignin" value="F"
-						type="hidden"> <input id="member_name_cert_flag"
-						name="member_name_cert_flag" value="F" type="hidden"> <input
-						id="is_name_auth_use" name="is_name_auth_use" value="F"
-						type="hidden"> <input id="is_ipin_auth_use"
-						name="is_ipin_auth_use" value="F" type="hidden"> <input
-						id="is_mobile_auth_use" name="is_mobile_auth_use" value="F"
-						type="hidden"> <input id="is_email_auth_use"
-						name="is_email_auth_use" value="F" type="hidden"> <input
-						id="default_auth_reg_page_flag" name="default_auth_reg_page_flag"
-						value="E" type="hidden"> <input id="realNameEncrypt"
-						name="realNameEncrypt" value="" type="hidden"> 
-					<input id="is_display_register_business"
-						name="is_display_register_business" value="F" type="hidden">
-					<input id="use_checking_cssn_duplication"
-						name="use_checking_cssn_duplication" value="F" type="hidden">
-					<input id="is_display_register_foreign"
-						name="is_display_register_foreign" value="F" type="hidden">
+				<form id="joinForm" name="joinForm" action="/exec/front/Member/join/" method="post">
 					<input id="idDuplCheck" name="idDuplCheck" value="" type="hidden">
-					<input id="emailDuplCheck" name="emailDuplCheck" value=""
-						type="hidden"> <input id="login_id_type"
-						name="login_id_type" value="id" type="hidden"> <input
+					 <input
 						id="display_agree_privacy_required_check_flag"
 						name="display_agree_privacy_required_check_flag" value="T"
 						type="hidden"> <input
@@ -75,11 +54,7 @@
 					<input id="is_display_register_name"
 						name="is_display_register_name" value="T" type="hidden"> <input
 						id="display_required_name" name="display_required_name" value="T"
-						type="hidden"> <input
-						id="is_display_register_name_phonetic"
-						name="is_display_register_name_phonetic" value="F" type="hidden">
-					<input id="display_required_name_phonetic"
-						name="display_required_name_phonetic" value="F" type="hidden">
+						type="hidden"> 
 					<input id="is_display_register_eng_name"
 						name="is_display_register_eng_name" value="F" type="hidden">
 					<input id="display_required_name_en"
@@ -174,8 +149,8 @@
 						name="sUseSeparationNameFlag" value="F" type="hidden"> <input
 						id="is_use_checking_join_info" name="is_use_checking_join_info"
 						value="F" type="hidden">
-						
-						<!-- 분류 -->
+
+					<!-- 분류 -->
 					<div class="xans-element- xans-member xans-member-join entry-page">
 						<div class="signup-form">
 							<div class="form-header">
@@ -218,8 +193,7 @@
 										<tr>
 											<th scope="row" id="nameTitle">이름</th>
 											<td><span id="nameContents"><input type="text"
-													name="name" id="name" maxlength="20"></span> 
-											</td>
+													name="name" id="name" maxlength="20"></span></td>
 										</tr>
 										<tr class="">
 											<th scope="row">주소 <img
@@ -243,7 +217,7 @@
 											</td>
 										</tr>
 										<tr class="">
-											<th scope="row">휴대전화 </th>
+											<th scope="row">휴대전화</th>
 											<td>
 												<div class="phone-fieldset">
 													<span class="select-field"><select id="mobile1"
@@ -277,16 +251,17 @@
 									<caption>회원 추가정보</caption>
 									<tbody>
 										<tr class="">
-											<th scope="row">성별 </th>
+											<th scope="row">성별</th>
 											<td><input id="is_sex0" name="is_sex" fw-filter="isFill"
 												fw-label="성별" fw-msg="" value="M" type="radio"
-												autocomplete="off"><label for="is_sex0">남자</label> <input
-												id="is_sex1" name="is_sex" fw-filter="isFill" fw-label="성별"
-												fw-msg="" value="F" type="radio" autocomplete="off"><label
+												autocomplete="off" checked="checked"> <label
+												for="is_sex0">남자</label> <input id="is_sex1" name="is_sex"
+												fw-filter="isFill" fw-label="성별" fw-msg="" value="F"
+												type="radio" autocomplete="off"> <label
 												for="is_sex1">여자</label></td>
 										</tr>
 										<tr class="">
-											<th scope="row">생년월일 </th>
+											<th scope="row">생년월일</th>
 											<td>
 												<div class="birthday-fieldset">
 													<input id="birth_year" name="birth_year" fw-filter="isFill"
@@ -299,7 +274,7 @@
 														name="birth_day" fw-filter="isFill" fw-label="생년월일"
 														fw-msg="" class="inputTypeText" placeholder=""
 														maxlength="2" value="" type="text"> 일
-												</div> 
+												</div>
 											</td>
 										</tr>
 									</tbody>
@@ -716,7 +691,7 @@
 												<tr class="">
 													<th scope="row">주소</th>
 													<td><span id="ec_shop_member_confirm_field-postcode1"></span><br>
-													<span id="ec_shop_member_confirm_field-addr1"></span> <span
+														<span id="ec_shop_member_confirm_field-addr1"></span> <span
 														id="ec_shop_member_confirm_field-addr2"></span></td>
 												</tr>
 												<tr class="">
@@ -759,7 +734,10 @@
 						</div>
 					</div>
 				</form>
-
+				<script>
+					$('#addr1').attr('placeholder', '기본 주소');
+					$('#addr2').attr('placeholder', '나머지 주소');
+				</script>
 				<!-- 여기까지 작성 -->
 
 				<!-- ============================== [[ Body  section]] ==============================-->
