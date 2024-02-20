@@ -33,7 +33,7 @@
 	    // Quill 에디터에서 얻은 HTML 콘텐츠를 setItem 메서드를 사용하여 브라우저의 localStorage에 저장 이러면 quillContent라는 이름으로 저장됨
 	    localStorage.setItem('quillContent', quillContent);
 	    
-	    window.location.href = 'QuilTest(submit).jsp'; // 다음 페이지로 이동
+	    window.location.href = 'quilTest(submit).jsp'; // 다음 페이지로 이동
 	  }
 	</script>
 	

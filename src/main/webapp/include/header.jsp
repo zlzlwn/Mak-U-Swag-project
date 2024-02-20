@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="javax.servlet.http.HttpSession"%>
 <%
-// 세션을 가져옵니다.
 // session2는 로그인용
 HttpSession session2 = request.getSession();
 // 세션에 저장된 사용자 정보가 있는지 확인합니다.
@@ -20,14 +19,23 @@ boolean reg = (session2 != null && session.getAttribute("user") != null);
 			</div>
 			<ul
 				class="xans-element- xans-layout xans-layout-statelogoff user-menu">
-				<% if (reg) { %>
+				<% if(reg) { %>
 				<li class="menu-item"><a href="logout.do"><b>Logout</b></a></li>
 				<% } else { %>
 				<li class="menu-item"><a href="login.do"><b>Login</b></a></li>
 				<% } %>
+				<% if(reg) { %>
 				<li class="menu-item"><a href="myPage.do"><b>MyPage</b></a></li>
+				<% } else { %>
+				<li class="menu-item"><a href="login.do"><b>MyPage</b></a></li>
+				<% } %>
+				<% if(reg) { %>
 				<li class="menu-item menu--cart"><a href="cart.do"><b>Cart</b><span
 						class="badge displaynone">()</span></a></li>
+				<% } else { %>
+				<li class="menu-item menu--cart"><a href="login.do"><b>Cart</b><span
+						class="badge displaynone">()</span></a></li>
+				<% } %>
 			</ul>
 			<div class="hamburger" role="button" aria-expanded="false">
 				<span class="patty"> </span>
