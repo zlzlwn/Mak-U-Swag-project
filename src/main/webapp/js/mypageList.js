@@ -51,19 +51,19 @@ function createTable(purchaseList) {
 
 	for (let i = 0; i < purchaseList.length; i++) {
 		accordion += "<div class='list-item xans-record-'>";
-		accordion += "<a href='qnaContent.do?qnaSeq='class='post-link'>";
-		accordion += "<span class='number'>" + purchaseList[i].purSeq + "</span>";
-		accordion += "<span class='number'>" + purchaseList[i].proName + "</span>";
-		accordion += "<span class='number'>" + purchaseList[i].pQty + "</span>";
-		accordion += "<span class='number'>" + purchaseList[i].pPrice + "</span>";
-		accordion += "<span class='number'>" + purchaseList[i].pStackPoint + "</span>";
-
+		accordion += "<a class='post-link'>";
+		accordion += "<span class='number1'>" + purchaseList[i].purSeq + "</span>";
+		accordion += "<span class='number1'>" + purchaseList[i].proName + "</span>";
+		accordion += "<span class='number1'>" + purchaseList[i].pQty + "</span>";
+		accordion += "<span class='number1'>" + purchaseList[i].pPrice + "</span>";
+		accordion += "<span class='number1'>" + purchaseList[i].pStackPoint + "</span>";
 		// 연월일만 추출
 		let fullDate = purchaseList[i].pDate;
 		let formattedDate = fullDate.substring(0, 10); // 년월일만 추출
 
-		accordion += "<span class='number'>" + formattedDate + "</span>";
+		accordion += "<span class='number1'>" + formattedDate + "</span>";
 
+		  accordion += "<button class='number1' data-index='" + i + "'>리뷰작성</button>";
 		accordion += "</a>";
 		accordion += "</div>";
 	}

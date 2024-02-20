@@ -82,7 +82,7 @@ $( function() {
 							</h2>
 						</div>
 						<div class="nav-items">
-							<a href="/myshop/order/list.html" class="nav-item selected">Orders</a>
+							<a href="myPage.do" class="nav-item selected">Orders</a>
 							<a href="/member/modify.html" class="nav-item">My Info</a>
 						</div>
 					</div>
@@ -104,8 +104,8 @@ $( function() {
 									</div>
 									<div class="date-range">
 										<input id="history_start_date" name="history_start_date"
-											class="fText hasDatepicker" readonly="readonly" size="10"
-											value="2023-11-17" type="text">
+											class="fText hasDatepicker"  size="10"
+											value="2000-11-17" type="text">
 										<button type="button" class="ui-datepicker-trigger">
 											<img
 												src="//img.echosting.cafe24.com/skin/admin_ko_KR/myshop/ico_cal.gif"
@@ -113,7 +113,7 @@ $( function() {
 										</button>
 										<span class="range-mark">~</span><input id="history_end_date"
 											name="history_end_date" class="fText hasDatepicker"
-											readonly="readonly" size="10" value="2024-02-15" type="text">
+											readonly="readonly" size="10" value="2025-02-15" type="text">
 										<button type="button" class="ui-datepicker-trigger">
 											<img
 												src="//img.echosting.cafe24.com/skin/admin_ko_KR/myshop/ico_cal.gif"
@@ -121,7 +121,6 @@ $( function() {
 										</button>
 									</div>
 									<input type="text" id="datepicker">
-									<button type="button" id="submitBtn">수정</button>
 									<span class="primary-button" id="searchButton"
 										onclick="searchData()">조회</span>
 									<!-- 									<input  class="primary-button" id="searchButton" type="submit" value="조회" onclick="searchData()" >
@@ -140,10 +139,10 @@ $( function() {
 							<div class="xans-element- xans-board xans-board-list qna-list">
 
 								<div class="list-item xans-record-">
-									<a href="qnaContent.do?qnaSeq=161" class="post-link"> <span
-										class="number">주문번호</span> <span class="number">상품명</span><span
-										class="number">수량</span> <span class="number">가격</span><span
-										class="number">적립포인트</span><span class="number">주문일자</span>
+									<a  class="post-link"> <span
+										class="number1">주문번호</span> <span class="number1">상품명</span><span
+										class="number1">수량</span> <span class="number1">가격</span><span
+										class="number1">적립포인트</span><span class="number1">주문일자</span>
 									</a>
 								</div>
 								<!-- 데이터 리스트 불러오는 ajax -->
