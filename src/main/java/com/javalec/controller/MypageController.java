@@ -13,22 +13,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.javalec.dto.PurchaesDto;
 import com.javalec.util.SharVar;
+import com.mysql.cj.Session;
 
 /**
  * Servlet implementation class QueryServlet
  */
 @WebServlet("/MypageServlet")
-public class MypageServlet extends HttpServlet {
+public class MypageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MypageServlet() {
+    public MypageController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,6 +44,8 @@ public class MypageServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		String startDate = request.getParameter("startDate");
 		String endDate = request.getParameter("endDate");
+		HttpSession session = request.getSession();
+		String userId = (String) session.getAttribute("userId");
 		System.out.println(startDate+endDate);
 		System.out.println("서블릿 실행됨");
 		//박스에 여러개의 데이터 담기
@@ -49,10 +53,21 @@ public class MypageServlet extends HttpServlet {
 		
 		
 		String query = "SELECT p.purSeq, p.pQty, p.pPrice, p.pStackPoint, p.pDate, pr.proName\n"
-				+ "FROM purchase as p\n"
-				+ "JOIN product as pr ON p.proSeq = pr.proSeq WHERE p.pDate BETWEEN '2024-02-10' AND '2024-02-16' ;";
-		System.out.println(query);
+		        + "FROM purchase as p\n"
+		        + "JOIN product as pr ON p.proSeq = pr.proSeq";
+
+		// startDate와 endDate가 null이 아닌 경우에만 BETWEEN 절 추가
+		if (startDate != null && endDate != null) {
+		    query += " WHERE p.pDate BETWEEN '"+startDate+"' AND '"+endDate+"'";
+		    System.out.println("이프쿼리 실행");
+		}
+		// userId가 null이 아닌 경우에만 userId 조건 추가
+		if (userId != null) {
+		    query += (startDate != null && endDate != null) ? " AND p.userId = '"+userId+"'" : " WHERE p.userId = '"+userId+"'";
+		}
 		try {
+
+			System.out.println(userId+"유저아이디");
 			System.out.println(startDate+endDate);
 			System.out.println("마이페이지 서블릿2");
 			Class.forName("com.mysql.cj.jdbc.Driver");

@@ -212,7 +212,7 @@
 .qna-list .list-item .post-link .number {
 	display: inline-block;
 	font-weight: 500;
-	width: 177px;
+	width: 85px;
 	 text-align: center; 
 }
 
@@ -4640,5 +4640,11 @@ my-account .local-nav {
     left: 0;
 }
 
+.qna-list .list-item .post-link .number1 {
+    display: inline-block;
+    font-weight: 500;
+    width: 150px;
+    text-align: center;
+}
 
 
