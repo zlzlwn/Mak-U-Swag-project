@@ -39,10 +39,11 @@ public class MypageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("마이페이지 서블릿1");
 		// AJAX에서 전달한 데이터 받기
-		String name = request.getParameter("name");
 		response.setContentType("text/html;charset=UTF-8");
-		
-		
+		String startDate = request.getParameter("startDate");
+		String endDate = request.getParameter("endDate");
+		System.out.println(startDate+endDate);
+		System.out.println("서블릿 실행됨");
 		//박스에 여러개의 데이터 담기
 		ArrayList<PurchaesDto> purchaseList = new ArrayList<PurchaesDto>();
 		
@@ -52,6 +53,7 @@ public class MypageServlet extends HttpServlet {
 				+ "JOIN product as pr ON p.proSeq = pr.proSeq WHERE p.pDate BETWEEN '2024-02-10' AND '2024-02-16' ;";
 		System.out.println(query);
 		try {
+			System.out.println(startDate+endDate);
 			System.out.println("마이페이지 서블릿2");
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("마이페이지 서블릿3");
