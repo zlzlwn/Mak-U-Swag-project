@@ -61,7 +61,7 @@
 											style="margin: 0 auto;">
 										<!-- <a href="#none" class="primary-button"
 											onclick="MemberAction.login('member_form'); return false;"><span>Login</span></a> -->
-										<a href="memberJoin.do" class="primary-button"><span>Join</span></a>
+										<a href="agree.do" class="primary-button"><span>Join</span></a>
 									</div>
 								</div>
 							</fieldset>

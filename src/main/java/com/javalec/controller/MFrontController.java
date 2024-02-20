@@ -203,12 +203,18 @@ public class MFrontController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = (String) request.getAttribute("redirectURL");
 			break;
+		case ("/agree.do"): // 회원 동의
+			viewPage = "./member/agree.jsp";
+		break;
 		case ("/findId.do"): // 아이디 찾기
 			viewPage = "./member/findId.jsp";
 			break;
 		case ("/findPasswd.do"): // 비밀번호 찾기
 			viewPage = "./member/findPasswd.jsp";
 			break;
+		case ("/identity.do"): // 본인인증
+			viewPage = "./member/identity.jsp";
+		break;
 		case ("/memberJoin.do"): // 회원가입
 			viewPage = "./member/join.jsp";
 			break;
