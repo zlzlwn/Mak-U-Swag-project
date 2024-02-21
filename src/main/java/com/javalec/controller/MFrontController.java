@@ -213,7 +213,7 @@ public class MFrontController extends HttpServlet {
 			viewPage = "./member/findPasswd.jsp";
 			break;
 		case ("/identity.do"): // 본인인증
-			viewPage = "./member/identity.jsp";
+			viewPage = "./member/sendEmail.jsp";
 		break;
 		case ("/memberJoin.do"): // 회원가입
 			viewPage = "./member/join.jsp";

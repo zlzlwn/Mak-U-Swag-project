@@ -20,7 +20,7 @@
     margin-bottom: 5px;
 }
 
-.entry-page .login input[type=text],.entry-page .login input[type=password] {
+.entry-page .login input[type=text],.entry-page .login input[type=password], .entry-page .login input[type=email] {
     background-color: #e6e5e0;
     border: 1px solid #0e3773;
     border-radius: 0;
