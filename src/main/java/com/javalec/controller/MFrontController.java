@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.javalec.command.AllinoneCommand;
+import com.javalec.command.AllinoneDetailCommand;
 import com.javalec.command.LoginCommand;
 import com.javalec.command.MCommand;
 import com.javalec.command.MFaqCommand;
@@ -99,10 +101,10 @@ public class MFrontController extends HttpServlet {
 //			command.execute(request, response);
 			viewPage = "./category/best_100.jsp";
 			break;
-		case ("/all_in_one.do"): // All-in-one
-//			command = new BListCommand();
-//			command.execute(request, response);
-			viewPage = "./category/all_in_one.jsp";
+		case ("/all_in_one.do"): // All-in-one   ---원래있던거
+			command = new AllinoneCommand();  
+			command.execute(request, response);   
+			viewPage = "./all_in_one.jsp";   
 			break;
 		case ("/outer.do"): // Outer
 //			command = new BListCommand();
@@ -143,6 +145,11 @@ public class MFrontController extends HttpServlet {
 //			command = new BListCommand();
 //			command.execute(request, response);
 			viewPage = "./category/women_only.jsp";
+			break;
+		case("/bbb.do"):
+			command = new AllinoneDetailCommand();
+			command.execute(request, response);
+			viewPage="ddd.jsp";
 			break;
 
 		// ------------- board 폴더 ------------------
