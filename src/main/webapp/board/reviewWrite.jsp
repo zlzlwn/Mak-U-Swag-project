@@ -65,7 +65,7 @@
 					<div
 						class="xans-element- xans-board xans-board-title board-header ">
 						<h3>
-							<font color="#555555">Q&A</font>
+							<font color="#555555">REVIEW</font>
 						</h3>
 					</div>
 					<form id="boardWriteForm" name="insertQnaForm" action="qnaWriteSubmit.do"
@@ -94,14 +94,7 @@
 									<div class="form-block">
 										<div class="form-field subject">
 											<div class="field-label">제목</div>
-											<select id="board_category" name="qnaCategory">
-												<option value="1">입급/결제관련 문의</option>
-												<option value="2">배송관련 문의</option>
-												<option value="3">배송 전 변경/취소 문의</option>
-												<option value="4">교환/반품 문의</option>
-												<option value="5">상품관련 문의</option>
-												<option value="6">기타 문의</option>
-											</select><input id="subject" name="qnaTitle" value = "${qnaTitle }" class="inputTypeText"
+											</select><input id="subject" name="qnaTitle"  class="inputTypeText"
 												placeholder="제목을 입력하세요" maxLength="125" type="text" />
 											<div class="checkbox"></div>
 											<div class="checkbox"></div>
@@ -133,10 +126,10 @@
 								</div>
 							</div>
 						</div>
-<!-- 					<div class="form-action">
+				<!-- 	<div class="form-action">
 						<input type="submit" class="button primary-button" value ="SUBMIT" name = "qnaInsert" onclick = "insertQna()">
-					</div>
- -->					</form>
+					</div> -->
+					</form>
 				</div>
 				<!-- 여기까지 Swag~ -->
 

@@ -63,7 +63,7 @@ function createTable(purchaseList) {
 
 		accordion += "<span class='number1'>" + formattedDate + "</span>";
 
-		  accordion += "<button class='number1' data-index='" + i + "'>리뷰작성</button>";
+accordion += "<button onclick='location.href=\"/MakUSwag2.5/reviewWrite.do?index=" + i + "\"' class='number1'>리뷰작성</button>";
 		accordion += "</a>";
 		accordion += "</div>";
 	}
