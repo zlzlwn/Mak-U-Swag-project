@@ -41,7 +41,7 @@ public class Allinone {
 	        connection = dataSource.getConnection();
 	        // SQL 쿼리를 사용하여 페이지 및 페이지당 튜플 수에 기반한 제한된 수의 공지사항을 가져옴
 	        
-	        String query = "SELECT proName,proPrice,proImage1 FROM product";
+	        String query = "SELECT min(proSeq) as proSeq, proName, min(proPrice) as proPrice,min(proImage1) as proImage1,min(proImage2) as proImage2, sum(proQty) as totalProQty FROM product  WHERE proCategory = 'All-in-one' group by proName";
 	        
 	        preparedStatement = connection.prepareStatement(query);
 	        resultSet = preparedStatement.executeQuery();
@@ -49,11 +49,13 @@ public class Allinone {
 
 	        // 결과 집합을 반복하며 NoticeDtoPJH 객체를 생성
 	        while (resultSet.next()) {
+	        	int proSeq = resultSet.getInt("proSeq");
 	            String proName = resultSet.getString("proName");
-	            String proPrice = resultSet.getString("proPrice");
+	            int proPrice = resultSet.getInt("proPrice");
 	            String proImage1 = resultSet.getString("proImage1");
+	            String proImage2 = resultSet.getString("proImage2");
 
-	            Allinonedto dto = new Allinonedto(proName,proPrice,proImage1);
+	            Allinonedto dto = new Allinonedto(proSeq,proName,proPrice,proImage1,proImage2);
 	            dtos.add(dto);
 	        }
 
