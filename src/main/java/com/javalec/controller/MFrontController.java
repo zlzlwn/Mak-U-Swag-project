@@ -17,6 +17,7 @@ import com.javalec.command.MCommand;
 import com.javalec.command.MFaqCommand;
 import com.javalec.command.MNoticeCommand;
 import com.javalec.command.MReviewCommand;
+import com.javalec.command.MReviewWriteCommand;
 import com.javalec.command.ManagerCommand;
 import com.javalec.command.MqnaCommand;
 import com.javalec.command.MqnaContentCommand;
@@ -194,8 +195,8 @@ public class MFrontController extends HttpServlet {
 			viewPage = "qna.do";
 			break;
 		case ("/reviewWrite.do"):// 마이페이지 에서 리뷰작성 버튼을 눌렀을 시 리뷰작성 페이지로 가는 컨트롤러
-//			command = new MqnaWriteCommand();
-//			command.execute(request, response);
+			command = new MReviewWriteCommand();
+			command.execute(request, response);
 			viewPage = "./board/reviewWrite.jsp";
 			break;
 

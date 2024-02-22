@@ -83,6 +83,7 @@
 							id="isGalleryBoard" name="isGalleryBoard" value="" type="hidden" />
 						<input id="a5de8f588ce99" name="a5de8f588ce99"
 							value="90c5c2c59257572aaad9896dc0760aa1" type="hidden" />
+							
 						<div
 							class="xans-element- xans-board xans-board-write post-editor ">
 							<!--
@@ -93,8 +94,14 @@
 								<div class="form-row">
 									<div class="form-block">
 										<div class="form-field subject">
+										<div class="title-range">
+													<img
+														src="//faderoom.co.kr/web/product/tiny/202311/416e1c58fbe02289e0598b83fd2277b8.jpg"
+														border="0" alt="" width=100px> <span>FELT WOOL
+														BLAZER JACKET <br>${dto.revTitle}</span>
+												</div><br><br><br>
 											<div class="field-label">제목</div>
-											</select><input id="subject" name="qnaTitle"  class="inputTypeText"
+											</select><input id="subject" name="reviewTitle"  class="inputTypeText"
 												placeholder="제목을 입력하세요" maxLength="125" type="text" />
 											<div class="checkbox"></div>
 											<div class="checkbox"></div>
@@ -108,7 +115,7 @@
 
 
 											<!-- HTML -->
-											<textarea style="width: 100%;" name="qnaContent" id="content"
+											<textarea style="width: 100%;" name="reviewContent" id="content"
 												class="ec-fr-never-be-duplicated"></textarea>
 											<input type="hidden" id="content_hidden"
 												fw-filter="isSimplexEditorFill" fw-label="내용"
@@ -121,7 +128,7 @@
 											</script>
 										</div>
 										<div class="field-label">첨부파일</div>
-										<input name="qnaImage" type="file" value = "qnaImage">
+										<input name="reviewImage" type="file" value = "reviewImage">
 									</div>
 								</div>
 							</div>
