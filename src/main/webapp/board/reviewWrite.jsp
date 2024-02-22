@@ -65,7 +65,7 @@
 					<div
 						class="xans-element- xans-board xans-board-title board-header ">
 						<h3>
-							<font color="#555555">Q&A</font>
+							<font color="#555555">REVIEW</font>
 						</h3>
 					</div>
 					<form id="boardWriteForm" name="insertQnaForm" action="qnaWriteSubmit.do"
@@ -83,6 +83,7 @@
 							id="isGalleryBoard" name="isGalleryBoard" value="" type="hidden" />
 						<input id="a5de8f588ce99" name="a5de8f588ce99"
 							value="90c5c2c59257572aaad9896dc0760aa1" type="hidden" />
+							
 						<div
 							class="xans-element- xans-board xans-board-write post-editor ">
 							<!--
@@ -93,15 +94,14 @@
 								<div class="form-row">
 									<div class="form-block">
 										<div class="form-field subject">
+										<div class="title-range">
+													<img
+														src="//faderoom.co.kr/web/product/tiny/202311/416e1c58fbe02289e0598b83fd2277b8.jpg"
+														border="0" alt="" width=100px> <span>FELT WOOL
+														BLAZER JACKET <br>${dto.revTitle}</span>
+												</div><br><br><br>
 											<div class="field-label">제목</div>
-											<select id="board_category" name="qnaCategory">
-												<option value="1">입급/결제관련 문의</option>
-												<option value="2">배송관련 문의</option>
-												<option value="3">배송 전 변경/취소 문의</option>
-												<option value="4">교환/반품 문의</option>
-												<option value="5">상품관련 문의</option>
-												<option value="6">기타 문의</option>
-											</select><input id="subject" name="qnaTitle" value = "${qnaTitle }" class="inputTypeText"
+											</select><input id="subject" name="reviewTitle"  class="inputTypeText"
 												placeholder="제목을 입력하세요" maxLength="125" type="text" />
 											<div class="checkbox"></div>
 											<div class="checkbox"></div>
@@ -115,7 +115,7 @@
 
 
 											<!-- HTML -->
-											<textarea style="width: 100%;" name="qnaContent" id="content"
+											<textarea style="width: 100%;" name="reviewContent" id="content"
 												class="ec-fr-never-be-duplicated"></textarea>
 											<input type="hidden" id="content_hidden"
 												fw-filter="isSimplexEditorFill" fw-label="내용"
@@ -128,15 +128,15 @@
 											</script>
 										</div>
 										<div class="field-label">첨부파일</div>
-										<input name="qnaImage" type="file" value = "qnaImage">
+										<input name="reviewImage" type="file" value = "reviewImage">
 									</div>
 								</div>
 							</div>
 						</div>
-<!-- 					<div class="form-action">
+				<!-- 	<div class="form-action">
 						<input type="submit" class="button primary-button" value ="SUBMIT" name = "qnaInsert" onclick = "insertQna()">
-					</div>
- -->					</form>
+					</div> -->
+					</form>
 				</div>
 				<!-- 여기까지 Swag~ -->
 
